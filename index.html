@@ -387,36 +387,45 @@
 					<h3>Variables</h3>
 					<p>Variables hold different types of information, like strings, numbers, and collections of data.</p>
 					<ul>
-						<li>When you first create a variable, it does not have a value (it is <em>undefined</em>).</li>
-						<li>Once you give your variable a starting value, it is no longer undefined. This is called <em>initializing</em> the variable.</li>
-						<li>The value of a variable can change (be updated) later.</li>
+						<li class="fragment"><em>Declared</em> (created) using the word <code>var</code>.</li>
+						<li class="fragment">When first declared, it does not have a value (it is <em>undefined</em>).</li>
+						<li class="fragment">Once given a starting value, it is no longer undefined. This is called <em>initializing</em> the variable.</li>
+						<li class="fragment">The value of a variable can change (be updated) later (don't need to re-use <code>var</code>).</li>
 					</ul>
-				</section>
-
-				<section>
-					<h3>Naming Variables</h3>
-					<ul>
-						<li>The variable name is case-sensitive.</li>
-						<li>A new variable needs to have a unique name.</li>
-						<li>Variable names need to start with a letter, $, or _.</li>
-						<li>Variable names can only be made of letters, numbers, $, or _.</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Declaring a Variable</h3>
-					<p>To declare (create) a variable, just type the word "var" and the variable name.</p>
-						<pre>
-							<code class="javascript">
-	var numberOfKittens; // numberOfKittens is undefined
-	var numberOfKittens = 5; // numberOfKittens is 5!
+					<pre class="fragment">
+						<code class="javascript">
+	var lsp; // declared but undefined
+	var lsp = "Lumpy Space Princess"; // initialized
+	lsp = "Lumpy Space Princes is my favorite!"; // updated
 						</code>
 					</pre>
 				</section>
 
 				<section>
+					<h3>Naming Variables</h3>
+					<ul>
+						<li class="fragment">Case-sensitive: ohio != Ohio</li>
+						<li class="fragment">Must be unique</li>
+						<li class="fragment">Must start with a letter, <code>$</code>, or <code>_</code>
+							<ul class="fragment">
+								<li><code>$</code> is used by the <b>jQuery</b> library</li>
+								<li><code>_</code> is used by the <b>underscore.js</b> library</li>
+								<li>Best just to start with a letter</li>
+							</ul>
+						</li>
+						<li class="fragment">Can only be made of letters, numbers, $, or _</li>
+						<li class="fragment">Best practice for multiple-word variables is to use <em>camelcase</em>:
+							<ul>
+								<li><code>var thisIsMyVariable;</code></li>
+								<li>Start with lowercase letter, then capitalize other words</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>Using a Variable</h3>
-					<p>Once you have created a variable, you can use it in your code. Just type the name of the variable.</p>
+					<p>Once you have declared a variable, you can use it in your code. Just type the name of the variable.</p>
 					<pre>
 						<code class="javascript">
 	var numberOfKittens = 5;
@@ -428,7 +437,7 @@
 				<section>
 					<h3>Let's Develop It!</h3>
 					<p>In your console, create a variable and give it a valid name and a value. Then, display the value.</p>
-					<p>Next, try combining a variable, a string data type, and an operator!</p>
+					<p>Next, try this one:</p>
 					<pre>
 						<code class="javascript">
 	var kittenName = 'Admiral';
@@ -436,8 +445,23 @@
 	console.log(kittenName); // Outputs 'Admiral Snuggles'
 						</code>
 					</pre>
+					<blockquote class="fragment green">You just combined using a <b>variable</b>, a <b>string</b>, and an <b>operator</b>!</blockquote>
 				</section>
 
+				<section>
+					<h3>Class 1 Homework</h3>
+					<p>Read over some introductory materials on JavaScript variables. If you want to look ahead, next time we'll be talking about <code>functions</code>, <code>arrays</code>, and <code>objects</code>.</p>
+					<ul>
+						<li><a href="https://www.codecademy.com/learn/javascript">Codecademy Intro to JS: Unit 1</a></li>
+						<li>Check out some browser-based JS tools like <a href="https://jsbin.com">jsbin</a> or <a href="http://jsfiddle.net/">jsfiddle</a>
+							<ul>
+								<li>Hint: Use the button labeled <code>run</code> to process your code</li>
+							</ul>
+						</li>
+						<li>Bring any questions you think of to next class</li>
+					</ul>
+					<blockquote class="green fragment"><b>Remember:<br/>Every question is important!</b></blockquote>
+				</section>
 
 				<!-- Class 2 Slides: Basics -->
 				<section id="class2slides">
