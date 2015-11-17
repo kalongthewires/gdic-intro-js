@@ -84,8 +84,12 @@
 					<h2>Welcome!</h2>
 					<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
 					<ul>
-						<li><a href="#/class1slides">Class 1: Introduction and Fundamentals</a></li>
-						<li><a href="#/class2slides">Class 2: Functions, Arrays, and Objects</a></li>
+						<li><a href="#/class1slides">Class 1: Introduction and Fundamentals</a>
+							<small>Data types, operators, conditionals, and variables</small>
+						</li>
+						<li><a href="#/class2slides">Class 2: Working with JavaScript</a>
+							<small>Functions, arrays, loops, and conditionals</small>
+						</li>
 						<!-- <li><a href="#/class3slides">Class 3</a></li> -->
 						<!-- <li><a href="#/class4slides">Class 4</a></li> -->
 						<!-- <li><a href="#/definitions">Definitions</a></li> -->
@@ -99,6 +103,7 @@
 				<section id="class1slides">
 					<h2>Class 1 Slides</h2>
 					<p>Introduction and Fundamentals</p>
+					<small>Data types, operators, conditionals, and variables</small>
 				</section>
 
 				<section>
@@ -455,7 +460,8 @@
 				<!-- Class 2 Slides: Basics -->
 				<section id="class2slides">
 					<h2>Class 2 Slides</h2>
-					<p>Functions, Arrays, and Objects</p>
+					<p>Working with JavaScript</p>
+					<small>Functions, Arrays, Loops, and Conditionals</small>
 				</section>
 
 				<section>
@@ -578,7 +584,7 @@
 					<ul>
 						<li>In the JS area, write a function called <code>sayMyName</code></li>
 						<li>Takes 2 parameters: <code>firstName</code> and <code>lastName</code></li>
-						<li>Outputs (either <code>alert</code> or <code>document.write</code>) a string that joins <code>firstName</code> and <code>lastName</code></li>
+						<li>Output (either <code>alert</code> or <code>document.write</code>) a string that joins <code>firstName</code> and <code>lastName</code></li>
 						<li>Call your function by passing it your first and last names as <code>strings</code></li>
 					</ul>
 				</section>
@@ -643,26 +649,12 @@
 				</section>
 
 				<section>
-					<h3>Using Arrays</h3>
+					<h3>Using arrays</h3>
 					<p>Access items in an array by wrapping its possition with <em>"bracket notation"</em> <code>[]</code></p>
 					<pre><code class="javascript">
  var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
  var firstCat = catNames[0]; //0-based! Returns 'Fluffy'
- var lastCat = catNames[2]; //1 less than items because 0-based!
-					</code></pre>
-					<p>Get the length of an array with <code>.length</code></p>
-					<pre><code class="javascript">
- var howManyCats = catNames.length; //Returns 3
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Changing arrays</h3>
-					<p>Add something to the <em>end</em> of an array with <code>.push()</code></p>
-					<pre><code class="javascript">
- var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
- catNames.push('Miss Havisham');
- console.log(catNames);
+ var lastCat = catNames[2]; //1 less than length because 0-based!
 					</code></pre>
 					<p>Change a particular value by accessing its <code>index</code> using bracket notation</p>
 					<pre><code class="javascript">
@@ -672,22 +664,69 @@
 				</section>
 
 				<section>
+					<h3>Using Arrays</h3>
+					<p>Get the length of an array with <code>.length</code></p>
+					<pre><code class="javascript">
+ var howManyCats = catNames.length; //Returns 3
+					</code></pre>
+					<p>Add something to the <em>end</em> of an array with <code>.push()</code></p>
+					<pre><code class="javascript">
+ var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
+ catNames.push('Miss Havisham');
+ console.log(catNames);
+					</code></pre>
+				</section>
+
+				<section>
 					<h3>Let's Develop It!</h3>
-					<p>Create an array of your favorite foods. Output a few values onto your screen.</p>
+					<ul>
+						<li>Create an array of your favorite foods.</li>
+						<li>Add a food without re-writing your array.</li>
+						<li>Change a food using bracket notation.</li>
+						<li>Output a few foods onto your screen.</li>
+					</ul>
+					<p class="fragment green">What if we wanted to simplify this?<br/>Could we write a function?</p>
+					<pre class="fragment"><code class="javascript">
+ var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+
+ function printNames(arrayOfNames) {
+	 //Print out each cat name
+	 //What goes here?
+ }
+
+ printNames(catNames);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Loops</h3>
+					<p>Process a set of data by <em>iterating</em> through the set</p>
+					<ul>
+						<li><code>while</code> loops</li>
+						<li><code>for</code> loops</li>
+						<li><strong>Require:</strong>
+							<ul>
+								<li>Set of data (a range or an array)</li>
+								<li>Ending condition</li>
+							</ul>
+						</li>
+						<li>infinite loops = sadfaces</li>
+					</ul>
 				</section>
 
 				<!-- Loops -->
 				<section>
-						<h3>While loops</h3>
-						<p>While will repeat the same code over and over until some condition is met.</p>
-						<pre><code>
-var bottlesOfBeer = 99;
-while (bottlesOfBeer &gt;= 1) {
-console.log (bottlesOfBeer + ' bottles of beer on the wall');
-bottlesOfBeer = bottlesOfBeer - 9;
-}
-		</code></pre>
+					<h3>While loops</h3>
+					<p>Repeats the same code over and over until some condition is met</p>
+					<pre><code>
+ var numberOfTacos = 10;
+ while (numberOfTacos > 0) {
+  console.log('OM NOM NOM'); //Eat a taco
+  numberOfTacos =- 1; //Decrement by 1
+ }
+					</code></pre>
 				</section>
+
 				<section>
 		<h3>Infinite Loops</h3>
 						<p>Make sure something changes in the loop, or your loop will go on forever...</p>
