@@ -502,7 +502,7 @@
 						<li>Keyword <code>function</code></li>
 						<li>Function <code>name</code></li>
 						<li><em>Parameters</em>: list of <em>arguments</em> the function can use, enclosed with parenthesis <code>()</code></li>
-						<li>Statments are enclosed with curly braces <code>{}</code></li>
+						<li>Statements are enclosed with curly braces <code>{}</code></li>
 					</ul>
 					<pre><code class="javascript">
 	function name(argument1, argument2){
@@ -601,6 +601,7 @@
 
  function addAnimals(puppies,kittens){
 	return (puppies + kittens);
+	console.log(puppies > kittens); //Will never get to this line
  }
 
  addAnimals(numberOfPuppies,numberOfKittens); // Has returned 9
@@ -700,7 +701,8 @@
 
 				<section>
 					<h3>Loops</h3>
-					<p>Process a set of data by <em>iterating</em> through the set</p>
+					<p>Process a set of data by <em>iterating</em> through the set<br>
+					and performing an action to each item</p>
 					<ul>
 						<li><code>while</code> loops</li>
 						<li><code>for</code> loops</li>
@@ -711,6 +713,7 @@
 							</ul>
 						</li>
 						<li>infinite loops = sadfaces</li>
+						<li class="fragment">Forgot the ending condition! (Or it's invalid)</li>
 					</ul>
 				</section>
 
@@ -725,6 +728,13 @@
   numberOfTacos =- 1; //Decrement by 1
  }
 					</code></pre>
+					<div class="fragment">
+						<p><code>while (numberOfTacos > 0)</code> is the ending condition</p>
+						<ul>
+							<li><code>while (numberOfTacos)</code> = sadface!</li>
+							<li><code>while (numberOfTacos < 100)</code> = sadface!</li>
+						</ul>
+					</div>
 				</section>
 
 				<section>
