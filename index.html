@@ -766,15 +766,45 @@
  var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
 
  for (var i = 0; i < catNames.length; i++) {
-  console.log(catNames[i])
+  console.log(catNames[i]) //i = index, or position in the array
  }
 					</code></pre>
 				</section>
 
 				<section>
-			<h3>Let's Develop It</h3>
-						<p>Use a loop to make a list of all your favorite foods.</p>
+					<h3>Putting it all together!</h3>
+					<pre><code>
+ var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+
+ function printNames(arrayOfNames) {
+  for (var i = 0; i < arrayOfNames.length; i++) {
+    console.log(arrayOfNames[i])
+  }
+ }
+
+ printNames(catNames);
+
+ var dogNames = ['Sparky','Thor','Sir Droolington'];
+ printNames(dogNames);
+					</code></pre>
+					<p class="green fragment">Reusable code!</p>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Use a loop to print out your favorite foods.</p>
+					<ul>
+						<li>Make an array of foods</li>
+						<li>Write a function what will:
+							<ul>
+								<li>Loop through the foods on your list</li>
+								<li>Output each food to the screen (console, document, or alert)</li>
+							</ul>
+						</li>
+						<li>Call the function, and pass it your array as an argument</li>
+					</ul>
 			</section>
+
 				<!-- Class 3 Slides: Basics -->
 				<section id="class3slides">
 					<h2>Class 3 Slides</h2>
