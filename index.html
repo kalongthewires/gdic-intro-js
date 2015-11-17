@@ -12,13 +12,20 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
+		<!-- reveal.js -->
 		<link rel="stylesheet" href="css/reveal.css">
+
+		<!-- GDI theme -->
 		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
+		<!-- hightlight.js Stylesheets-->
 		<!-- For syntax highlighting -->
-		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
-		<!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- light editors -->
+		<!-- <link rel="stylesheet" href="lib/css/light.css"> -->
+		<link rel="stylesheet" href="lib/css/tomorrow.css">
+		<!-- dark editors -->
+		<!-- <link rel="stylesheet" href="lib/css/dark.css"> -->
+		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
 
 		<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
 
@@ -64,15 +71,13 @@
         <!-- Opening -->
 				<section>
 					<h1>Intro to JavaScript</h1>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	function helloWorld(){
 		var name = "GDI";
 		alert("Hello world, it's " + name + "!");
 	}
 	helloWorld();
-						</code>
-					</pre>
+					</code></pre>
 				</section>
 
 				<section>
@@ -80,11 +85,11 @@
 					<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
 					<ul>
 						<li><a href="#/class1slides">Class 1: Introduction and Fundamentals</a></li>
-						<!-- <li><a href="#/class2slides">Class 2</a></li>
-						<li><a href="#/class3slides">Class 3</a></li>
-						<li><a href="#/class4slides">Class 4</a></li>
-						<li><a href="#/definitions">Definitions</a></li>
-						<li><a href="#/references">References</a></li> -->
+						<li><a href="#/class2slides">Class 2: Functions, Arrays, and Objects</a></li>
+						<!-- <li><a href="#/class3slides">Class 3</a></li> -->
+						<!-- <li><a href="#/class4slides">Class 4</a></li> -->
+						<!-- <li><a href="#/definitions">Definitions</a></li> -->
+						<!-- <li><a href="#/references">References</a></li> -->
 					</ul>
 					<!-- <p class="green">Remember! <em>Every</em> question is important.</p> -->
 					<blockquote class="green"><b>Remember:<br/>Every question is important!</b></blockquote>
@@ -161,11 +166,9 @@
 						<li>Click on the `Console` tab</li>
 						<li>Enter the following:</li>
 					</ul>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	alert('Hello World!');
-						</code>
-					</pre>
+					</code></pre>
 					<aside class="notes">
 						<p>Walk students through Chome Dev Tools and Console.</p>
 						<p>Explain that JS has interacted with aspects of the client (browser) and told it to do something!</p>
@@ -308,8 +311,7 @@
 						<li>Click on the `Console` tab</li>
 						<li>Play around!</li>
 					</ul>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	3.2 - 4
 	"GDI" + "Cbus"
 	6 * "six";
@@ -318,8 +320,7 @@
 	9 % 2
 	"GDI" == "gdi"
 	14 >= 14
-						</code>
-					</pre>
+					</code></pre>
 					<p>Try your own! Find any interesting results?</p>
 				</section>
 
@@ -327,15 +328,13 @@
 					<h2>JavaScript Basics</h2>
 					<h3>Statements</h3>
 					<p>Each instruction in JS is a <b><em>statement</em></b>, like:</p>
-					<pre>console.log('Hello Class!');</pre>
+					<pre><code class="javascript">console.log('Hello Class!');</code></pre>
 					<div class="fragment">
 						<p>After each individual statement, you <em>must</em> add a semicolon to end the command.</p>
-						<pre>
-							<code class="javascript">
+						<pre><code class="javascript">
 	console.log('I am glad to meet you.');
 	console.log('Fuzzy Wuzzy Was A Bear');
-							</code>
-						</pre>
+						</code></pre>
 					</div>
 					<blockquote class="fragment green">
 						If it's left off, it's up to the browser to decide what you meant.
@@ -344,8 +343,7 @@
 
 				<section>
 					<h3>Data Outputs</h3>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	// Open a popup box:
 	alert('Hello World!');
 	alert(2015 / 746);
@@ -357,30 +355,25 @@
 	// Add something to the page:
 	document.write('Hello World!');
 	document.write("kittens" == "kittens");
-						</code>
-					</pre>
+					</code></pre>
 				</section>
 
 				<section>
 					<h3>Comments</h3>
 					<p>You can leave comments in your code that won't be processed in the script.</p>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	/* I can wrap long comments
 	with multiple lines
 	like this */
 	console.log('Hello World!'); // Or short like this
-						</code>
-					</pre>
+					</code></pre>
 					<p>Comments act as notes that people can read and computers will ignore.</p>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	/* This code multiplies puppies by kitties */
 	var puppies = 10;
 	var kitties = 11;
 	document.write(puppies * kitties);
-						</code>
-					</pre>
+					</code></pre>
 				</section>
 
 				<section>
@@ -397,8 +390,7 @@
 	var lsp; // declared but undefined
 	var lsp = "Lumpy Space Princess"; // initialized
 	lsp = "Lumpy Space Princes is my favorite!"; // updated
-						</code>
-					</pre>
+					</code></pre>
 				</section>
 
 				<section>
@@ -426,25 +418,21 @@
 				<section>
 					<h3>Using a Variable</h3>
 					<p>Once you have declared a variable, you can use it in your code. Just type the name of the variable.</p>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	var numberOfKittens = 5;
 	console.log(numberOfKittens);
-						</code>
-					</pre>
+					</code></pre>
 				</section>
 
 				<section>
 					<h3>Let's Develop It!</h3>
 					<p>In your console, create a variable and give it a valid name and a value. Then, display the value.</p>
 					<p>Next, try this one:</p>
-					<pre>
-						<code class="javascript">
+					<pre><code class="javascript">
 	var kittenName = 'Admiral';
 	kittenName += ' Snuggles';
 	console.log(kittenName); // Outputs 'Admiral Snuggles'
-						</code>
-					</pre>
+					</code></pre>
 					<blockquote class="fragment green">You just combined using a <b>variable</b>, a <b>string</b>, and an <b>operator</b>!</blockquote>
 				</section>
 
@@ -463,9 +451,291 @@
 					<blockquote class="green fragment"><b>Remember:<br/>Every question is important!</b></blockquote>
 				</section>
 
+
 				<!-- Class 2 Slides: Basics -->
 				<section id="class2slides">
 					<h2>Class 2 Slides</h2>
+					<p>Functions, Arrays, and Objects</p>
+				</section>
+
+				<section>
+					<h3>Class 1 Review</h3>
+					<p>Did you find anything interesting about JS since last time?</p>
+					<ul>
+						<li class="fragment">Data Types - Which can you remember?</li>
+						<li class="fragment">Operators</li>
+						<li class="fragment">Comparators
+							<pre><code class="javascript">== vs ===</code></pre>
+						</li>
+						<li class="fragment">Variables
+							<pre><code class="javascript">var students = "Javascript stars!";</code></pre>
+						</li>
+					</ul>
+				</section>
+				<section>
+						<h3>Functions</h3>
+						<ul>
+							<li>Collection of statements that perform a task or calculation</li>
+							<li class="fragment">Functions are kinda like algebra equations:<br/>
+							Define the equation, plug in some values, and get a result</li>
+							<li class="fragment">Just like variables, <em>declaring</em> a function creates it</li>
+						</ul>
+						<pre class="fragment"><code class="javascript">
+	function helloWorld(){} // Declared, now it exists!
+						</code></pre>
+						<pre class="fragment"><code class="javascript">
+	// Another way of writing it
+	var helloWorld = function(){}; // Stored as a variable
+						</code></pre>
+				</section>
+
+				<section>
+					<h3>Function Syntax</h3>
+					<ul>
+						<li>Function <em>definition</em> (or <em>declaration</em>): the entire set of keyword, name, parameters, and statements making up the function</li>
+						<li>Keyword <code>function</code></li>
+						<li>Function <code>name</code></li>
+						<li><em>Parameters</em>: list of <em>arguments</em> the function can use, enclosed with parenthesis <code>()</code></li>
+						<li>Statments are enclosed with curly braces <code>{}</code></li>
+					</ul>
+					<pre><code class="javascript">
+	function name(argument1, argument2){
+		statement;
+		statement;
+		statement;
+	} // No ending semi-colon!
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Calling Functions</h3>
+					<ul>
+						<li><em>Calling</em> a function means to <em>invoke</em> it, or activate it</li>
+						<li><em>After</em> it has been defined</li>
+						<li><code>functionName();</code></li>
+					</ul>
+					<pre><code class="javascript">
+	function helloWorld(){    // Declared function named helloWorld
+		document.write("Hello world!");  // What you want it to do
+	}
+
+	helloWorld(); // Call the function
+					</code></pre>
+					<p>Once defined, you can <em>call</em> the function as many times as you want!</p>
+					<p class="green">Reusable code!</p>
+				</section>
+
+				<section>
+					<h3>Passing Arguments</h3>
+					<ul>
+						<li>Functions accept input values, called arguments</li>
+					</ul>
+					<pre><code class="javascript">
+	function callKitten(kittenName){
+		console.log('Come here, ' + kittenName + '!');
+	}
+	callKitten('Fluffy'); // Outputs 'Come here, Fluffy!'
+	callKitten('Admiral Snuggles'); // Outputs 'Come here, Admiral Snuggles!'
+	callKitten('Fizgig'); // Outputs 'Come here, Fizgig!'
+					</code></pre>
+					<p>You can re-use the <em>same function</em> for many different arguments!</p>
+					<p class="green fragment">Reusable code!</p>
+				</section>
+
+				<section>
+					<h3>More on Arguments</h3>
+					<ul>
+						<li>Pass multiple arguments</li>
+					</ul>
+					<pre><code class="javascript">
+ function addNumbers(a,b) {
+  document.write(a + b);
+ }
+ addNumbers(5,7); //outputs 12
+ addNumbers(9,12); //outputs 21
+					</code></pre>
+					<ul>
+						<li>Pass variables as arguments</li>
+					</ul>
+					<pre><code class="javascript">
+ // Declare variables
+ var numberOfKittens = 5;
+ var numberOfPuppies = 4;
+ var numberOfGoats = 14;
+ // Define function
+ function addAnimals(puppies,kittens){
+  console.log('You now have ' + (puppies + kittens) + ' pets!');
+ }
+ //Use variables in the function
+ addAnimals(numberOfPuppies,numberOfKittens);
+ addAnimals(numberOfPuppies,numberOfGoats);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Writing multiple lines in your console gets tough, so let's use <a href="http://codepen.io/pen/">Codepen.io</a></p>
+					<ul>
+						<li>In the JS area, write a function called <code>sayMyName</code></li>
+						<li>Takes 2 parameters: <code>firstName</code> and <code>lastName</code></li>
+						<li>Outputs (either <code>alert</code> or <code>document.write</code>) a string that joins <code>firstName</code> and <code>lastName</code></li>
+						<li>Call your function by passing it your first and last names as <code>strings</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Function Returns</h3>
+					<ul>
+						<li>The keyword <code>return</code> produces a value at the end of the function</li>
+						<li>Immediately exits the function</li>
+					</ul>
+					<pre><code class="javascript">
+ var numberOfKittens = 5;
+ var numberOfPuppies = 4;
+
+ function addAnimals(puppies,kittens){
+	return (puppies + kittens);
+ }
+
+ addAnimals(numberOfPuppies,numberOfKittens); // Has returned 9
+					</code></pre>
+					<p class="fragment">But how do you know?!</p>
+				</section>
+
+				<section>
+					<h3>Ways to use Returns</h3>
+					<pre><code class="javascript">
+ var numberOfKittens = 5;
+ var numberOfPuppies = 4;
+
+ function addAnimals(puppies,kittens){
+	return (puppies + kittens);
+ }
+
+ // Save the returned value as a variable
+ // then output the variable
+ var myAnimals = addAnimals(numberOfPuppies,numberOfKittens);
+ document.write(myAnimals);
+
+ // Output the returned value directly
+ document.write(addAnimals(numberOfPuppies,numberOfKittens));
+					</code></pre>
+				</section>
+
+				<section>
+						<h3>Arrays</h3>
+						<p>Arrays are ordered lists of values.</p>
+						<pre><code>
+				var arrayName = [element0, element1, ...];
+				</code></pre>
+						<p>You can put different types of data into an array.</p>
+						<pre><code>
+				var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
+				'Blue', 'Indigo', 'Violet'];
+				var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+				var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+				</code></pre>
+				</section>
+				<section>
+						<h3>Array Length</h3>
+						<p>The length property tells you how many things are in an array</p>
+						<pre><code>
+				var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
+				'Blue', 'Indigo', 'Violet'];
+				console.log(rainbowColors.length);
+				</code></pre>
+				</section>
+				<section>
+						<h3>Using Arrays</h3>
+						<p>You can access items with "bracket notation" by using the position of the object you want. Programmers start counting at zero.</p>
+						<pre><code>
+				var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
+				'Blue', 'Indigo', 'Violet'];
+				var firstColor = rainbowColors[0];
+				var lastColor = rainbowColors[6];
+				</code></pre>
+				</section>
+				<section>
+						<h3>Changing arrays</h3>
+						<p>You can use bracket notation to change an item in an array</p>
+						<pre><code>
+				var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+				myFavoriteThings[0] = 'Asparagus';
+						</code></pre>
+				</section>
+				<section>
+						<h3>Expanding arrays</h3>
+						<p>Arrays do not have a fixed length. You can use "push" to add something to an array.</p>
+						<pre><code>
+				var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+				myFavoriteThings.push('Dancing');
+						</code></pre>
+				</section>
+				<section>
+				<h3>Let's Develop It</h3>
+						<p>Create an array of your favorite foods. Echo a few values onto your screen.</p>
+				</section>
+
+				<!-- Loops -->
+				<section>
+						<h3>While loops</h3>
+						<p>While will repeat the same code over and over until some condition is met.</p>
+						<pre><code>
+var bottlesOfBeer = 99;
+while (bottlesOfBeer &gt;= 1) {
+console.log (bottlesOfBeer + ' bottles of beer on the wall');
+bottlesOfBeer = bottlesOfBeer - 9;
+}
+		</code></pre>
+				</section>
+				<section>
+		<h3>Infinite Loops</h3>
+						<p>Make sure something changes in the loop, or your loop will go on forever...</p>
+	</section>
+				<section>
+						<h3>For loops</h3>
+						<p>For loops are very similar, but you declare a counter in the statement.</p>
+						<pre><code>
+//will count 1 to 10
+for (var i = 1; i &lt;= 10; i++) {
+console.log (i);
+}
+		</code></pre>
+				</section>
+				<section>
+						<h3>Break</h3>
+						<p>To exit a loop, use the break statement.</p>
+						<pre><code>
+//Count from 100 to 200
+for (var i = 100; i &lt;= 200; i++) {
+console.log('Testing ' + i);
+//Stop at the first multiple of 7
+if (i % 7 == 0) {
+		console.log('Found it! ' + i);
+		break;
+}
+}
+		</code></pre>
+				</section>
+
+
+				<section>
+						<h3>Iterating through arrays</h3>
+						<p>Use a for loop to easily process each item in an array.</p>
+						<pre><code>
+			var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+			for (var i = 0; i &lt; rainbowColors.length; i++) {
+			console.log(rainbowColors[i]);
+			}
+						</code></pre>
+				</section>
+				<section>
+			<h3>Let's Develop It</h3>
+						<p>Use a loop to make a list of all your favorite foods.</p>
+			</section>
+				<!-- Class 3 Slides: Basics -->
+				<section id="class3slides">
+					<h2>Class 3 Slides</h2>
 
 				</section>
 
@@ -473,13 +743,6 @@
 					<h3>Errors</h3>
 					<p>The secret sauce of programming</p>
 				</section>
-
-				<!-- Class 3 Slides: Basics -->
-				<section id="class3slides">
-					<h2>Class 3 Slides</h2>
-
-				</section>
-
 
 				<!-- Class 4 Slides: Basics -->
 				<section id="class4slides">
@@ -534,7 +797,7 @@
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/highlight/highlight.pack.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
                     { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
