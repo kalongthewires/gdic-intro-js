@@ -554,27 +554,27 @@
 						<li>Pass multiple arguments</li>
 					</ul>
 					<pre><code class="javascript">
- function addNumbers(a,b) {
-  document.write(a + b);
- }
- addNumbers(5,7); //outputs 12
- addNumbers(9,12); //outputs 21
+	function addNumbers(a,b) {
+		document.write(a + b);
+	}
+	addNumbers(5,7); //outputs 12
+	addNumbers(9,12); //outputs 21
 					</code></pre>
 					<ul>
 						<li>Pass variables as arguments</li>
 					</ul>
 					<pre><code class="javascript">
- // Declare variables
- var numberOfKittens = 5;
- var numberOfPuppies = 4;
- var numberOfGoats = 14;
- // Define function
- function addAnimals(puppies,kittens){
-  console.log('You now have ' + (puppies + kittens) + ' pets!');
- }
- //Use variables in the function
- addAnimals(numberOfPuppies,numberOfKittens);
- addAnimals(numberOfPuppies,numberOfGoats);
+	// Declare variables
+	var numberOfKittens = 5;
+	var numberOfPuppies = 4;
+	var numberOfGoats = 14;
+	// Define function
+	function addAnimals(puppies,kittens){
+		console.log('You now have ' + (puppies + kittens) + ' pets!');
+	}
+	//Use variables in the function
+	addAnimals(numberOfPuppies,numberOfKittens);
+	addAnimals(numberOfPuppies,numberOfGoats);
 					</code></pre>
 				</section>
 
@@ -596,15 +596,15 @@
 						<li>Immediately exits the function</li>
 					</ul>
 					<pre><code class="javascript">
- var numberOfKittens = 5;
- var numberOfPuppies = 4;
+	var numberOfKittens = 5;
+	var numberOfPuppies = 4;
 
- function addAnimals(puppies,kittens){
-	return (puppies + kittens);
-	console.log(puppies > kittens); //Will never get to this line
- }
+	function addAnimals(puppies,kittens){
+		return (puppies + kittens);
+		console.log(puppies > kittens); //Will never get to this line
+	}
 
- addAnimals(numberOfPuppies,numberOfKittens); // Has returned 9
+	addAnimals(numberOfPuppies,numberOfKittens); // Has returned 9
 					</code></pre>
 					<p class="fragment">But how do you know?!</p>
 				</section>
@@ -612,27 +612,27 @@
 				<section>
 					<h3>Ways to use Returns</h3>
 					<pre><code class="javascript">
- var numberOfKittens = 5;
- var numberOfPuppies = 4;
+	var numberOfKittens = 5;
+	var numberOfPuppies = 4;
 
- function addAnimals(puppies,kittens){
-	return (puppies + kittens);
- }
+	function addAnimals(puppies,kittens){
+		return (puppies + kittens);
+	}
 
- // Save the returned value as a variable
- // then output the variable
- var myAnimals = addAnimals(numberOfPuppies,numberOfKittens);
- document.write(myAnimals);
+	// Save the returned value as a variable
+	// then output the variable
+	var myAnimals = addAnimals(numberOfPuppies,numberOfKittens);
+	document.write(myAnimals);
 
- // Output the returned value directly
- document.write(addAnimals(numberOfPuppies,numberOfKittens));
+	// Output the returned value directly
+	document.write(addAnimals(numberOfPuppies,numberOfKittens));
 					</code></pre>
 				</section>
 
 				<section>
 					<h3>Arrays</h3>
 					<pre><code class="javascript">
- var arrayName = [thing0, thing1, thing2, thing3];
+	var arrayName = [thing0, thing1, thing2, thing3];
 					</code></pre>
 					<ul>
 						<li class="fragment">Arrays are <strong>ordered</strong> lists of values</li>
@@ -643,9 +643,9 @@
 						<li class="fragment">You can put different types of data into an array</li>
 					</ul>
 					<pre class="fragment"><code>
- var colors = ['Red','Orange','Yellow','Green','Blue','Indigo','Violet'];
- var lotteryNumbers = [33, 72, 64, 18, 17, 85];
- var mixOfThings = ['Cheese', 100, 'Sherlock', ["array","in","array"]];
+	var colors = ['Red','Orange','Yellow','Green','Blue','Indigo','Violet'];
+	var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+	var mixOfThings = ['Cheese', 100, 'Sherlock', ["array","in","array"]];
 					</code></pre>
 				</section>
 
@@ -653,14 +653,14 @@
 					<h3>Using arrays</h3>
 					<p>Access items in an array by wrapping its possition with <em>"bracket notation"</em> <code>[]</code></p>
 					<pre><code class="javascript">
- var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
- var firstCat = catNames[0]; //0-based! Returns 'Fluffy'
- var lastCat = catNames[2]; //1 less than length because 0-based!
+	var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
+	var firstCat = catNames[0]; //0-based! Returns 'Fluffy'
+	var lastCat = catNames[2]; //1 less than length because 0-based!
 					</code></pre>
 					<p>Change a particular value by accessing its <code>index</code> using bracket notation</p>
 					<pre><code class="javascript">
- catNames[2] = 'Fizzgig'; // Fix that spelling!
- console.log(catNames);
+	catNames[2] = 'Fizzgig'; // Fix that spelling!
+	console.log(catNames);
 					</code></pre>
 				</section>
 
@@ -668,13 +668,13 @@
 					<h3>Using Arrays</h3>
 					<p>Get the length of an array with <code>.length</code></p>
 					<pre><code class="javascript">
- var howManyCats = catNames.length; //Returns 3
+var h	owManyCats = catNames.length; //Returns 3
 					</code></pre>
 					<p>Add something to the <em>end</em> of an array with <code>.push()</code></p>
 					<pre><code class="javascript">
- var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
- catNames.push('Miss Havisham');
- console.log(catNames);
+	var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
+	catNames.push('Miss Havisham');
+	console.log(catNames);
 					</code></pre>
 				</section>
 
@@ -688,14 +688,14 @@
 					</ul>
 					<p class="fragment green">What if we wanted to simplify this?<br/>Could we write a function?</p>
 					<pre class="fragment"><code class="javascript">
- var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+	var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
 
- function printNames(arrayOfNames) {
-	 //Print out each cat name
-	 //What goes here?
- }
+	function printNames(arrayOfNames) {
+		//Print out each cat name
+		//What goes here?
+	}
 
- printNames(catNames);
+	printNames(catNames);
 					</code></pre>
 				</section>
 
@@ -723,12 +723,12 @@
 					<p>Repeats the same code over and over until some condition is met.</p>
 					<p><code>while (this thing is true) { do something }</code></p>
 					<pre><code>
- var numberOfTacos = 10;
- while (numberOfTacos > 0) {
-  console.log('OM NOM NOM'); //Eat a taco
-  numberOfTacos -= 1; //Subtract 1 and update variable
-  console.log('Only ' + numberOfTacos + ' tacos left!');
- }
+	var numberOfTacos = 10;
+	while (numberOfTacos > 0) {
+		console.log('OM NOM NOM'); //Eat a taco
+		numberOfTacos -= 1; //Subtract 1 and update variable
+		console.log('Only ' + numberOfTacos + ' tacos left!');
+	}
 					</code></pre>
 					<div class="fragment">
 						<p><code>(numberOfTacos > 0)</code> is the ending condition</p>
@@ -744,48 +744,48 @@
 					<p>For loops are very similar, but you declare a counter in the statement.</p>
 					<p><code>for(starting condition; ending condition; counter) { do something }</code></p>
 					<pre><code>
- // Counts 1 to 10
- for (var i = 1; i <= 10; i++) {
-  console.log(i);
- }
+	// Counts 1 to 10
+	for (var i = 1; i <= 10; i++) {
+		console.log(i);
+	}
 					</code></pre>
-					<pre class="fragment"><code>
- var numberOfTacos = 10;
- for (var i = numberOfTacos; i > 0; i--) {
-  console.log('OM NOM NOM'); //Eat a taco
-  numberOfTacos -= 1; //Subtract 1 and update variable
-  console.log('Only ' + numberOfTacos + ' tacos left!');
- }
+					<pre class="fragment"><code class="javascript">
+	var numberOfTacos = 10;
+	for (var i = numberOfTacos; i > 0; i--) {
+	  console.log('OM NOM NOM'); //Eat a taco
+		numberOfTacos -= 1; //Subtract 1 and update variable
+		console.log('Only ' + numberOfTacos + ' tacos left!');
+	}
 					</code></pre>
 				</section>
 
 				<section>
 					<h3>Iterating through Arrays</h3>
 					<p>Use a <code>for</code> loop to easily process each item in an array.</p>
-					<pre><code>
- var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+					<pre><code class="javascript">
+	var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
 
- for (var i = 0; i < catNames.length; i++) {
-  console.log(catNames[i]) //i = index, or position in the array
- }
+	for (var i = 0; i < catNames.length; i++) {
+		console.log(catNames[i]) //i = index, or position in the array
+	}
 					</code></pre>
 				</section>
 
 				<section>
 					<h3>Putting it all together!</h3>
-					<pre><code>
- var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+					<pre><code class="javascript">
+	var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
 
- function printNames(arrayOfNames) {
-  for (var i = 0; i < arrayOfNames.length; i++) {
-    console.log(arrayOfNames[i])
-  }
- }
+	function printNames(arrayOfNames) {
+		for (var i = 0; i < arrayOfNames.length; i++) {
+			console.log(arrayOfNames[i])
+		}
+	}
 
- printNames(catNames);
+	printNames(catNames);
 
- var dogNames = ['Sparky','Thor','Sir Droolington'];
- printNames(dogNames);
+	var dogNames = ['Sparky','Thor','Sir Droolington'];
+	printNames(dogNames);
 					</code></pre>
 					<p class="green fragment">Reusable code!</p>
 				</section>
@@ -803,6 +803,95 @@
 						</li>
 						<li>Call the function, and pass it your array as an argument</li>
 					</ul>
+			</section>
+
+			<section>
+				<h3>Control Flow</h3>
+				<p>Control different outcomes using conditionals</p>
+				<p><code>if statement</code></p>
+				<pre><code class="javascript">
+ if (condition) { // if condition is true
+	 statement; // do this
+ }
+				</code></pre>
+				<p><code>if/else statement</code></p>
+				<pre><code class="javascript">
+ if (condition) { // if condition is true
+	 statement; // do this
+ } else { // otherwise condition is false
+	 statement; // do this
+ }
+				</code></pre>
+			</section>
+
+			<section>
+				<h3>Control Flow</h3>
+				<p><code>if/else if/else statement</code></p>
+				<pre><code class="javascript">
+ if (condition) { // if condition is true
+	 statement; // do this
+ } else if (other condition) { // if condition is true
+	 statement; // do this
+ } else { // otherwise condition is false
+	 statement; // usually a default/fallback
+ }
+				</code></pre>
+				<pre><code class="javascript">
+  var age = 20;
+	if (age >= 35) {
+	    console.log('You can vote AND hold any place in government!');
+	} else if (age >= 25) {
+	    console.log('You can vote AND run for the Senate!');
+	} else if (age >= 18) {
+	    console.log('You can vote!');
+	} else {
+	    console.log('You can\'t vote, but you can
+	    still write your representatives.');
+	}
+				</code></pre>
+			</section>
+
+			<section>
+ 				<h3>Let's Develop It!</h3>
+				 <p>Write a function for these conditions:</p>
+				 <ol>
+					 <li>If it is less than 50 degrees, wear a coat.</li>
+					 <li>If it is less than 30 degrees, wear a coat and a hat.</li>
+					 <li>If it is less than 0 degrees, stay inside.</li>
+					 <li>Otherwise, wear whatever you want.</li>
+				 </ol>
+			</section>
+
+			<section>
+				<h3>Break Statement</h3>
+				<ul>
+					<li>To exit a loop, use <code>break;</code></li>
+					<li>Usually used with an <code>if</code> statement to see if a condition has been met.</li>
+					<li>Works like <code>return</code> to immediately end the loop, but doesn't return a value.</li>
+				</ul>
+				<p></p>
+				<p></p>
+				<p></p>
+				<pre><code class="javascript">
+	for (var current = 100; current < 200; current++) {
+	  console.log('Testing ' + current);
+	  if (current % 7 == 0) {
+	    console.log('Found it! ' + current);
+	    break;
+	  }
+	}
+				</code></pre>
+			</section>
+
+			<section>
+				<h3>Homework</h3>
+				<p>In a <a href="http://codepen.io">Codepen</a>, complete the following exercises:</p>
+				<small>Can do one big Pen or start a new one for each</small>
+				<ul>
+					<li><a href="http://www.teaching-materials.org/javascript/exercises/arrays.html">Your Top Things: Numbered</a></li>
+					<li><a href="http://www.teaching-materials.org/javascript/exercises/wordguesser.html">The Word Guesser</a></li>
+				</ul>
+				<p>Post the link to your Pen(s) in the Slack channel for this class.</p>
 			</section>
 
 				<!-- Class 3 Slides: Basics -->
