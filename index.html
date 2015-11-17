@@ -720,12 +720,14 @@
 				<!-- Loops -->
 				<section>
 					<h3>While loops</h3>
-					<p>Repeats the same code over and over until some condition is met</p>
+					<p>Repeats the same code over and over until some condition is met.</p>
+					<p><code>while (this thing is true) { do something }</code></p>
 					<pre><code>
  var numberOfTacos = 10;
  while (numberOfTacos > 0) {
   console.log('OM NOM NOM'); //Eat a taco
-  numberOfTacos =- 1; //Decrement by 1
+  numberOfTacos -= 1; //Subtract 1 and update variable
+  console.log('Only ' + numberOfTacos + ' tacos left!');
  }
 					</code></pre>
 					<div class="fragment">
@@ -738,19 +740,52 @@
 				</section>
 
 				<section>
-		<h3>Infinite Loops</h3>
-						<p>Make sure something changes in the loop, or your loop will go on forever...</p>
-	</section>
-				<section>
-						<h3>For loops</h3>
-						<p>For loops are very similar, but you declare a counter in the statement.</p>
-						<pre><code>
-//will count 1 to 10
-for (var i = 1; i &lt;= 10; i++) {
-console.log (i);
-}
-		</code></pre>
+					<h3>For loops</h3>
+					<p>For loops are very similar, but you declare a counter in the statement.</p>
+					<p><code>for(starting condition; ending condition; counter) { do something }</code></p>
+					<pre><code>
+ // Counts 1 to 10
+ for (var i = 1; i <= 10; i++) {
+  console.log(i);
+ }
+					</code></pre>
+					<pre class="fragment"><code>
+ var numberOfTacos = 10;
+ for (var i = numberOfTacos; i > 0; i--) {
+  console.log('OM NOM NOM'); //Eat a taco
+  numberOfTacos -= 1; //Subtract 1 and update variable
+  console.log('Only ' + numberOfTacos + ' tacos left!');
+ }
+					</code></pre>
 				</section>
+
+				<section>
+					<h3>Iterating through Arrays</h3>
+					<p>Use a <code>for</code> loop to easily process each item in an array.</p>
+					<pre><code>
+ var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+
+ for (var i = 0; i < catNames.length; i++) {
+  console.log(catNames[i])
+ }
+					</code></pre>
+				</section>
+
+				<section>
+			<h3>Let's Develop It</h3>
+						<p>Use a loop to make a list of all your favorite foods.</p>
+			</section>
+				<!-- Class 3 Slides: Basics -->
+				<section id="class3slides">
+					<h2>Class 3 Slides</h2>
+
+				</section>
+
+				<section>
+					<h3>Errors</h3>
+					<p>The secret sauce of programming</p>
+				</section>
+
 				<section>
 						<h3>Break</h3>
 						<p>To exit a loop, use the break statement.</p>
@@ -765,32 +800,6 @@ if (i % 7 == 0) {
 }
 }
 		</code></pre>
-				</section>
-
-
-				<section>
-						<h3>Iterating through arrays</h3>
-						<p>Use a for loop to easily process each item in an array.</p>
-						<pre><code>
-			var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
-			for (var i = 0; i &lt; rainbowColors.length; i++) {
-			console.log(rainbowColors[i]);
-			}
-						</code></pre>
-				</section>
-				<section>
-			<h3>Let's Develop It</h3>
-						<p>Use a loop to make a list of all your favorite foods.</p>
-			</section>
-				<!-- Class 3 Slides: Basics -->
-				<section id="class3slides">
-					<h2>Class 3 Slides</h2>
-
-				</section>
-
-				<section>
-					<h3>Errors</h3>
-					<p>The secret sauce of programming</p>
 				</section>
 
 				<!-- Class 4 Slides: Basics -->
