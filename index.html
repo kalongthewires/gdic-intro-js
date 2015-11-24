@@ -90,8 +90,8 @@
 						<li><a href="#/class2slides">Class 2: Working with JavaScript</a>
 							<small>Functions, arrays, loops, and conditionals</small>
 						</li>
-						<li><a href="#/class3slides">Class 3</a>
-							<small>Objects and scope and the browser</small>
+						<li><a href="#/class3slides">Class 3: Objects in JS and the DOM</a>
+							<small>Objects, scope, and the DOM</small>
 						</li>
 						<!-- <li><a href="#/class4slides">Class 4</a></li> -->
 						<!-- <li><a href="#/definitions">Definitions</a></li> -->
@@ -888,7 +888,7 @@ var h	owManyCats = catNames.length; //Returns 3
 			</section>
 
 			<section>
-				<h3>Homework</h3>
+				<h3>Class 2 Homework</h3>
 				<p>In a <a href="http://codepen.io">Codepen</a>, complete the following exercises:</p>
 				<small>Can do one big Pen or start a new one for each</small>
 				<ul>
@@ -901,7 +901,8 @@ var h	owManyCats = catNames.length; //Returns 3
 				<!-- Class 3 Slides: Basics -->
 				<section id="class3slides">
 					<h2>Class 3 Slides</h2>
-
+					<p>Objects in JS and the DOM</p>
+					<small>Objects, scope, and the DOM</small>
 				</section>
 
 				<section>
@@ -1174,9 +1175,11 @@ function globalFunction() {
 		// This is a new local space, my variables *can't* be
 		// accessed by my parents
 		console.log("I have access to " + localVariable);
-		var localFunctionVariable = "UBER LOCAL!";
+		var uberLocalVariable = "UBER LOCAL!";
+		console.log("I have access to " + uberLocalVariable);
 	}
-	console.log("Do I have access to " + localFunctionVariable); //nope!
+	localFunction();
+	console.log("Do I have access to " + uberLocalVariable); //nope!
 }
 globalFunction();
 					</code></pre>
@@ -1184,26 +1187,308 @@ globalFunction();
 
 				<section>
 					<h3>Scope</h3>
-					<p><strong>But!</strong> You can grant access to a local variable using <code>return</code></p>
-					<pre><code class="javascript">// Global space
-
+					<p><strong>But!</strong> You can grant access to a local variable using <code>return</code> + objects!</p>
+					<pre><code class="javascript">
 function globalFunction() {
-	// This is a local space, my variables *can* be accessed
-	// by anything inside me
 	var localVariable = "LOCAL!";
 
 	function localFunction() {
-		// This is a new local space, my variables *can't* be
-		// accessed by my parents
-		console.log("I have access to " + localVariable);
-
-		var localFunctionVariable = "UBER LOCAL!";
-		return localFunctionVariable;
+		var uberLocalVariable1 = "UBER LOCAL!";
+		var uberLocalVariable2 = "UBER UBER LOCAL!";
+		return {
+			uberLocalVariable1: uberLocalVariable1,
+			uberLocalVariable2: uberLocalVariable2
+		}
 	}
-	console.log("Do I have access to " + localFunctionVariable); //YEP!
+	console.log(localFunction().uberLocalVariable1); //YEP!
+	console.log(localFunction().uberLocalVariable2); //YEP!
 }
 globalFunction();
-//But I don't have access to localFunctionVariable here!
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<ul>
+						<li>Write an object called <code>movieInfo</code> with title, genre, and array of main actors</li>
+						<li>Add a method called <code>rateMovie</code> that accepts a number as a parameter</li>
+						<li>Using a <code>return</code>, create and access a new variable called <code>myRating</code></li>
+						<li>Stretch: Using <strong>dot notation</strong>, use rateMovie to add <code>myRating</code> as a property to <code>movieInfo</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>JavaScript in the Browser</h2>
+					<p>Review:</p>
+					<ul>
+						<li><strong>HTML</strong> is how the content is <em>structured</em></li>
+						<li><strong>CSS</strong> is how the content is <em>styled</em></li>
+						<li><strong>JS</strong> is how we can <em>interacts</em> with the content</li>
+						<li><strong>IDs</strong> are unique identifiers for HTML elements</li>
+						<li><strong>Classes</strong> are general identifiers for CSS styles</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Document Object Model</h3>
+					<p>Representation of HTML elements in your document as Objects in the browser</p>
+					<div class="left-column fragment">
+						<p>Turns:</p>
+						<img src="img/dom_code.png" alt="">
+					</div>
+					<div class="right-column fragment">
+						<p>Into:</p>
+						<img src="img/dom_objects.png" alt="">
+					</div>
+				</section>
+
+				<section>
+					<h3>DOM</h3>
+					<ul>
+						<li>Referred to as a "tree" structure</li>
+						<li>"Traversing" the DOM</li>
+						<li>Individual elements are called <strong>nodes</strong></li>
+						<li>Each object has
+							<ul>
+								<li>HTML attributes (id, class, value)</li>
+								<li>CSS attributes (width, height, display)</li>
+							</ul>
+						</li>
+						<li>When accessed by JavaScript, gains JS methods
+							<ul>
+								<li>(.style, .on("click"), .getAttribute)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+          <h3>DOM Access</h3>
+          <p>Your browser automatically builds a Document Object to store the DOM of a page. To change a page:</p>
+          <ol>
+            <li>Find the DOM node and store it in a variable</li>
+            <li>Use methods to manipulate the node</li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>DOM Access: By Id</h3>
+          <p>You can find nodes by id using the method:</p>
+          <pre><code class="javascript">
+document.getElementById(id);
+			  	</code></pre>
+          <p>To find:</p>
+          <pre><code class="html">
+&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
+			  	</code></pre>
+          <p>We would use:</p>
+          <pre><code class="javascript">
+var imgKitten = document.getElementById('kittenPic');
+			  	</code></pre>
+        </section>
+
+        <section>
+          <h3>DOM Access: By Tag Name</h3>
+          <p>You can find certain types of HTML elements using this method:</p>
+          <pre><code class="javascript">
+document.getElementsByTagName(tagName);
+			  	</code></pre>
+          <p>To find:</p>
+          <pre><code>
+&lt;li&gt;Daisy&lt;/li&gt;
+&lt;li&gt;Tulip&lt;/li&gt;
+			  	</code></pre>
+          <p>We would use:</p>
+          <pre><code class="javascript">
+var listItems = document.getElementsByTagName('li');
+for (var i = 0; i &lt; listItems.length; i++) {
+  var listItem = listItems[i];
+}
+			  	</code></pre>
+        </section>
+
+        <section>
+          <h3>DOM Access: HTML 5</h3>
+          <p>In newer browsers, you can use other methods too.</p>
+          <p>Available in <a href="http://caniuse.com/#search=getElementsByClassName">IE9+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
+          <pre><code class="javascript">
+document.getElementsByClassName(className);
+			  	</code></pre>
+          <p>Available in <a href="http://caniuse.com/#search=querySelectorAll">IE8+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
+          <pre><code class="javascript">
+document.querySelector(cssQuery);
+document.querySelectorAll(cssQuery);
+			  	</code></pre>
+        </section>
+
+        <section>
+          <h3>getElement vs. getElements</h3>
+          <p>Any method that starts with "getElement" will return a <span class = "blue">single</span> node.</p>
+          <pre><code>
+document.getElementById('uniqueID'); //returns a single node
+		  		</code></pre>
+          <p>Any method that starts with "getElements" will return a <span class = "blue">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
+          <pre><code>
+document.getElementsByTagName('p'); //returns multiple nodes
+var specficParagraph = document.getElementsByTagName('p')[2];
+			  	</code></pre>
+        </section>
+
+        <section>
+          <h3>DOM Nodes: Attributes</h3>
+          <p>You can access and change attributes of DOM nodes using dot notation.</p>
+          <p>To change this element:</p>
+          <pre><code class="html">
+&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
+			  	</code></pre>
+          <p>We could change the src attribute this way:</p>
+          <pre><code class="javascript">
+var imgKitten = document.getElementById('kittenPic');
+var oldSrc = imgKitten.src;
+imgKitten.src = 'http://placekitten.com/100/500';
+			  	</code></pre>
+        </section>
+        <section>
+          <h3>DOM Nodes: Getting and Setting Attributes</h3>
+          <p>You can also use <code>getAttribute/setAttribute:</code></p>
+          <pre><code class="html">
+&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/&gt;
+			  	</code></pre>
+          <p>We could change the src attribute this way:</p>
+          <pre><code class="javascript">
+var imgKitten = document.getElementById('kittenPic');
+var oldSrc = imgKitten.getAttribute('src');
+imgKitten.setAttribute('src', 'http://placekitten.com/100/500');
+			  	</code></pre>
+        </section>
+
+        <section>
+          <h3>DOM Nodes: Styles</h3>
+          <p>You can change page css using <code>style</code></p>
+          <p>To make this CSS:</p>
+          <pre><code class="css">
+body {
+  color: red;
+}
+			  	</code></pre>
+          <p>Use this JavaScript:</p>
+          <pre><code class="javascript">
+var pageNode = document.getElementsByTagName('body')[0];
+pageNode.style.color = 'red';
+			  	</code></pre>
+        </section>
+
+        <section>
+          <h3>DOM Nodes: More Styles</h3>
+          <p>Change any CSS property with a "-" to camelCase, and be sure to include a unit on any number</p>
+          <p>To make this CSS:</p>
+          <pre><code class="css">
+body {
+  background-color: pink;
+  padding-top: 10px;
+}
+			  	</code></pre>
+          <p>Use this JavaScript:</p>
+          <pre><code class="javascript">
+var pageNode = document.getElementsByTagName('body')[0]
+pageNode.style.backgroundColor = 'pink';
+pageNode.style.paddingTop = '10px';
+			  	</code></pre>
+        </section>
+
+        <section>
+					<h3>Let's Develop It</h3>
+					<p>Create a simple HTML page:</p>
+					<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Test Page&lt;/title&gt;
+		&lt;style&gt;
+			.green {
+				color: seafoamgreen;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p class="green"&gt;This is my awesome JavaScript code.&lt;/p&gt;
+		&lt;script&gt;
+				alert('Hello World!');
+		&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+          <p>Isolate a node (an element on the page) and change an attribute or add a new style.</p>
+				</section>
+
+				<section>
+          <h3>.text and .innerHTML</h3>
+          <p>Each DOM node has a <code>.text</code> and an <code>.innerHTML</code> property with the HTML of all its children. You can use the property to view or change the HTML of a node.</p>
+          <p>For example, you can overwrite the entire body:</p>
+          <pre><code class="javascript">
+var pageNode = document.getElementsByTagName('body')[0];
+pageNode.innerHTML = '&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;'
+					</code></pre>
+			    <p>Or just add some new content to the end:</p>
+			    <pre><code class="javascript">
+pageNode.innerHTML += '...just adding this bit at the end of the page.';
+					</code></pre>
+			  </section>
+
+        <section>
+          <h3>DOM innerHTML continued</h3>
+          <p>You can also target a particular element</p>
+          <p>To fill this HTML element:</p>
+          <pre><code class="html">
+&lt;p id="warning"&gt;&lt;/p&gt;
+					</code></pre>
+			    <p>We can select the node and modify it:</p>
+			    <pre><code class="javascript">
+var warningParagraph = document.getElementById('warning');
+warningParagraph.innerHTML = 'Danger Will Robinson!';
+					</code></pre>
+			  </section>
+
+			  <section>
+          <h3>Creating New Nodes</h3>
+          <p>The <code>document</code> object also provides ways to create nodes from scratch:</p>
+          <pre><code class="javascript">
+document.createElement(tagName);
+document.createTextNode(text);
+document.appendChild();
+					</code></pre>
+			  </section>
+
+	      <section>
+	        <h3>Creating New Nodes: Sample Code</h3>
+	        <pre><code class="javascript">
+var pageNode = document.getElementsByTagName('body')[0];
+
+var newImg = document.createElement('img');
+newImg.src = 'http://placekitten.com/400/300';
+newImg.style.border = '1px solid black';
+pageNode.appendChild(newImg);
+
+var newParagraph = document.createElement('p');
+var paragraphText = document.createTextNode('Squee!');
+newParagraph.appendChild(paragraphText);
+pageNode.appendChild(newParagraph);
+	  			</code></pre>
+        </section>
+
+				<section>
+					<h3>Class 3 Homework</h3>
+					<p>Make a simple website with <em>separate</em> CSS and JS files. Use JavaScript to:</p>
+					<ul>
+						<li>Add an element with the text "I'm an added element!"</li>
+						<li>Change the style of an element</li>
+						<li>Change the src of an image</li>
+					</ul>
+					<pre><code class="html">
+//Goes at the top inside &lt;head>
+&lt;link rel="stylesheet" href="css/styles.css">
+
+//Goes at the bottom before &lt;/body>
+&lt;script src="js/scripts.js">&lt;/script>
 					</code></pre>
 				</section>
 
@@ -1215,14 +1500,11 @@ globalFunction();
 
 
 				<!-- Class 4 Slides: Basics -->
-				<section id="class4slides">
+				<!-- <section id="class4slides">
 					<h2>Class 4 Slides</h2>
-
-				</section>
-
-
+				</section> -->
 				<!-- Definitions -->
-				<section>
+				<!-- <section>
 					<h2>JS Terms</h2>
 					<div class="left-column"></div>
 					<div class="right-column"></div>
@@ -1235,8 +1517,7 @@ globalFunction();
 						<dd>JS Object: </dd>
 						<dd>DOM Object: </dd>
 					</dl>
-				</section>
-
+				</section> -->
 			</div>
   		<footer>
         <div class="copyright">
