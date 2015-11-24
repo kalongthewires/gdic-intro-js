@@ -443,6 +443,8 @@
 					<blockquote class="fragment green">You just combined using a <b>variable</b>, a <b>string</b>, and an <b>operator</b>!</blockquote>
 				</section>
 
+
+
 				<section>
 					<h3>Class 1 Homework</h3>
 					<p>Read over some introductory materials on JavaScript variables. If you want to look ahead, next time we'll be talking about <code>functions</code>, <code>arrays</code>, and <code>objects</code>.</p>
@@ -952,8 +954,8 @@ var brick = {
 	color: firebrick,
 	worn: 5px,
 	falls: function() {
-						alert("Ouch!");
-					},
+		alert("Ouch!");
+	},
 	width: 150px,
 	height: 80px
 };
@@ -1005,10 +1007,203 @@ var myObject = {
 					<h3>More about Objects</h3>
 					<pre><code class="javascript">
 var ourClass = {
-state: "Ohio",
-city: "Columbus",
-TAs: ["Lauren",""]
+	chapter: "Columbus",
+	helpers: ["Lauren","Craig","Blanche"],
+	classSize: 12,
+	takeNotes: function() {
+		document.write("More about objects");
+	}
 };
+					</code></pre>
+					<ul>
+						<li><code>properties</code> consist of a paired <code>key: value</code></li>
+						<li><code>keys</code> are written like variables</li>
+						<li><code>values</code> can be any data type</li>
+						<li>Update values: <code>ourClass.classSize = 15;</code></li>
+						<li>Acessing non-existent <code>keys</code> returns <code>undefined</code></li>
+						<li>Remove properties: <code>delete ourClass.classSize;</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h4>Using Objects</h4>
+					<pre><code class="javascript">
+var admiralSnuggles = {
+  age: 8,
+  furColor: "grey",
+  likes: ["catnip", "milk"],
+  birthday: {"month": "March", "day": 17}
+};
+function describeCat(cat) {
+	//Access properties with dot notation
+  console.log("This cat is " + cat.age + " years old with " +
+							cat.furColor + " fur.");
+	//Access properties inside properties by "chaining"
+	console.log("This cat's birthday is " + cat.birthday.month +
+							" " + cat.birthday.day + ".");
+}
+describeCat(admiralSnuggles);
+					</code></pre>
+					<pre><code class="text">
+	//Output
+	This cat is 8 years old with grey fur.
+	This cat's birthday is March 17.
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Movie Data</p>
+					<ul>
+						<li>Create an object to store the following information about your favorite movie: title (a string), duration (a number), and actors (an array of strings).</li>
+						<li>Create a function to print out the movie information: <pre>Puff the Magic Dragon lasts for 30 minutes.
+Staring: Puff, Jackie, Living Sneezes.</pre></li>
+					</ul>
+					<p>Movie Data Stretch Challenge</p>
+					<ul>
+						<li>Create an array of movie objects and add more movies you have seen.</li>
+						<li>Iterate through your movie array and print out the movie information for each.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Methods</h3>
+					<p><span class="green">Method</span>: a property that is a function</p>
+					<pre><code class="javascript">var admiralSnuggles = {
+	meow: function() {
+    console.log('meowww');
+  },
+  eat: function(food) {
+    console.log('Yum, I love ' + food);
+  },
+  sleep: function(numMinutes) {
+    for (var i = 0; i < numMinutes; i++) {
+      console.log('zzz');
+    }
+  }
+};
+admiralSnuggles.meow();
+admiralSnuggles.eat('brown mushy stuff');
+admiralSnuggles.sleep(10);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Data Types as Objects</h3>
+					<p>JavaScript data types have methods built-in, so they are more useful!</p>
+					<pre><code class="javascript">
+var myArray = ["One","Two","Three"];
+myArray.length; //Returns 3
+myArray.push("Four"); //Adds to the end
+myArray.join(", "); //Returns "One, Two, Three, Four"
+					</code></pre>
+					<p>Explore common JS <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">objects and their methods</a>:</p>
+					<div class="left-column">
+						<ul>
+							<li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array">Array</a></code></li>
+							<li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code></li>
+							<li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number">Number</a></code></li>
+							<li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">String</a></code></li>
+						</ul>
+					</div>
+					<div class="right-column">
+						<ul>
+							<li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Date</a></code></li>
+							<li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Math</a></code></li>
+							<li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp">Regular Expressions</a></code></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h3>Scope</h3>
+					<p>The <strong>scope</strong> of a variable defines where it can be accessed in a program.</p>
+					<ul>
+						<li><strong class="green">Global</strong>: can be accessed anywhere in the program</li>
+						<li><strong class="green">Local</strong>: can only be accessed within the function where it was defined</li>
+					</ul>
+					<pre><code class="javascript">var globalVariable = "GLOBAL!";
+function defineVariable() {
+	var localVariable = "LOCAL!";
+	console.log("1. I have access to " + globalVariable);
+	console.log("2. I have access to " + localVariable);
+}
+defineVariable();
+console.log("3. I have access to " + globalVariable);
+console.log("4. Do I have access to " + localVariable + "?");
+
+//Output
+"1. I have access to GLOBAL!"
+"2. I have access to LOCAL!"
+"3. I have access to GLOBAL!"
+Uncaught ReferenceError: localVariable is not defined(…)
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Scope</h3>
+					<p>Scope applies to any object defined in the global or local space.</p>
+					<pre><code class="javascript">
+function globalFunction() {
+	console.log("I am global.");
+	function localFunction() {
+		console.log("I am local.");
+	}
+	localFunction();
+}
+globalFunction();
+localFunction();
+//Output
+"I am global."
+"I am local."
+Uncaught ReferenceError: localFunction is not defined(…)
+					</code></pre>
+					<blockquote class="green">Note: calling globalFunction() from <em>inside</em> <code>globalFunction</code> would create an infinite loop!</blockquote>
+				</section>
+
+				<section>
+					<h3>Scope</h3>
+					<p>Each function defines a new local space</p>
+					<pre><code class="javascript">
+// Global space
+function globalFunction() {
+	// This is a local space, my variables *can* be accessed
+	// by anything inside me
+	var localVariable = "LOCAL!";
+	function localFunction() {
+		// This is a new local space, my variables *can't* be
+		// accessed by my parents
+		console.log("I have access to " + localVariable);
+		var localFunctionVariable = "UBER LOCAL!";
+	}
+	console.log("Do I have access to " + localFunctionVariable); //nope!
+}
+globalFunction();
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Scope</h3>
+					<p><strong>But!</strong> You can grant access to a local variable using <code>return</code></p>
+					<pre><code class="javascript">// Global space
+
+function globalFunction() {
+	// This is a local space, my variables *can* be accessed
+	// by anything inside me
+	var localVariable = "LOCAL!";
+
+	function localFunction() {
+		// This is a new local space, my variables *can't* be
+		// accessed by my parents
+		console.log("I have access to " + localVariable);
+
+		var localFunctionVariable = "UBER LOCAL!";
+		return localFunctionVariable;
+	}
+	console.log("Do I have access to " + localFunctionVariable); //YEP!
+}
+globalFunction();
+//But I don't have access to localFunctionVariable here!
 					</code></pre>
 				</section>
 
