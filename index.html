@@ -90,7 +90,9 @@
 						<li><a href="#/class2slides">Class 2: Working with JavaScript</a>
 							<small>Functions, arrays, loops, and conditionals</small>
 						</li>
-						<!-- <li><a href="#/class3slides">Class 3</a></li> -->
+						<li><a href="#/class3slides">Class 3</a>
+							<small>Objects and scope and the browser</small>
+						</li>
 						<!-- <li><a href="#/class4slides">Class 4</a></li> -->
 						<!-- <li><a href="#/definitions">Definitions</a></li> -->
 						<!-- <li><a href="#/references">References</a></li> -->
@@ -901,25 +903,110 @@ var h	owManyCats = catNames.length; //Returns 3
 				</section>
 
 				<section>
-					<h3>Errors</h3>
-					<p>The secret sauce of programming</p>
+					<h3>Objects</h3>
+					<div class="left-column fragment">
+						<p>
+							This is a brick.
+						</p>
+						<img src="img/brick_object.jpg" alt="I am a brick" />
+						<p class="fragment">
+							Actually, it's a <span class="green"><em>picture</em></span> of a brick. But you understand it to represent "brick".
+						</p>
+					</div>
+					<div class="right-column fragment">
+						<p>
+							This is a CSS brick.
+						</p>
+						<div>
+							<style media="screen">
+								.brick {
+									background: firebrick;
+									border-radius: 5px;
+									width: 150px;
+									height: 80px;
+								}
+							</style>
+							<div class="brick"></div>
+							<pre><code class="css">
+.brick {
+	background: firebrick;
+	border-radius: 5px;
+	width: 150px;
+	height: 80px;
+}
+							</code></pre>
+							<p class="fragment">
+								Described by <span class="green"><em>properties</em></span> the browser can use to render a representation.
+							</p>
+						</div>
+					</div>
 				</section>
 
 				<section>
-						<h3>Break</h3>
-						<p>To exit a loop, use the break statement.</p>
-						<pre><code>
-//Count from 100 to 200
-for (var i = 100; i &lt;= 200; i++) {
-console.log('Testing ' + i);
-//Stop at the first multiple of 7
-if (i % 7 == 0) {
-		console.log('Found it! ' + i);
-		break;
-}
-}
-		</code></pre>
+					<h3>JavaScript Objects</h3>
+					<p>
+						A data type that let us store a collection of properties.
+					</p>
+					<pre><code class="javascript">
+var brick = {
+	color: firebrick,
+	worn: 5px,
+	falls: function() {
+						alert("Ouch!");
+					},
+	width: 150px,
+	height: 80px
+};
+					</code></pre>
+					<ul class="fragment">
+						<li><span class="green">Method</span>: a property that is a function</li>
+						<li>You <em>call</em> methods (because they are functions)</li>
+					</ul>
 				</section>
+
+				<section>
+					<h3>Objects vs Arrays</h3>
+					<div class="left-column">
+						<h4>Arrays</h4>
+						<pre><code class="javascript">
+var myArray = [
+	item1,
+	item2,
+	item3
+];
+						</code></pre>
+						<ul>
+							<li class="fragment" data-fragment-index="1">Wrapped in square brackets <code>[]</code></li>
+							<li class="fragment" data-fragment-index="2">Separated with commas</li>
+							<li class="fragment" data-fragment-index="3"><em>Ordered </em>list (<code>ol</code>)</li>
+							<li class="fragment" data-fragment-index="4">Bracket notation <code>myArray[0]</code></li>
+						</ul>
+					</div>
+					<div class="right-column">
+						<h4>Objects</h4>
+						<pre><code class="javascript">
+var myObject = {
+	item1: property,
+	item2: property,
+	item3: property
+};
+						</code></pre>
+						<ul>
+							<li class="fragment" data-fragment-index="1">Wrapped in curly brackets <code>{}</code></li>
+							<li class="fragment" data-fragment-index="2">Separated with commas</li>
+							<li class="fragment" data-fragment-index="3"><em>Unordered </em>list (<code>ul</code>)</li>
+							<li class="fragment" data-fragment-index="4">Bracket notation <code>myObject["item1"]</code></li>
+							<li class="fragment" data-fragment-index="5">Dot notation <code>myObject.item2</code></li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- <section>
+					<h3>Errors</h3>
+					<p>The secret sauce of programming</p>
+				</section> -->
+
+
 
 				<!-- Class 4 Slides: Basics -->
 				<section id="class4slides">
