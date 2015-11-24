@@ -1283,7 +1283,7 @@ document.getElementById(id);
 			  	</code></pre>
           <p>We would use:</p>
           <pre><code class="javascript">
-var imgKitten = document.getElementById('kittenPic');
+var kittenImg = document.getElementById('kittenPic');
 			  	</code></pre>
         </section>
 
@@ -1422,15 +1422,20 @@ pageNode.style.paddingTop = '10px';
 
 				<section>
           <h3>.text and .innerHTML</h3>
-          <p>Each DOM node has a <code>.text</code> and an <code>.innerHTML</code> property with the HTML of all its children. You can use the property to view or change the HTML of a node.</p>
-          <p>For example, you can overwrite the entire body:</p>
+          <p>Each DOM node has a <code>.text</code> and an <code>.innerHTML</code> method</p>
+					<ul>
+						<li>.text - Sets/gets the plain text in between a tag</li>
+						<li>.innerHTML - Sets/gets the entire HTML markup from within a node</li>
+					</ul>
+          <p>For example, you can change what a paragraph says:</p>
+          <pre><code class="javascript">
+var pageNode = document.getElementsByTagName('p')[0];
+pageNode.text = "Changing the text of the first paragraph";
+					</code></pre>
+			    <p>Or you can overwrite the entire body with new markup:</p>
           <pre><code class="javascript">
 var pageNode = document.getElementsByTagName('body')[0];
-pageNode.innerHTML = '&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;'
-					</code></pre>
-			    <p>Or just add some new content to the end:</p>
-			    <pre><code class="javascript">
-pageNode.innerHTML += '...just adding this bit at the end of the page.';
+pageNode.innerHTML = '&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;';
 					</code></pre>
 			  </section>
 
