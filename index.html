@@ -84,16 +84,20 @@
 					<h2>Welcome!</h2>
 					<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
 					<ul>
-						<li><a href="#/class1slides">Class 1: Introduction and Fundamentals</a>
+						<p>
+							<a href="#/class1slides">Class 1: Introduction and Fundamentals</a><br>
 							<small>Data types, operators, conditionals, and variables</small>
-						</li>
-						<li><a href="#/class2slides">Class 2: Working with JavaScript</a>
+						</p>
+
+						<p><a href="#/class2slides">Class 2: Programming with JavaScript</a><br>
 							<small>Functions, arrays, loops, and conditionals</small>
-						</li>
-						<li><a href="#/class3slides">Class 3: Objects in JS and the DOM</a>
-							<small>Objects, scope, and the DOM</small>
-						</li>
-						<!-- <li><a href="#/class4slides">Class 4</a></li> -->
+						</p>
+						<p><a href="#/class3slides">Class 3: Objects</a><br>
+							<small>Objects in JS and the DOM</small>
+						</p>
+						<p><a href="#/class4slides">Class 4: Interactions</a><br>
+							<small>Events, Forms, AJAX</small>
+						</p>
 						<!-- <li><a href="#/definitions">Definitions</a></li> -->
 						<!-- <li><a href="#/references">References</a></li> -->
 					</ul>
@@ -901,8 +905,8 @@ var h	owManyCats = catNames.length; //Returns 3
 				<!-- Class 3 Slides: Basics -->
 				<section id="class3slides">
 					<h2>Class 3 Slides</h2>
-					<p>Objects in JS and the DOM</p>
-					<small>Objects, scope, and the DOM</small>
+					<p>Objects</p>
+					<small>Objects in JS and the DOM</small>
 				</section>
 
 				<section>
@@ -1506,100 +1510,132 @@ pageNode.appendChild(newParagraph);
 				<!-- Class 4 Slides:  -->
 				<section id="class4slides">
 					<h2>Class 4 Slides</h2>
+					<p>Interactions</p>
+					<small>Events, Forms, AJAX</small>
 				</section>
 
 				<section>
 					<h3>Events</h3>
-					<p>An 'event' is a type of object that is created when the user interacts with a web page.</p>
-					<p>For example, JS creates an event when a user clicks an element.</p>
-					<pre>
-						<code>
-element.onclick = function () { //code to execute when the click happens };
-						</code>
-					</pre>
+					<p>An <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a> is an interaction that occurs within a web page.</p>
+					<ul>
+						<li class="fragment">Events can represent everything from basic user interactions to automated notifications of things happening in the DOM.</li>
+						<li class="fragment">Events are a type of JS Object, so they have methods and properties!</li>
+						<li class="fragment">Events are made more useful by JavaScript's <a href="">event handlers</a> which process the events and let us add interactions.</li>
+					</ul>
+					<blockquote class="fragment" cite="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">
+						<small><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">GlobalEventHandlers</a> ... [are] common to several interfaces like <code>HTMLElement</code>, <code>Document</code>, or <code>Window</code>.</small>
+					</blockquote>
 				</section>
 				<section>
 					<h3>Types of Events</h3>
 					<p>There are a <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">variety of events</a>. Some of the most common:</p>
 					<ul>
-						<li>onclick: The event occurs when the user clicks on an element</li>
-						<li>onmouseover: The event occurs when the pointer is moved onto an element</li>
+						<li onclick="alert('I was clicked!');">onclick: The event occurs when the user clicks on an element</li>
+						<li onmouseover="this.style.color='red';">onmouseover: The event occurs when the pointer is moved onto an element</li>
 						<li>onkeyup: The event occurs when the user releases a key</li>
 						<li>onload: The event occurs when a document has been loaded</li>
-						<li>onfocus: The event occurs when an element gets focus</li>
+						<li>onfocus: The event occurs when an element gets focused</li>
 					</ul>
 				</section>
+
 				<section>
-					<h3>Events and Code</h3>
-					<p>How do you make an event trigger some code?</p>
-					<ol>
-						<li>Break your code into functions</li>
-						<li>Associate a function with a JavaScript event</li>
-					</ol>
-				</section>
-				<section>
-					<h3>Calling Functions from HTML</h3>
-					<p>You can call a function directly from your HTML code:</p>
-					<pre>
-						<code>
+					<h3>Triggering Events from HTML</h3>
+					<p>You can <strong>fire</strong> an event directly from the HTML element:</p>
+					<pre><code class="html">
+&lt;img alt="" src="" onclick="alert('I was clicked!');">
+					</code></pre>
+					<p>or you can call a function:</p>
+					<pre><code class="html">
 &lt;button id="clickMe" onclick="sayHi()"&gt;Click Me!&lt;/button&gt;
-						</code>
-					</pre>
-					<pre>
-						<code>
-function sayHi() { alert ('Hi!'); }
-						</code>
-					</pre>
+&lt;script>
+function sayHi() {
+	alert ('Hi!');
+}
+&lt;/script>
+						</code></pre>
+						<p>But! This mixes functionality with HTML. This is not recommended practice!</p>
 				</section>
+
 				<section>
-					<h3>Listening Functions</h3>
-					<p>Listening functions work like many of the other things we have done. First, find the object:</p>
-					<pre>
-						<code>
-var myTarget = document.getElementById('clickMe');
-						</code>
-					</pre>
-					<p>Then add an event to that object:</p>
-					<pre>
-						<code>
-myTarget.onclick=function(){ alert ('Hi!'); }
-						</code>
-					</pre>
+					<h3>Triggering Events from JS file</h3>
+					<p>Separate that content and functionality!</p>
+					<pre><code class="javascript">
+// Save your element as a variable
+var myElement = document.getElementById('clickMe');
+
+// Then bind your event handler
+myElement.onclick = function sayHi() {
+	alert ('Hi!');
+}
+					</code></pre>
+					<p>Note the term <strong>bind</strong>: aka, attach an event handler: <code>.onclick</code></p>
 				</section>
+
 				<section>
 					<h3>Let's Develop It</h3>
-					<p>Download <a href="files/class4.zip">this week's sample code</a>.</p>
-					<p>Make some JavaScript code fire after an
-						<code>onmouseover</code> event. Try adding the event to the HTML and adding a listening function.</p>
+					<p>Open your website from last week's homework.</p>
+					<p>Make some JavaScript code fire after an <code>onmouseover</code> event.</p>
+				</section>
 
+				<section>
+					<h3>Event Listeners</h3>
+					<p>The third way to handle events is by using an <code>event listener</code></p>
+					<pre><code class="javascript">
+var myElement = document.getElementById('clickMe');
+var sayHi = function() {
+	alert ('Hi!');
+}
+
+// Here is our event listener
+myElement.addEventListener("click",function(){
+	sayHi();
+});
+					</code></pre>
+					<p>This method lets us have more than one event handler bound.</p>
+					<blockquote class="fragment" cite="http://blog.bitovi.com/a-crash-course-in-how-dom-events-work/">
+						<small><a href="http://blog.bitovi.com/a-crash-course-in-how-dom-events-work/">A crash course in how DOM events work</a> is a great article on explaining events!</small>
+					</blockquote>
 				</section>
 
 				<section>
 					<h3>Preventing Defaults</h3>
 					<p>Elements like buttons and links have default behaviors. However, the
 						<code>event</code> objects has a built-in method to handle that:</p>
-					<pre>
-						<code>
-element.onclick = function (event) { event.preventDefault(); };
-						</code>
-					</pre>
+					<pre><code>
+// Every event handler is passed the event as a param
+element.onclick = function (event) {
+	event.preventDefault();
+};
+						</code></pre>
+						<p>el: element, the element in question</p>
+						<p>e: event, the current event we're handling</p>
+						<pre><code>
+// Every event handler is passed the event as a param
+el.onclick = function(e) {
+	e.preventDefault();
+};
+							</code></pre>
 				</section>
 
 				<section>
 					<h3>This</h3>
 					<p>The keyword
 						<code>this</code> references the element that the user has just interacted with:</p>
-					<pre>
-						<code>
-element.onmouseover = function (event) { console.log(this); }; element.onclick = function (event) { this.style.backgroundColor = 'red'; this.innerHTML = 'I've been clicked!'; };
-						</code>
-					</pre>
+					<pre><code class="javascript">
+el.onmouseover = function(e) {
+	console.log(this);
+};
+el.onclick = function() {
+	this.style.backgroundColor = 'red';
+	this.innerHTML = 'I've been clicked!';
+};
+						</code></pre>
 				</section>
+
 				<section>
 					<h3>Let's Develop It</h3>
 					<p>Write code that targets this link:</p>
-					<pre>
-						<code>
+					<pre><code>
 &lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
 						</code>
 					</pre>
@@ -1610,45 +1646,59 @@ element.onmouseover = function (event) { console.log(this); }; element.onclick =
 				<section>
 					<h3>Forms</h3>
 					<p>You can collect information from users to use in functions. The most common method is an HTML form:</p>
-					<pre>
-						<code>
+					<pre><code class="html">
 &lt;form id="temperatureForm"&gt;
-  &lt;label for="temp"&gt;Temperature:&lt;/label&gt; &lt;input type="text" id="temp" size="3"/&gt; degrees in &lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit &lt;input type="radio" name="tempFormat"
-value="C" /&gt;Celsius &lt;br /&gt; &lt;label for="submitButton"&gt;&lt;/label&gt; &lt;input id="tempSubmitButton" type="submit" value="Submit" /&gt; &lt;/form&gt;
-						</code>
-					</pre>
+  &lt;label for="temp"&gt;Temperature:&lt;/label&gt;
+	&lt;input type="text" id="temp" size="3"/&gt; degrees in
+
+	&lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit
+	&lt;input type="radio" name="tempFormat" value="C" /&gt;Celsius
+
+	&lt;label for="submitButton"&gt;Convert!&lt;/label&gt;
+	&lt;input id="tempSubmitButton" type="submit" value="Submit" /&gt;
+&lt;/form&gt;
+						</code></pre>
 				</section>
+
 				<section>
 					<h3>Retrieving Form Data</h3>
-					<p>You retrieve the values of form elements using the
-						<code>value</code> method:</p>
-					<pre>
-						<code>
-var temperature = document.getElementById('temp').value; console.log (temperature);
-						</code>
-					</pre>
-					<p>You can retrieve the value of a form at any time. Try
-						<code>onblur</code> (when a form element loses focus).</p>
+					<p>You retrieve the values of form elements using the <code>value</code> method:</p>
+					<pre><code class="javascript">
+var temperature = document.getElementById('temp').value;
+console.log(temperature);
+						</code></pre>
+					<p>You can retrieve the value of a form at any time. Try <code>onblur</code> (when a form element loses focus).</p>
 				</section>
+
 				<section>
 					<h3>Radio Buttons</h3>
-					<p>Radio buttons usually do not have IDs, so you will need to use an array:</p>
-					<pre>
-						<code>
-var radios = document.getElementsByName('tempFormat'); for (var i = 0, length = radios.length; i &lt; length; i++) { if (radios[i].checked) { var radioButtonValue = radios[i].value; // only one radio can be checked, so stop now break; } }
-						</code>
-					</pre>
+					<p>Radio buttons usually don't have IDs, so you have to loop through them:</p>
+					<pre><code class="javascript">
+var formatOptions = document.getElementsByName("tempFormat");
+var selectedFormat = '';
+
+for (var i = 0; i < options.length; i++) {
+  if (options[i].checked){
+    selectedFormat = options[i].value;
+  }
+}
+					</code></pre>
 				</section>
 				<section>
 					<h3>Submit buttons</h3>
 					<p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
-					<pre>
-						<code>
-var submitButton = document.getElementById('tempSubmitButton'); submitButton.onclick = function () { event.preventDefault(); var temperature = document.getElementById('temp').value; console.log (temperature); }
-							<!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
-						</code>
-					</pre>
+					<pre><code class="javascript">
+var submitButton = document.getElementById('tempSubmitButton');
+
+submitButton.onclick = function(e) {
+	e.preventDefault();
+
+	var temperature = document.getElementById('temp').value;
+	console.log (temperature);
+}
+						</code></pre>
 				</section>
+				
 				<section>
 					<h3>Let's Develop It</h3>
 					<p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
