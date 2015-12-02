@@ -1806,6 +1806,39 @@ var helloBox; function sayHello() { helloBox = setTimeout(function(){alert('Hell
 					</pre>
 				</section>
 
+				<section>
+					<h3>What is AJAX?</h3>
+					<p class="fragment">Asynchronous Java and XML</p>
+					<p class="fragment">It is mainly a mix of several technologies:
+					</p>
+					<ul class="fragment">
+						<li>HTML</li>
+						<li>JS</li>
+						<li>DOM</li>
+						<li>XMLHttpRequest object (an object that lets you make requests to a server).</li>
+					</ul>
+					<p class="fragment"><a href="http://www.codecoffee.com/articles/ajax.html">AJAX</a> lets you make web based user interfaces more responsive by letting you update sections of the page without refreshing the entire page.</p>
+				</section>
+
+				<section>
+					<img src="http://www.w3schools.com/ajax/ajax.gif" alt="">
+				</section>
+
+				<section>
+					<h3>What does AJAX look like?</h3>
+					<pre><code class="javascript">
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+					</code></pre>
+				</section>
 				<!-- Definitions -->
 				<!-- <section>
 					<h2>JS Terms</h2>
