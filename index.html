@@ -1698,11 +1698,51 @@ submitButton.onclick = function(e) {
 }
 						</code></pre>
 				</section>
-				
+
 				<section>
 					<h3>Let's Develop It</h3>
 					<p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
 				</section>
+
+				<section>
+					<h3>Example</h3>
+					<div class="left-column">
+						<p>HTML Markup</p>
+						<pre><code class="html">
+&lt;form id="addressForm" action="">
+	&lt;label for="name">Name&lt;/label>&lt;input type="text" name="name" id="name"><br>
+	&lt;label for="street">Street&lt;/label>&lt;input type="text" name="street" id="street"><br>
+	&lt;label for="city">City&lt;/label>&lt;input type="text" name="city" id="city"><br>
+	&lt;label for="state">State&lt;/label>&lt;input type="text" name="state" id="state"><br>
+	&lt;label for="zip">Zip&lt;/label>&lt;input type="text" name="zip" id="zip"><br>
+	&lt;input id="submitButton" type="submit" value="Submit" /&gt;
+&lt;/form>
+&lt;button id="cheatButton" type="button">Fill out!&lt;/button>
+						</code></pre>
+					</div>
+					<div class="right-column">
+						<p>JavaScript Code</p>
+						<pre><code class="javascript">
+var button = document.getElementById('cheatButton');
+
+var name = document.getElementById('name');
+var street = document.getElementById('street');
+var city = document.getElementById('city');
+var state = document.getElementById('state');
+var zip = document.getElementById('zip');
+
+button.onclick = function() {
+	name.value = "Girl Develop It";
+	street.value = "123 Main St";
+	city.value = "New York";
+	state.value = "NY";
+	zip.value = "01234";
+}
+						</code></pre>
+						<p><a href="http://codepen.io/jannypie/pen/rxBMNd/">See it work</a></p>
+					</div>
+				</section>
+
 
 				<section>
 					<h3>Timing Events</h3>
