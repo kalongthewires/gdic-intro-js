@@ -59,6 +59,19 @@
 				float: right;
 				width: 49%;
 			}
+			.reveal small {
+				display: block;
+			}
+			.try:after {
+				background-color: #92BB44;
+				color: white;
+				display: block;
+				content: 'Try It!';
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 2px 4px;
+			}
 		</style>
 	</head>
 
@@ -71,38 +84,47 @@
         <!-- Opening -->
 				<section>
 					<h1>Intro to JavaScript</h1>
-					<pre><code class="javascript">
+<pre><code class="javascript">
+	// Tell your computer how to do something
 	function helloWorld(){
 		var name = "GDI";
 		alert("Hello world, it's " + name + "!");
 	}
+
+	// Then make it do that thing!
 	helloWorld();
-					</code></pre>
+</code></pre>
 				</section>
 
 				<section>
 					<h2>Welcome!</h2>
-					<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+					<p><strong>Girl Develop It</strong> is here to provide affordable programs to learn coding in a judgement-free environment through mentorship and hands-on instruction.</p>
+					<p class="green"><b>One Rule: Every question is important!</b></p>
+
+				</section>
+
+				<section>
+					<h2>Course Overview</h2>
 					<ul>
-						<li><a href="#/class1slides">Class 1: Introduction and Fundamentals</a>
+						<li><a href="#/class1slides">Part 1: Introduction and Fundamentals</a>
+							<small>Getting set up</small>
 							<small>Data types, operators, conditionals, and variables</small>
 						</li>
-						<li><a href="#/class2slides">Class 2: Working with JavaScript</a>
+						<li><a href="#/class2slides">Part 2: Working with JavaScript</a>
 							<small>Functions, arrays, loops, and conditionals</small>
 						</li>
-						<!-- <li><a href="#/class3slides">Class 3</a></li> -->
-						<!-- <li><a href="#/class4slides">Class 4</a></li> -->
-						<!-- <li><a href="#/definitions">Definitions</a></li> -->
+						<li><a href="#/class3slides">Part 3</a></li>
+						<li><a href="#/class4slides">Part 4</a></li>
+						<li><a href="#/definitions">Definitions</a></li>
 						<!-- <li><a href="#/references">References</a></li> -->
 					</ul>
-					<!-- <p class="green">Remember! <em>Every</em> question is important.</p> -->
-					<blockquote class="green"><b>Remember:<br/>Every question is important!</b></blockquote>
 				</section>
 
 				<!-- Class 1 Slides: Basics -->
 				<section id="class1slides">
-					<h2>Class 1 Slides</h2>
+					<h2>Part 1</h2>
 					<p>Introduction and Fundamentals</p>
+					<small>Getting set up</small>
 					<small>Data types, operators, conditionals, and variables</small>
 				</section>
 
@@ -110,23 +132,39 @@
 					<h3>Let's Get Introduced!</h3>
 					<ul>
 						<li>Who are you?</li>
-						<li>What do you hope to get out of the class?</li>
 						<li>What is your favorite children's book?</li>
 						<li>Have you ever taken Algebra?</li>
 					</ul>
+<pre class="fragment"><code class="text">
+ Algebra: Using symbols and rules to solve math equations
+
+	x = 1 and y = 3
+
+	x + y = z
+
+	z = ?
+
+</code></pre>
+					<p class="fragment"><code>x</code>, <code>y</code>, and <code>z</code> are <strong>variables</strong></p>
+					<p class="fragment"><code>x + y = z</code> is an <strong>equation</strong></p>
 				</section>
 
 				<section>
-					<h3>Let's Get Introduced-- to JS!</h3>
+					<h3>Let's Get Introduced -- to JS!</h3>
 					<p class="green">What is JavaScript?</p>
 					<ul>
-						<li>Cross-platform, lightweight scripting language</li>
-						<li>Client-side <em>and</em> server-side</li>
+						<li><em>Scripting</em> language
+							<small>Writing <strong>commands</strong> (x + y) that tell your browser to do <strong>actions</strong> (addition!)</small>
+						</li>
+						<li>Computers have <strong>Client-Server</strong> relationship
+							<small>Server sends information, Client displays it (browser)</small>
+						</li>
+						<li>JS can run on Client-side <em>and</em> Server-side!</li>
 						<li>Called "the language of the web" - for a reason!</li>
 					</ul>
 					<p>---</p>
 						<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">
-							"JavaScript can be connected to the <b>objects of its environment</b> to provide programmatic control over them."
+							"JavaScript can be connected to the <b>objects of its environment</b> (client or server) to provide programmatic control over them."
 						</blockquote>
 					<aside class="notes">
 						<p>Ability to interact with objects from its parent is a rare feature!</p>
@@ -137,11 +175,13 @@
 					<h3>History of JS</h3>
 					<ul>
 						<li><b>1995:</b> At Netscape, Brendan Eich created "Mocha" in only 10 days!</li>
-						<li>That same year, Mocha is renamed "LiveScript" and then "JavaScript".</li>
-						<li><b>1997:</b> JavaScript was standardized by the ECMA as the "ECMAScript" (ES) spec.</li>
-						<li><b>1998-2003:</b> Various battles between browser vendors about adoption and specs! IE booo.</li>
-						<li><b>2005:</b> "AJAX" was coined, and the web 2.0 age begins. JavaScript renaissance!</li>
-						<li><b>2006:</b> jQuery 1.0 was released.</li>
+						<li>That same year, Mocha is renamed "JavaScript"</li>
+						<li><b>1997:</b> Standardized by the <a href="https://en.wikipedia.org/wiki/Ecma_International" title="European Computer Manufacturers Association">ECMA</a> as "ECMAScript"</li>
+						<li><b>1998-2003:</b> Various battles between browser vendors about adoption! IE boooo</li>
+						<li><b>2005-2006:</b> AJAX gets popular, jQuery 1.0 released</li>
+						<li><b>2010:</b> Node.JS released. Now it's server-side!</li>
+						<li><b>2014-2015:</b> Rise of "Client-side MVC frameworks"- server-side techniques in the browser</li>
+						<li><b>2016:</b> Newest ECMAScript spec (ES6) changes a lot! (But more advanced than this class)</li>
 					</ul>
 					<aside class="notes">
 						<ul>
@@ -154,26 +194,27 @@
 				</section>
 
 				<section>
-					<h3>History of JS</h3>
-					<ul>
-						<li><b>2008ish:</b> JavaScript isn't going away; browsers unite behind ECMA specs again.</li>
-						<li><b>2010:</b> Node.JS was released. Now we can use it server-side!</li>
-						<li><b>2014-2015:</b> Rise of "Client-side MVC frameworks"- server-side architecture (MVC) in the browser.</li>
-						<li><b>2016:</b> Newest ECMAScript spec (ES6) changes a lot! (But more advanced than this class.)</li>
-					</ul>
+					<h3>Getting Set Up</h3>
+					<ol>
+						<li>Introduction to Browser Developer Tools</li>
+						<li>Running commands in the console</li>
+					</ol>
 				</section>
 
 				<section>
 					<h3>Let's Develop It!</h3>
 					<p>Let's write your first JavaScript program!</p>
-					<ul>
-						<li>Open Chrome Dev Tools</li>
+					<ol>
+						<li>Open Browser Dev Tools</li>
 						<li>Click on the `Console` tab</li>
-						<li>Enter the following:</li>
-					</ul>
+						<li>Type in the following command:</li>
+					</ol>
 					<pre><code class="javascript">
 	alert('Hello World!');
 					</code></pre>
+					<small>What action resulted?</small>
+					<p>---</p>
+					<blockquote class="green">Ask questions!</blockquote>
 					<aside class="notes">
 						<p>Walk students through Chome Dev Tools and Console.</p>
 						<p>Explain that JS has interacted with aspects of the client (browser) and told it to do something!</p>
@@ -183,13 +224,86 @@
 				<section>
 					<h3>Basics of Programming</h3>
 					<ul>
-						<li>Data Types</li>
-						<li>Operators</li>
-						<li>Comparisons</li>
 						<li>Variables</li>
-						<li>Functions (Class 2)</li>
-						<li>Loops &amp; Conditionals (Class 2)</li>
+						<li>Data Types</li>
+						<li>Commands</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>Variables</h3>
+					<p>Variables represent information</p>
+<pre><code class="javascript">
+	x = 1
+	x + 2 = 3
+</code></pre>
+					<ul>
+						<li class="fragment"><em>Declared</em> (created) using the word <code>var</code>
+<pre><code class="javascript">
+	var x = 1
+</code></pre>
+						</li>
+						<li class="fragment">When first declared, it does not have a value (it is <em>undefined</em>).</li>
+						<li class="fragment">Once given a starting value, it is no longer undefined. This is called <em>initializing</em> the variable.</li>
+					</ul>
+					<pre class="fragment">
+						<code class="javascript try">
+	var lsp; // declared but undefined
+	var lsp = "Lumpy Space Princess"; // initialized
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Naming Variables</h3>
+					<ul>
+						<li class="fragment">Case-sensitive: ohio != Ohio</li>
+						<li class="fragment">Must be unique</li>
+						<li class="fragment">Must start with a letter, <code>$</code>, or <code>_</code>
+							<ul class="fragment">
+								<li><code>$</code> is used by the <b>jQuery</b> library</li>
+								<li><code>_</code> is used by the <b>underscore.js</b> library</li>
+								<li>Best just to start with a letter</li>
+							</ul>
+						</li>
+						<li class="fragment">Can only be made of letters, numbers, $, or _</li>
+						<li class="fragment">Best practice for multiple-word variables is to use <em>camelCase</em>:
+							<ul>
+								<li><code>var thisIsMyVariable;</code></li>
+								<li>Start with lowercase letter, then capitalize other words</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Using a Variable</h3>
+					<p>Once you have declared a variable, you can use it in your code. Just type the name of the variable.</p>
+					<pre><code class="javascript try">
+	var numberOfKittens = 5;
+	console.log(numberOfKittens);
+					</code></pre>
+					<li class="fragment">The value of a variable can change (be updated) later (don't need to re-use <code>var</code>).</li>
+					<pre class="fragment"><code class="javascript try">
+	numberOfKittens = 13;
+	console.log(numberOfKittens);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>In your console, create a variable and give it a valid name and a value. Then, display the value.</p>
+					<p class="fragment">Next, try this one:</p>
+					<pre class="fragment"><code class="javascript">
+	var kittenTitle = 'Admiral';
+	var kittenName = kittenTitle + ' Snuggles';
+	console.log(kittenName);
+					</code></pre>
+					<p class="fragment">What did you get?</p>
+					<blockquote class="fragment green">You're so fancy</blockquote>
+				</section>
+
+				<section>
+					<h2>Break Time</h2>
 				</section>
 
 				<section>
@@ -265,6 +379,7 @@
 							</tr>
 						</table>
 					</div>
+
 					<div class="right-column fragment">
 						<h3>Comparators</h3>
 						<table>
@@ -367,78 +482,18 @@
 					<h3>Comments</h3>
 					<p>You can leave comments in your code that won't be processed in the script.</p>
 					<pre><code class="javascript">
-	/* I can wrap long comments
-	with multiple lines
-	like this */
+	// I can wrap long comments
+	// with multiple lines
+	// like this
 	console.log('Hello World!'); // Or short like this
 					</code></pre>
 					<p>Comments act as notes that people can read and computers will ignore.</p>
 					<pre><code class="javascript">
-	/* This code multiplies puppies by kitties */
+	// This code multiplies puppies by kitties
 	var puppies = 10;
 	var kitties = 11;
 	document.write(puppies * kitties);
 					</code></pre>
-				</section>
-
-				<section>
-					<h3>Variables</h3>
-					<p>Variables hold different types of information, like strings, numbers, and collections of data.</p>
-					<ul>
-						<li class="fragment"><em>Declared</em> (created) using the word <code>var</code>.</li>
-						<li class="fragment">When first declared, it does not have a value (it is <em>undefined</em>).</li>
-						<li class="fragment">Once given a starting value, it is no longer undefined. This is called <em>initializing</em> the variable.</li>
-						<li class="fragment">The value of a variable can change (be updated) later (don't need to re-use <code>var</code>).</li>
-					</ul>
-					<pre class="fragment">
-						<code class="javascript">
-	var lsp; // declared but undefined
-	var lsp = "Lumpy Space Princess"; // initialized
-	lsp = "Lumpy Space Princes is my favorite!"; // updated
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Naming Variables</h3>
-					<ul>
-						<li class="fragment">Case-sensitive: ohio != Ohio</li>
-						<li class="fragment">Must be unique</li>
-						<li class="fragment">Must start with a letter, <code>$</code>, or <code>_</code>
-							<ul class="fragment">
-								<li><code>$</code> is used by the <b>jQuery</b> library</li>
-								<li><code>_</code> is used by the <b>underscore.js</b> library</li>
-								<li>Best just to start with a letter</li>
-							</ul>
-						</li>
-						<li class="fragment">Can only be made of letters, numbers, $, or _</li>
-						<li class="fragment">Best practice for multiple-word variables is to use <em>camelcase</em>:
-							<ul>
-								<li><code>var thisIsMyVariable;</code></li>
-								<li>Start with lowercase letter, then capitalize other words</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Using a Variable</h3>
-					<p>Once you have declared a variable, you can use it in your code. Just type the name of the variable.</p>
-					<pre><code class="javascript">
-	var numberOfKittens = 5;
-	console.log(numberOfKittens);
-					</code></pre>
-				</section>
-
-				<section>
-					<h3>Let's Develop It!</h3>
-					<p>In your console, create a variable and give it a valid name and a value. Then, display the value.</p>
-					<p>Next, try this one:</p>
-					<pre><code class="javascript">
-	var kittenName = 'Admiral';
-	kittenName += ' Snuggles';
-	console.log(kittenName); // Outputs 'Admiral Snuggles'
-					</code></pre>
-					<blockquote class="fragment green">You just combined using a <b>variable</b>, a <b>string</b>, and an <b>operator</b>!</blockquote>
 				</section>
 
 				<section>
@@ -799,6 +854,17 @@ if (i % 7 == 0) {
 
 				</section>
 
+				<!-- Key Terms -->
+				<section>
+					<h2>Web Page Key Terms</h2>
+					<dl>
+						<dt>Element</dt><dd></dd>
+						<dt>Document</dt><dd></dd>
+						<dt>DOM</dt><dd>Document Object Model</dd>
+						<dt>Object</dt><dd></dd>
+
+					</dl>
+				</section>
 
 				<!-- Definitions -->
 				<section>
@@ -814,6 +880,17 @@ if (i % 7 == 0) {
 						<dd>JS Object: </dd>
 						<dd>DOM Object: </dd>
 					</dl>
+				</section>
+
+				<section>
+					<h2>References</h2>
+					<ul>
+						<li><a href="http://eloquentjavascript.net/01_values.html">Eloquent JavaScript - Data Types</a></li>
+						<li><a href="http://eloquentjavascript.net/02_program_structure.html">Eloquent JavaScript - Syntax</a></li>
+						<li><a href="http://eloquentjavascript.net/03_functions.html">Eloquent JavaScript - Functions</a></li>
+						<li><a href="http://eloquentjavascript.net/04_data.html">Eloquent JavaScript - Objects and Arrays</a></li>
+						<li><a href="https://medium.freecodecamp.com/lets-learn-javascript-closures-66feb44f6a44#.3r8f88npp">JavaScript Closures</a></li>
+					</ul>
 				</section>
 
 			</div>
