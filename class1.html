@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to JavaScript ~ Girl Develop It</title>
+
+		<meta name="description" content="Beginner level course material for learning javascript.">
+		<meta name="author" content="Girl Develop It">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- reveal.js -->
+		<link rel="stylesheet" href="css/reveal.css">
+
+		<!-- GDI theme -->
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- hightlight.js Stylesheets-->
+		<!-- For syntax highlighting -->
+		<!-- light editors -->
+		<!-- <link rel="stylesheet" href="lib/css/light.css"> -->
+		<link rel="stylesheet" href="lib/css/tomorrow.css">
+		<!-- dark editors -->
+		<!-- <link rel="stylesheet" href="lib/css/dark.css"> -->
+		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+		<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!-- If use the PDF print sheet so students can print slides-->
+
+		<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+			p a.link {
+				border-bottom: 1px dashed #92BB44;
+			}
+			.left-column {
+				float: left;
+				width: 49%;
+			}
+			.right-column {
+				float: right;
+				width: 49%;
+			}
+			.reveal small {
+				display: block;
+			}
+			.try:after {
+				background-color: #92BB44;
+				color: white;
+				display: block;
+				content: 'Try It!';
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 2px 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+				<!-- Class 1 Slides: Basics -->
+				<section id="class1slides">
+					<h2>Class 1</h2>
+					<p>Introduction and Fundamentals</p>
+					<small>Getting set up</small>
+					<small>Variables, data types, and operators</small>
+					<small>JavaScript basics</small>
+				</section>
+
+				<section>
+					<h3>Let's Get Introduced!</h3>
+					<ul>
+						<li>Who are you?</li>
+						<li>What is your favorite children's book?</li>
+						<li>Have you ever taken Algebra?</li>
+					</ul>
+<pre class="fragment"><code class="text">
+ Algebra: Using symbols and rules to solve math equations
+
+	x = 1 and y = 3
+
+	x + y = z
+
+	z = ?
+
+</code></pre>
+					<p class="fragment"><code>x</code>, <code>y</code>, and <code>z</code> are <strong>variables</strong></p>
+					<p class="fragment"><code>x + y = z</code> is an <strong>equation</strong></p>
+				</section>
+
+				<section>
+					<h3>Let's Get Introduced -- to JS!</h3>
+					<p class="green">What is JavaScript?</p>
+					<ul>
+						<li><em>Scripting</em> language
+							<small>Writing <strong>commands</strong> (x + y) that tell your browser to do <strong>actions</strong> (addition!)</small>
+						</li>
+						<li>Computers have <strong>Client-Server</strong> relationship
+							<small>Server sends information, Client displays it (browser)</small>
+						</li>
+						<li>JS can run on Client-side <em>and</em> Server-side!</li>
+						<li>Called "the language of the web" - for a reason!</li>
+					</ul>
+					<p>---</p>
+						<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">
+							"JavaScript can be connected to the <b>objects of its environment</b> (client or server) to provide programmatic control over them."
+						</blockquote>
+					<aside class="notes">
+						<p>Ability to interact with objects from its parent is a rare feature!</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3>History of JS</h3>
+					<ul>
+						<li><b>1995:</b> At Netscape, Brendan Eich created "Mocha" in only 10 days!</li>
+						<li>That same year, Mocha is renamed "JavaScript"</li>
+						<li><b>1997:</b> Standardized by the <a href="https://en.wikipedia.org/wiki/Ecma_International" title="European Computer Manufacturers Association">ECMA</a> as "ECMAScript"</li>
+						<li><b>1998-2003:</b> Various battles between browser vendors about adoption! IE boooo</li>
+						<li><b>2005-2006:</b> AJAX gets popular, jQuery 1.0 released</li>
+						<li><b>2010:</b> Node.JS released. Now it's server-side!</li>
+						<li><b>2014-2015:</b> Rise of "Client-side MVC frameworks"- server-side techniques in the browser</li>
+						<li><b>2016:</b> Newest ECMAScript spec (ES6) changes a lot! (But more advanced than this class)</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Netscape is now called Mozilla, makers of Firefox.</li>
+							<li>The name JavaScript was chosen to borrow popularity from the programming language Java. Has nothing to do with Java.</li>
+							<li>AJAX: Asynchronous JavaScript, allows data loading in background and out of the direct flow.</li>
+							<li>Standardization by ECMA allowed other browsers use the same specs.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Getting Set Up</h3>
+					<ol>
+						<li>Introduction to Browser Developer Tools</li>
+						<li>Running commands in the console</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Let's write your first JavaScript program!</p>
+					<ol>
+						<li>Open Browser Dev Tools</li>
+						<li>Click on the `Console` tab</li>
+						<li>Type in the following command:</li>
+					</ol>
+					<pre><code class="javascript">
+	alert('Hello World!');
+					</code></pre>
+					<small>What action resulted?</small>
+					<p>---</p>
+					<blockquote class="green">Ask questions!</blockquote>
+					<aside class="notes">
+						<p>Walk students through Chome Dev Tools and Console.</p>
+						<p>Explain that JS has interacted with aspects of the client (browser) and told it to do something!</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Basics of Programming</h3>
+					<ul>
+						<li>Variables</li>
+						<li>Data Types</li>
+						<li>Commands</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Variables</h3>
+					<p>Variables represent information</p>
+<pre><code class="javascript">
+	x = 1
+	x + 2 = 3
+</code></pre>
+					<ul>
+						<li class="fragment"><em>Declared</em> (created) using the word <code>var</code>
+<pre><code class="javascript">
+	var x = 1
+</code></pre>
+						</li>
+						<li class="fragment">When first declared, it does not have a value (it is <em>undefined</em>).</li>
+						<li class="fragment">Once given a starting value, it is no longer undefined. This is called <em>initializing</em> the variable.</li>
+					</ul>
+					<pre class="fragment">
+						<code class="javascript try">
+	var lsp; // declared but undefined
+	var lsp = "Lumpy Space Princess"; // initialized
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Naming Variables</h3>
+					<ul>
+						<li class="fragment">Case-sensitive: ohio != Ohio</li>
+						<li class="fragment">Must be unique</li>
+						<li class="fragment">Must start with a letter, <code>$</code>, or <code>_</code>
+							<ul class="fragment">
+								<li><code>$</code> is used by the <b>jQuery</b> library</li>
+								<li><code>_</code> is used by the <b>underscore.js</b> library</li>
+								<li>Best just to start with a letter</li>
+							</ul>
+						</li>
+						<li class="fragment">Can only be made of letters, numbers, $, or _</li>
+						<li class="fragment">Best practice for multiple-word variables is to use <em>camelCase</em>:
+							<ul>
+								<li><code>var thisIsMyVariable;</code></li>
+								<li>Start with lowercase letter, then capitalize other words</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Using a Variable</h3>
+					<p>Once you have declared a variable, you can use it in your code. Just type the name of the variable.</p>
+					<pre><code class="javascript try">
+	var numberOfKittens = 5;
+	console.log(numberOfKittens);
+					</code></pre>
+					<li class="fragment">The value of a variable can change (be updated) later (don't need to re-use <code>var</code>).</li>
+					<pre class="fragment"><code class="javascript try">
+	numberOfKittens = 13;
+	console.log(numberOfKittens);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>In your console, create a variable and give it a valid name and a value. Then, display the value.</p>
+					<p class="fragment">Next, try this one:</p>
+					<pre class="fragment"><code class="javascript">
+	var kittenTitle = 'Admiral';
+	var kittenName = kittenTitle + ' Snuggles';
+	console.log(kittenName);
+					</code></pre>
+					<p class="fragment">What did you get?</p>
+					<blockquote class="fragment green">You're so fancy</blockquote>
+				</section>
+
+				<section>
+					<h2>Break Time</h2>
+				</section>
+
+				<section>
+					<h3>Data Types</h3>
+					<table>
+						<th class="green fragment">Numbers</th>
+						<tr class="fragment">
+							<td><b>Integers</b></td>
+							<td><code>0, 1, 2 ... 9</code></td>
+						</tr>
+						<tr class="fragment">
+							<td><b>Floats</b> (decimals)</td>
+							<td><code>0.5, 1.618, 3.14</code></td>
+						</tr>
+						<tr class="fragment">
+							<th class="green">Strings</th>
+							<td><code>"GDI", 'rock on', "three"</code></td>
+						</tr>
+						<tr class="fragment">
+							<th class="green">Boolean</th>
+							<td><code>true</code> or <code>false</code></td>
+						</tr>
+						<tr class="fragment">
+							<th class="green">Null</th>
+							<td><code>null</code></td>
+						</tr>
+						<tr class="fragment">
+							<th class="green">Undefined</th>
+							<td><code>undefined</code></td>
+						</tr>
+						<tr class="fragment">
+							<th class="green">Arrays</th>
+							<td>Next class!</td>
+						</tr>
+						<tr class="fragment">
+							<th class="green">Objects</th>
+							<td>Next class!</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<div class="left-column fragment">
+						<h3>Operators</h3>
+						<table>
+							<tr>
+								<th class="green">+</th>
+								<td>Addition</td>
+							</tr>
+							<tr>
+								<th class="green">-</th>
+								<td>Subtraction</td>
+							</tr>
+							<tr>
+								<th class="green">++</th>
+								<td>Increment (+1)</td>
+							</tr>
+							<tr>
+								<th class="green">--</th>
+								<td>Decrement (-1)</td>
+							</tr>
+							<tr>
+								<th class="green">*</th>
+								<td>Multiplication</td>
+							</tr>
+							<tr>
+								<th class="green">/</th>
+								<td>Division</td>
+							</tr>
+							<tr>
+								<th class="green">%</th>
+								<td>Modulus (remainder)</td>
+							</tr>
+							<tr>
+								<th class="green">+=</th>
+								<td>Add to value and reassign</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="right-column fragment">
+						<h3><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">Comparators</a></h3>
+						<table>
+							<tr>
+								<th class="green">!</th>
+								<td>Is Not</td>
+							</tr>
+							<tr>
+								<th class="green">==</th>
+								<td>Equality</td>
+							</tr>
+							<tr>
+								<th class="green">!=</th>
+								<td>Inequality</td>
+							</tr>
+							<tr>
+								<th class="green">===</th>
+								<td>Identity/strictly&nbsp;equal</td>
+							</tr>
+							<tr>
+								<th class="green">!==</th>
+								<td>Non-identity</td>
+							</tr>
+							<tr>
+								<th class="green">></th>
+								<td>Greater than</td>
+							</tr>
+							<tr>
+								<th class="green">>=</th>
+								<td>Greater or equal</td>
+							</tr>
+							<tr>
+								<th class="green"><</th>
+								<td>Less than</td>
+							</tr>
+							<tr>
+								<th class="green"><=</th>
+								<td>Less or equal</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+
+				<section>
+					<h3>Let's Develop It!</h3>
+					<p>Experiment with Data Types,<br/>Operators and Comparators</p>
+					<ul>
+						<li>Open Chrome Dev Tools</li>
+						<li>Click on the `Console` tab</li>
+						<li>Play around!</li>
+					</ul>
+					<pre><code class="javascript">
+	3.2 - 4
+	"GDI" + "Cbus"
+	6 * "six";
+	( 2 + 3 ) - ( 4 * 12 )
+	9 / 2
+	9 % 2
+	"GDI" == "gdi"
+	14 >= 14
+					</code></pre>
+					<p>Try your own! Find any interesting results?</p>
+				</section>
+
+				<section>
+					<h2>JavaScript Basics</h2>
+					<h3>Statements</h3>
+					<p>Each instruction in JS is a <b><em>statement</em></b>, like:</p>
+					<pre><code class="javascript">console.log('Hello Class!');</code></pre>
+					<div class="fragment">
+						<p>After each individual statement, you <em>must</em> add a semicolon to end the command.</p>
+						<pre><code class="javascript">
+	console.log('I am glad to meet you.');
+	console.log('Fuzzy Wuzzy Was A Bear');
+						</code></pre>
+					</div>
+					<blockquote class="fragment green">
+						If it's left off, it's up to the browser to decide what you meant.
+					</blockquote>
+				</section>
+
+				<section>
+					<h3>Data Outputs</h3>
+					<pre><code class="javascript">
+	// Open a popup box:
+	alert('Hello World!');
+	alert(2015 / 746);
+
+	// Display a message in your console:
+	console.log('Hello World!');
+	console.log(14++);
+
+	// Add something to the page:
+	document.write('Hello World!');
+	document.write("kittens" == "kittens");
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Comments</h3>
+					<p>You can leave comments in your code that won't be processed in the script.</p>
+					<pre><code class="javascript">
+	// I can wrap long comments
+	// with multiple lines
+	// like this
+	console.log('Hello World!'); // Or short like this
+					</code></pre>
+					<p>Comments act as notes that people can read and computers will ignore.</p>
+					<pre><code class="javascript">
+	// This code multiplies puppies by kitties
+	var puppies = 10;
+	var kitties = 11;
+	document.write(puppies * kitties);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Class 1 Homework</h3>
+					<p>GDI homework is never required, but made available for students to practice what they've learned.</p>
+					<ul>
+						<li><a href="https://www.codecademy.com/articles/glossary-html">Review key HTML terms</a></li>
+						<li><a href="homework1.html">Practice exercises</a></li>
+						<li><a href="https://www.codecademy.com/learn/javascript">Codecademy Intro to JS: Unit 1</a></li>
+						<li>Check out some browser-based JS tools like <a href="https://jsbin.com">jsbin</a> or <a href="http://jsfiddle.net/">jsfiddle</a>
+							<small>Hint: Use the button labeled <code>run</code> to process your code</small>
+						</li>
+						<li>Bring any questions you think of to next class</li>
+					</ul>
+					<blockquote class="green fragment"><b>Remember:<br/>Every question is important!</b></blockquote>
+				</section>
+
+
+
+			</div>
+  		<footer>
+        <div class="copyright">
+          Intro to JavaScript -- Girl Develop It Columbus --
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.pack.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
