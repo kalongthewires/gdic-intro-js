@@ -377,11 +377,15 @@
 								<th class="green">%</th>
 								<td>Modulus (remainder)</td>
 							</tr>
+							<tr>
+								<th class="green">+=</th>
+								<td>Add to value and reassign</td>
+							</tr>
 						</table>
 					</div>
 
 					<div class="right-column fragment">
-						<h3>Comparators</h3>
+						<h3><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">Comparators</a></h3>
 						<table>
 							<tr>
 								<th class="green">!</th>
@@ -536,17 +540,32 @@
 				<section>
 						<h3>Functions</h3>
 						<ul>
-							<li>Collection of statements that perform a task or calculation</li>
-							<li class="fragment">Functions are kinda like algebra equations:<br/>
-							Define the equation, plug in some values, and get a result</li>
-							<li class="fragment">Just like variables, <em>declaring</em> a function creates it</li>
+							<li>"Subprograms" that can be activated at a later time</li>
+							<!-- <li>Collection of statements that perform a task or calculation</li> -->
+							<li class="fragment">Functions are kinda like doing algebra:
+								<ul>
+									<li>
+										Define the equation (declare the function)
+									</li>
+									<li>
+										Plug in your values (pass the function some parameters)
+									</li>
+									<li>
+										Get a result (output)
+									</li>
+								</ul>
+							<!-- <li class="fragment">Just like variables, <em>declaring</em> a function creates it</li> -->
 						</ul>
 						<pre class="fragment"><code class="javascript">
-	function helloWorld(){} // Declared, now it exists!
+	function identifier(parameters*) {
+		statements
+	}
 						</code></pre>
 						<pre class="fragment"><code class="javascript">
-	// Another way of writing it
-	var helloWorld = function(){}; // Stored as a variable
+	// Another way of writing it, stored as a variable
+	var helloWorld = function(params){
+		statements
+	};
 						</code></pre>
 				</section>
 
@@ -576,11 +595,11 @@
 						<li><code>functionName();</code></li>
 					</ul>
 					<pre><code class="javascript">
-	function helloWorld(){    // Declared function named helloWorld
+	function helloWorld(){    // DECLARE a function named helloWorld
 		document.write("Hello world!");  // What you want it to do
 	}
 
-	helloWorld(); // Call the function
+	helloWorld(); // CALL the function
 					</code></pre>
 					<p>Once defined, you can <em>call</em> the function as many times as you want!</p>
 					<p class="green">Reusable code!</p>
@@ -595,12 +614,13 @@
 	function callKitten(kittenName){
 		console.log('Come here, ' + kittenName + '!');
 	}
+
 	callKitten('Fluffy'); // Outputs 'Come here, Fluffy!'
 	callKitten('Admiral Snuggles'); // Outputs 'Come here, Admiral Snuggles!'
 	callKitten('Fizgig'); // Outputs 'Come here, Fizgig!'
 					</code></pre>
-					<p>You can re-use the <em>same function</em> for many different arguments!</p>
-					<p class="green fragment">Reusable code!</p>
+					<p>You can re-use the <em>same</em> function for many <em>different</em> arguments!</p>
+					<p class="green fragment">More reusable code!</p>
 				</section>
 
 				<section>
@@ -612,6 +632,7 @@
  function addNumbers(a,b) {
   document.write(a + b);
  }
+
  addNumbers(5,7); //outputs 12
  addNumbers(9,12); //outputs 21
 					</code></pre>
@@ -648,16 +669,17 @@
 					<h3>Function Returns</h3>
 					<ul>
 						<li>The keyword <code>return</code> produces a value at the end of the function</li>
+						<li>The value can then be used in other actions</li>
 						<li>Immediately exits the function</li>
 					</ul>
 					<pre><code class="javascript">
  var numberOfKittens = 5;
  var numberOfPuppies = 4;
 
- function addAnimals(puppies,kittens){
+ var addAnimals = function(puppies,kittens){
 	return (puppies + kittens);
-	console.log(puppies > kittens); //Will never get to this line
- }
+	console.log("puppies > kittens"); //Will never get to this line
+}
 
  addAnimals(numberOfPuppies,numberOfKittens); // Has returned 9
 					</code></pre>
@@ -670,7 +692,7 @@
  var numberOfKittens = 5;
  var numberOfPuppies = 4;
 
- function addAnimals(puppies,kittens){
+ var addAnimals = function(puppies,kittens) {
 	return (puppies + kittens);
  }
 
