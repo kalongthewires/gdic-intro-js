@@ -444,42 +444,61 @@
 						<code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a></code>
 					</li>
 					<li>
-						<code>text</code>
+						<code>textContent</code>
 					</li>
 				</ul>
 			</section>
 
 			<section>
-				<h2>Break time!</h2>
-			</section>
-
-			<section>
 				<h3>Review: Anatomy of a website</h3>
-				<div class="blue"> Your Content</div>
+				<div class="blue">Content</div>
 				<div>
 					<span class="blue">+ HTML: </span>Structure</div>
 				<div>
 					<span class="blue">+ CSS: </span>Presentation</div>
+					<div class="fragment">
+						<span class="green">+ JS: </span>Function</div>
 				<div class="blue">= Your Website</div>
 				<p>A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</p>
+				<p class="fragment green">JS makes it interactive!</p>
 			</section>
 
 			<section>
 				<h3>IDs vs. Classes</h3>
-				<div class="left-align">
-					<span class="yellow">ID</span> -- Should only apply to one element on a webpage. For instance, a webpage only has one footer.
-					<p>The "#" is how you tell CSS "this is an id."</p>
-				</div>
-				<div class="left-align">
-					<span class="yellow">Class</span> -- Lots of elements can have the same class. For instance, there can be many warnings on one webpage.
-					<p>The "." is how you tell CSS "this is a class name."</p>
-				</div>
+				<ul>
+					<li id="myName" class="fragment">ID
+						<ul>
+							<li>ONE per page! Must be unique.
+								<small>Example: page footer</small>
+							</li>
+							<li class="blue"><code>&lt;p id="myName">My name is Becky&lt;p></code></li>
+							<li class="green"><code>#myName { color: red; }</code></li>
+							<li class="orange"><code>document.getElementById("myName");</code></li>
+						</ul>
+					</li>
+					<li class="fragment">Class
+						<ul>
+							<li>As many as you need. Should be descriptive.
+								<small>Example: green text</small>
+							</li>
+							<li class="blue"><code>&lt;p class="green">My name is Becky&lt;p></code></li>
+							<li class="green"><code>.green { color: green; }</code></li>
+							<li class="orange"><code>document.getElementsByClassName("green");</code></li>
+						</ul>
+					</li>
+				</ul>
 			</section>
 
 
 			<section>
-				<h3>The DOM Tree</h3>
-				<p>We model the nested structure of an HTML page with the DOM (Document Object Model) Tree. The browser makes a "map" of all the elements on a page.</p>
+				<h3>The DOM</h3>
+				<p>We model the nested structure of an HTML page with the DOM (Document Object Model). The browser makes objects, or <strong>node</strong>, of all the elements on a page.</p>
+				<pre><code class="html">
+	&lt;h1>My Page&lt;/h1>
+	&lt;p>Hello World!&lt;/p>
+		</code></pre>
+		<h1>My Page</h1>
+  <p>Hello World!</p>
 			</section>
 			<section>
 				<h3>The DOM: Sample Code</h3>
@@ -489,9 +508,7 @@
 	&lt;html>
 		&lt;head>
 			&lt;title>Test Page&lt;/title>
-			&lt;style>
-				h1 { color: red; }
-			&lt;/style>
+			&lt;style>h1 { color: red; }&lt;/style>
 			&lt;script>
 				alert("It's my fancy website!");
 			&lt;/script>
@@ -510,10 +527,21 @@
 
 			<section>
 				<h3>DOM Access</h3>
-				<p>Your browser automatically builds a Document Object to store the DOM of a page. To change a page:</p>
+				<p>To change something on a page:</p>
 				<ol>
-					<li>Find the DOM node and store it in a variable</li>
-					<li>Use methods to manipulate the node</li>
+					<li>Select the DOM node using JS and store it in a variable
+						<ul>
+							<li>getElementById()</li>
+							<li>getElementsByClassName()</li>
+							<li>getElementsByTagName()</li>
+						</ul>
+					</li>
+					<li>Use methods to manipulate the node
+						<ul>
+							<li>node.innerHTML;</li>
+							<li>node.innerText = "My new text";</li>
+						</ul>
+					</li>
 				</ol>
 			</section>
 			<section>
@@ -534,6 +562,24 @@
 	var imgKitten = document.getElementById('kittenPic');</code>
 				</pre>
 			</section>
+
+			<section>
+				<h3>getElement vs. getElements</h3>
+				<p>Any method that starts with "getElement" will return a
+					<span class="blue">single</span> node.</p>
+				<pre>
+					<code>
+	document.getElementById('uniqueID'); //returns a single node</code>
+				</pre>
+				<p>Any method that starts with "getElements" will return a
+					<span class="blue">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
+				<pre>
+					<code>
+	document.getElementsByTagName('p'); //returns multiple nodes
+	var specficParagraph = document.getElementsByTagName('p')[2];</code>
+				</pre>
+			</section>
+
 			<section>
 				<h3>DOM Access: By Tag Name</h3>
 				<p>You can find certain types of HTML elements using this method:</p>
@@ -551,40 +597,9 @@
 				<pre>
 					<code>
 	var listItems = document.getElementsByTagName('li');
-
 	for (var i = 0; i < listItems.length; i++) {
 		var listItem = listItems[i];
 	}</code>
-				</pre>
-			</section>
-			<section>
-				<h3>DOM Access: HTML 5</h3>
-				<p>In newer browsers, you can use other methods too.</p>
-				<p>Available in <a href="http://caniuse.com/#search=getElementsByClassName">IE9+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
-				<pre>
-					<code>
-	document.getElementsByClassName(className);</code>
-				</pre>
-				<p>Available in <a href="http://caniuse.com/#search=querySelectorAll">IE8+, FF3.6+, Chrome 17+, Safari 5+</a>:</p>
-				<pre>
-					<code>
-	document.querySelector(cssQuery);
-	document.querySelectorAll(cssQuery);</code>
-				</pre>
-			</section>
-			<section>
-				<h3>getElement vs. getElements</h3>
-				<p>Any method that starts with "getElement" will return a
-					<span class="blue">single</span> node.</p>
-				<pre>
-					<code>
-	document.getElementById('uniqueID'); //returns a single node</code>
-				</pre>
-				<p>Any method that starts with "getElements" will return a
-					<span class="blue">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
-				<pre>
-					<code>
-	document.getElementsByTagName('p'); //returns multiple nodes var specficParagraph = document.getElementsByTagName('p')[2];</code>
 				</pre>
 			</section>
 
@@ -604,29 +619,10 @@
 	imgKitten.src = 'http://placekitten.com/100/500';</code>
 				</pre>
 			</section>
-			<section>
-				<h3>DOM Nodes: Getting and Setting Attributes</h3>
-				<p>You can also use
-					<code>getAttribute/setAttribute:</code>
-				</p>
-				<pre>
-					<code>
-	&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
-				</pre>
-				<p>We could change the src attribute this way:</p>
-				<pre>
-					<code>
-	var imgKitten = document.getElementById('kittenPic');
-	var oldSrc = imgKitten.getAttribute('src');
 
-	imgKitten.setAttribute('src', 'http://placekitten.com/100/500');</code>
-				</pre>
-			</section>
 			<section>
 				<h3>DOM Nodes: Styles</h3>
-				<p>You can change page css using
-					<code>style</code>
-				</p>
+				<p>You can change element css using <code>style</code></p>
 				<p>To make this CSS:</p>
 				<pre>
 					<code>
@@ -665,36 +661,17 @@
 
 			<section>
 				<h3>DOM innerHTML</h3>
-				<p>Each DOM node has an
-					<code>innerHTML</code> property with the HTML of all its children. You can use the property to view or change the HTML of a node.</p>
-				<p>For example, you can overwrite the entire body:</p>
-				<pre>
-					<code>
+				<p>Used to get or set content:</p>
+				<pre><code>
 	var pageNode = document.getElementsByTagName('body')[0];
-	pageNode.innerHTML = '&h1>Oh Noes!&/h1> &p>I just changed the whole page!&/p>';</code>
-				</pre>
+	pageNode.innerHTML = '&h1>Oh Noes!&/h1> &p>I just changed the whole page!&/p>';
+				</code></pre>
 				<p>Or just add some new content to the end:</p>
-				<pre>
-					<code>
-	pageNode.innerHTML += '...just adding this bit at the end of the page.';</code>
-				</pre>
+				<pre><code>
+	pageNode.innerHTML += '...just adding this bit at the end of the page.';
+				</code></pre>
 			</section>
-			<section>
-				<h3>DOM innerHTML continued</h3>
-				<p>You can also target a particular element</p>
-				<p>To fill this HTML element:</p>
-				<pre>
-					<code>
-	&lt;p id="warning"></p></code>
-				</pre>
-				<p>We can select the node and modify it:</p>
-				<pre>
-					<code>
-	var warningParagraph = document.getElementById('warning');
-
-	warningParagraph.innerHTML = 'Danger Will Robinson!';</code>
-				</pre>
-			</section>
+			
 			<section>
 				<h3>Creating New Nodes</h3>
 				<p>The
