@@ -351,25 +351,9 @@
 				<p>Or delete them</p>
 				<pre><code>delete aboutMe.gender;</code></pre>
 			</section>
-			<section>
-				<h3>Arrays of Objects</h3>
-				<p>Since arrays can hold any data type, they can also hold objects</p>
-				<pre>
-					<code>
-	var myCats = [
-		{name: 'Lizzie', age: 18},
-		{name: 'Daemon', age: 1}
-	];
 
-	for (var i = 0; i < myCats.length; i++) {
-		var myCat = myCats[i];
-
-		console.log(myCat.name + ' is ' + myCat.age + ' years old.');
-	}</code>
-				</pre>
-			</section>
 			<section>
-				<h3>Arrays of Objects</h3>
+				<h3>Using Objects</h3>
 				<p>Just like other data types, objects can be passed into functions:</p>
 				<pre>
 					<code>
@@ -387,6 +371,25 @@
 	describeCat(lizzieTheCat);</code>
 				</pre>
 			</section>
+
+			<section>
+				<h3>Arrays of Objects</h3>
+				<p>Since arrays can hold any data type, they can also hold objects</p>
+				<pre>
+					<code>
+	var myCats = [
+		{name: 'Lizzie', age: 18},
+		{name: 'Daemon', age: 1}
+	];
+
+	for (var i = 0; i < myCats.length; i++) {
+		var myCat = myCats[i];
+
+		console.log(myCat.name + ' is ' + myCat.age + ' years old.');
+	}</code>
+				</pre>
+			</section>
+
 			<section>
 				<h3>Let's Develop It</h3>
 				<p>Create objects for your other two cats.</p>
