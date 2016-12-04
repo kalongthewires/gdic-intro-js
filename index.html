@@ -99,7 +99,13 @@
 				<section>
 					<h2>Welcome!</h2>
 					<p><strong>Girl Develop It</strong> is here to provide affordable programs to learn coding in a judgement-free environment through mentorship and hands-on instruction.</p>
-					<p class="green"><b>One Rule: Every question is important!</b></p>
+					<p class="green"><b>Some "rules":</b></p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important.</li>
+            <li>Help each other.</li>
+            <li>Have fun.</li>
+          </ul>
 
 				</section>
 
@@ -132,43 +138,24 @@
 					<h3>Let's Get Introduced!</h3>
 					<ul>
 						<li>Who are you?</li>
-						<li>What is your favorite children's book?</li>
-						<li>Have you ever taken Algebra?</li>
+            <li>What do you hope to get out of the class?</li>
+						<li>What is your favorite book or movie from 2016?</li>
 					</ul>
-<pre class="fragment"><code class="text">
- Algebra: Using symbols and rules to solve math equations
-
-	x = 1 and y = 3
-
-	x + y = z
-
-	z = ?
-
-</code></pre>
-					<p class="fragment"><code>x</code>, <code>y</code>, and <code>z</code> are <strong>variables</strong></p>
-					<p class="fragment"><code>x + y = z</code> is an <strong>equation</strong></p>
 				</section>
 
 				<section>
 					<h3>Let's Get Introduced -- to JS!</h3>
 					<p class="green">What is JavaScript?</p>
 					<ul>
-						<li><em>Scripting</em> language
-							<small>Writing <strong>commands</strong> (x + y) that tell your browser to do <strong>actions</strong> (addition!)</small>
+						<li>Programming language</li>
+						<li>Computers have <strong class="blue">client-server</strong> relationship
+							<small>Server sends information, client (browser) displays it</small>
 						</li>
-						<li>Computers have <strong>Client-Server</strong> relationship
-							<small>Server sends information, Client displays it (browser)</small>
-						</li>
-						<li>JS can run on Client-side <em>and</em> Server-side!</li>
+						<li>JS can run on client-side <em>and</em> server-side!</li>
 						<li>Called "the language of the web" - for a reason!</li>
 					</ul>
-					<p>---</p>
-						<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction">
-							"JavaScript can be connected to the <b>objects of its environment</b> (client or server) to provide programmatic control over them."
-						</blockquote>
-					<aside class="notes">
-						<p>Ability to interact with objects from its parent is a rare feature!</p>
-					</aside>
+					<img src="img/client-server.jpg" alt="Laptop and server connected via the internet" width="400"/>
+					<small class="credits">Photo credits: <a href="http://www.flickr.com/photos/papalars/5210226441/" target="_blank">Andrew E. Larson</a> and <a href="http://www.flickr.com/photos/johnseb/3425464/" target="_blank">John Seb Barber</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></small>
 				</section>
 
 				<section>
@@ -181,7 +168,7 @@
 						<li><b>2005-2006:</b> AJAX gets popular, jQuery 1.0 released</li>
 						<li><b>2010:</b> Node.JS released. Now it's server-side!</li>
 						<li><b>2014-2015:</b> Rise of "Client-side MVC frameworks"- server-side techniques in the browser</li>
-						<li><b>2016:</b> Newest ECMAScript spec (ES6) changes a lot! (But more advanced than this class)</li>
+						<li><b>2016:</b> Newest ECMAScript spec (ES6/ES2015+) changes a lot! (But more advanced than this class)</li>
 					</ul>
 					<aside class="notes">
 						<ul>
@@ -233,24 +220,19 @@
 				<section>
 					<h3>Variables</h3>
 					<p>Variables represent information</p>
-<pre><code class="javascript">
-	x = 1
-	x + 2 = 3
+<pre><code class="javascript">x = 1
+x + 2 = 3
 </code></pre>
 					<ul>
-						<li class="fragment"><em>Declared</em> (created) using the word <code>var</code>
-<pre><code class="javascript">
-	var x = 1
-</code></pre>
+						<li class="fragment"><strong class="blue">Declared</strong> (created) using the word <code>var</code>
+<pre><code class="javascript">var x = 1;</code></pre>
 						</li>
-						<li class="fragment">When first declared, it does not have a value (it is <em>undefined</em>).</li>
-						<li class="fragment">Once given a starting value, it is no longer undefined. This is called <em>initializing</em> the variable.</li>
+						<li class="fragment">When first declared, it does not have a value (it is <strong class="blue">undefined</strong>).</li>
+						<li class="fragment">Once given a starting value, it is no longer undefined. This is called <strong class="blue">initializing</strong> the variable.</li>
 					</ul>
-					<pre class="fragment">
-						<code class="javascript try">
-	var lsp; // declared but undefined
-	var lsp = "Lumpy Space Princess"; // initialized
-					</code></pre>
+<pre class="fragment"><code class="javascript try">var lsp; // declared but undefined
+var lsp = "Lumpy Space Princess"; // initialized
+</code></pre>
 				</section>
 
 				<section>
@@ -260,13 +242,13 @@
 						<li class="fragment">Must be unique</li>
 						<li class="fragment">Must start with a letter, <code>$</code>, or <code>_</code>
 							<ul class="fragment">
-								<li><code>$</code> is used by the <b>jQuery</b> library</li>
-								<li><code>_</code> is used by the <b>underscore.js</b> library</li>
+								<li><code>$</code> is used by the <b class="blue">jQuery</b> library</li>
+								<li><code>_</code> is used by the <b class="blue">underscore.js</b> library</li>
 								<li>Best just to start with a letter</li>
 							</ul>
 						</li>
 						<li class="fragment">Can only be made of letters, numbers, $, or _</li>
-						<li class="fragment">Best practice for multiple-word variables is to use <em>camelCase</em>:
+						<li class="fragment">Best practice for multiple-word variables is to use <strong class="blue">camelCase</strong>:
 							<ul>
 								<li><code>var thisIsMyVariable;</code></li>
 								<li>Start with lowercase letter, then capitalize other words</li>
@@ -336,17 +318,17 @@
 						</tr>
 						<tr class="fragment">
 							<th class="green">Arrays</th>
-							<td>Next class!</td>
+							<td>Stay tuned...</td>
 						</tr>
 						<tr class="fragment">
 							<th class="green">Objects</th>
-							<td>Next class!</td>
+							<td>Stay tuned...</td>
 						</tr>
 					</table>
 				</section>
 
 				<section>
-					<div class="left-column fragment">
+					<div class="left-column">
 						<h3>Operators</h3>
 						<table>
 							<tr>
@@ -447,7 +429,7 @@
 				<section>
 					<h2>JavaScript Basics</h2>
 					<h3>Statements</h3>
-					<p>Each instruction in JS is a <b><em>statement</em></b>, like:</p>
+					<p>Each instruction in JS is a <b class="blue">statement</b>, like:</p>
 					<pre><code class="javascript">console.log('Hello Class!');</code></pre>
 					<div class="fragment">
 						<p>After each individual statement, you <em>must</em> add a semicolon to end the command.</p>
@@ -474,7 +456,7 @@
 
 	// Add something to the page:
 	document.write('Hello World!');
-	document.write("kittens" == "kittens");
+	document.write('kittens' === 'kittens');
 					</code></pre>
 				</section>
 
@@ -482,10 +464,11 @@
 					<h3>Comments</h3>
 					<p>You can leave comments in your code that won't be processed in the script.</p>
 					<pre><code class="javascript">
-	// I can wrap long comments
-	// with multiple lines
-	// like this
-	console.log('Hello World!'); // Or short like this
+	/*
+    A comment block
+    For a longer comment that spans multiple lines
+  */
+	console.log('Hello World!'); // A shorter (single-line) comment
 					</code></pre>
 					<p>Comments act as notes that people can read and computers will ignore.</p>
 					<pre><code class="javascript">
