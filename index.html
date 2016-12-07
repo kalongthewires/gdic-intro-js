@@ -400,12 +400,12 @@ var lsp = "Lumpy Space Princess"; // initialized
             <tr>
               <th class="green">
                 &lt;</th>
-                  <td>Less than</td>
+              <td>Less than</td>
             </tr>
             <tr>
               <th class="green">
                 &lt;=</th>
-                  <td>Less or equal</td>
+              <td>Less or equal</td>
             </tr>
           </table>
         </div>
@@ -526,26 +526,30 @@ var lsp = "Lumpy Space Princess"; // initialized
         <h3>Functions</h3>
         <ul>
           <li>Collection of statements that perform a task or calculation</li>
-          <li class="fragment">Functions are kinda like algebra equations:<br/> Define the equation, plug in some values, and get a result</li>
-          <li class="fragment">Just like variables, <em>declaring</em> a function creates it</li>
+          <li>Functions are kinda like algebra equations:<br/> Define the equation, plug in some values, and get a result</li>
+          <li>Just like variables, <strong class="blue">declaring</strong> a function creates it</li>
         </ul>
-        <pre class="fragment"><code class="javascript">
-	function helloWorld(){} // Declared, now it exists!
+        <pre><code class="javascript">
+	function add(value1, value2){
+    console.log(value1 + value2);
+  } // Declared, now it exists!
 						</code></pre>
-        <pre class="fragment"><code class="javascript">
+        <pre><code class="javascript">
 	// Another way of writing it
-	var helloWorld = function(){}; // Stored as a variable
+	var add = function(value1, value2) {
+    console.log(value1 + value2);
+  }; // Stored as a variable
 						</code></pre>
       </section>
 
       <section>
         <h3>Function Syntax</h3>
         <ul>
-          <li>Function <em>definition</em> (or <em>declaration</em>): the entire set of keyword, name, parameters, and statements making up the function</li>
-          <li>Keyword <code>function</code></li>
-          <li>Function <code>name</code></li>
-          <li><em>Parameters</em>: list of <em>arguments</em> the function can use, enclosed with parenthesis <code>()</code></li>
-          <li>Statements are enclosed with curly braces <code>{}</code></li>
+          <li>Function <strong class="blue">definition</strong> (or <strong class="blue">declaration</strong>): the entire set of keyword, name, parameters, and statements making up the function</li>
+          <li>Keyword: <code>function</code></li>
+          <li>Function name: <code>name</code></li>
+          <li><strong class="blue">Parameters</strong>: list of <strong class="blue">arguments</strong> the function can use, enclosed with parentheses <code>()</code></li>
+          <li><strong class="blue">Statements</strong> are enclosed with curly braces <code>{}</code></li>
         </ul>
         <pre><code class="javascript">
 	function name(argument1, argument2){
@@ -559,7 +563,7 @@ var lsp = "Lumpy Space Princess"; // initialized
       <section>
         <h3>Calling Functions</h3>
         <ul>
-          <li><em>Calling</em> a function means to <em>invoke</em> it, or activate it</li>
+          <li><strong class="blue">Calling</strong> a function means to <strong class="blue">invoke</strong> it, or activate it</li>
           <li><em>After</em> it has been defined</li>
           <li><code>functionName();</code></li>
         </ul>
@@ -569,8 +573,8 @@ var lsp = "Lumpy Space Princess"; // initialized
 	}
 
 	helloWorld(); // Call the function
-					</code></pre>
-        <p>Once defined, you can <em>call</em> the function as many times as you want!</p>
+				</code></pre>
+        <p>Once defined, you can <strong class="blue">call</strong> the function as many times as you want!</p>
         <p class="green">Reusable code!</p>
       </section>
 
@@ -597,11 +601,11 @@ var lsp = "Lumpy Space Princess"; // initialized
           <li>Pass multiple arguments</li>
         </ul>
         <pre><code class="javascript">
- function addNumbers(a,b) {
+ function addNumbers(a, b) {
   document.write(a + b);
  }
- addNumbers(5,7); //outputs 12
- addNumbers(9,12); //outputs 21
+ addNumbers(5, 7); // outputs 12
+ addNumbers(9, 12); // outputs 21
 					</code></pre>
         <ul>
           <li>Pass variables as arguments</li>
@@ -610,50 +614,53 @@ var lsp = "Lumpy Space Princess"; // initialized
  // Declare variables
  var numberOfKittens = 5;
  var numberOfPuppies = 4;
- var numberOfGoats = 14;
+ var numberOfBlackKittens = 2;
  // Define function
- function addAnimals(puppies,kittens){
+ function addAnimals(puppies, kittens){
   console.log('You now have ' + (puppies + kittens) + ' pets!');
  }
  //Use variables in the function
  addAnimals(numberOfPuppies,numberOfKittens);
- addAnimals(numberOfPuppies,numberOfGoats);
+ addAnimals(numberOfPuppies,numberOfBlackKittens);
 					</code></pre>
       </section>
 
       <section>
-        <h3>Let's Develop It!</h3>
+        <h3>Example</h3>
         <p>Writing multiple lines in your console gets tough, so let's use <a href="http://codepen.io/pen/">Codepen.io</a></p>
         <ul>
-          <li>In the JS area, write a function called <code>sayMyName</code></li>
-          <li>Takes 2 parameters: <code>firstName</code> and <code>lastName</code></li>
-          <li>Output (either <code>alert</code> or <code>document.write</code>) a string that joins <code>firstName</code> and <code>lastName</code></li>
-          <li>Call your function by passing it your first and last names as <code>strings</code></li>
+          <li>In the JS area, write a function called <code>subtract</code></li>
+          <li>Takes 2 parameters: <code>value1</code> and <code>value2</code></li>
+          <li>Outputs the result of subtracting value2 from value1 (using either <code>alert</code> or <code>document.write</code>)</li>
+          <li>Call your function by passing it two numbers</li>
         </ul>
+      </section>
+
+      <section>
+        <section>
+          <h3>Let's Develop It!</h3>
+          <p>Writing multiple lines in your console gets tough, so let's use <a href="http://codepen.io/pen/">Codepen.io</a></p>
+          <ul>
+            <li>In the JS area, write a function called <code>sayMyName</code></li>
+            <li>Takes 2 parameters: <code>firstName</code> and <code>lastName</code></li>
+            <li>Output (either <code>alert</code> or <code>document.write</code>) a string that joins <code>firstName</code> and <code>lastName</code></li>
+            <li>Call your function by passing it your first and last names as <code>strings</code></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Let's Develop It!</h3>
+          <ul>
+            <li>Write a function similar to <code>sayMyName</code> called <code>greet</code></li>
+            <li>Takes 2 parameters: <code>firstName</code> and <code>lastName</code></li>
+            <li>Output (either <code>alert</code> or <code>document.write</code>) a greeting with your name (e.g. "Hello, Kim Hamper!")</li>
+            <li>Call your function by passing it your first and last names as <code>strings</code></li>
+          </ul>
+        </section>
       </section>
 
       <section>
         <h3>Function Returns</h3>
-        <ul>
-          <li>The keyword <code>return</code> produces a value at the end of the function</li>
-          <li>Immediately exits the function</li>
-        </ul>
-        <pre><code class="javascript">
- var numberOfKittens = 5;
- var numberOfPuppies = 4;
-
- function addAnimals(puppies,kittens){
-	return (puppies + kittens);
-	console.log(puppies &gt; kittens); //Will never get to this line
- }
-
- addAnimals(numberOfPuppies,numberOfKittens); // Has returned 9
-					</code></pre>
-        <p class="fragment">But how do you know?!</p>
-      </section>
-
-      <section>
-        <h3>Ways to use Returns</h3>
+        <p>The keyword <code>return</code> produces a value at the end of the function</p>
         <pre><code class="javascript">
  var numberOfKittens = 5;
  var numberOfPuppies = 4;
@@ -673,17 +680,33 @@ var lsp = "Lumpy Space Princess"; // initialized
       </section>
 
       <section>
+        <h3>Function Returns</h3>
+        <p>Immediately exits the function</p>
+        <pre><code class="javascript">
+var numberOfKittens = 5;
+var numberOfPuppies = 4;
+
+function addAnimals(puppies,kittens){
+  return (puppies + kittens);
+  console.log(puppies &gt; kittens); // Will never get to this line
+}
+
+addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
+        </code></pre>
+      </section>
+
+      <section>
         <h3>Arrays</h3>
         <pre><code class="javascript">
  var arrayName = [thing0, thing1, thing2, thing3];
 					</code></pre>
         <ul>
-          <li class="fragment">Arrays are <strong>ordered</strong> lists of values</li>
-          <li class="fragment">Wrapped by square brackets <code>[]</code></li>
-          <li class="fragment">Location of a value is called its <strong>index</strong></li>
-          <li class="fragment"><strong>0-based</strong>: count starts at 0, not 1</li>
-          <li class="fragment green">The <code>value</code> of <code>arrayName</code> at <code>index 0</code> is <code>thing0</code></li>
-          <li class="fragment">You can put different types of data into an array</li>
+          <li>Arrays are <strong>ordered</strong> lists of values</li>
+          <li>Wrapped by square brackets <code>[]</code></li>
+          <li>Location of a value is called its <strong class="blue">index</strong></li>
+          <li><strong>zero-based</strong>: count starts at 0, not 1</li>
+          <li class="green">The <code>value</code> of <code>arrayName</code> at <code>index 0</code> is <code>thing0</code></li>
+          <li>You can put different types of data into an array</li>
         </ul>
         <pre class="fragment"><code>
  var colors = ['Red','Orange','Yellow','Green','Blue','Indigo','Violet'];
@@ -694,11 +717,12 @@ var lsp = "Lumpy Space Princess"; // initialized
 
       <section>
         <h3>Using arrays</h3>
-        <p>Access items in an array by wrapping its possition with <em>"bracket notation"</em> <code>[]</code></p>
+        <p>Access items in an array using <strong class="blue">bracket notation</strong>:</p>
         <pre><code class="javascript">
  var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
- var firstCat = catNames[0]; //0-based! Returns 'Fluffy'
- var lastCat = catNames[2]; //1 less than length because 0-based!
+
+ var firstCat = catNames[0]; // Zero-based! Sets firstCat to 'Fluffy'
+ var lastCat = catNames[2]; // Sets lastCat to 'Fizgig'
 					</code></pre>
         <p>Change a particular value by accessing its <code>index</code> using bracket notation</p>
         <pre><code class="javascript">
@@ -711,7 +735,7 @@ var lsp = "Lumpy Space Princess"; // initialized
         <h3>Using Arrays</h3>
         <p>Get the length of an array with <code>.length</code></p>
         <pre><code class="javascript">
- var howManyCats = catNames.length; //Returns 3
+ var numberOfCats = catNames.length; // sets numberOfCats to 3
 					</code></pre>
         <p>Add something to the <em>end</em> of an array with <code>.push()</code></p>
         <pre><code class="javascript">
@@ -734,8 +758,8 @@ var lsp = "Lumpy Space Princess"; // initialized
  var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
 
  function printNames(arrayOfNames) {
-	 //Print out each cat name
-	 //What goes here?
+	 // Print out each cat name
+	 // What goes here?
  }
 
  printNames(catNames);
@@ -744,18 +768,17 @@ var lsp = "Lumpy Space Princess"; // initialized
 
       <section>
         <h3>Loops</h3>
-        <p>Process a set of data by <em>iterating</em> through the set<br> and performing an action to each item</p>
+        <p>Process a set of data by <strong class="blue">iterating</strong> through the set<br> and performing an action to each item</p>
         <ul>
           <li><code>while</code> loops</li>
           <li><code>for</code> loops</li>
-          <li><strong>Require:</strong>
+          <li>Require:
             <ul>
               <li>Set of data (a range or an array)</li>
               <li>Ending condition</li>
             </ul>
           </li>
-          <li>infinite loops = sadfaces</li>
-          <li class="fragment">Forgot the ending condition! (Or it's invalid)</li>
+          <li>An <strong class="blue">infinite loop</strong> occurs if you forget the ending condition! (Or if it's invalid.)</li>
         </ul>
       </section>
 
@@ -763,12 +786,14 @@ var lsp = "Lumpy Space Princess"; // initialized
       <section>
         <h3>While loops</h3>
         <p>Repeats the same code over and over until some condition is met</p>
+        <p class="green">Let's try an example:</p>
         <pre><code>
- var numberOfTacos = 10;
- while (numberOfTacos &gt; 0) {
-  console.log('OM NOM NOM'); //Eat a taco
-  numberOfTacos =- 1; //Decrement by 1
- }
+  var numberOfTacos = 10;
+
+  while (numberOfTacos &gt; 0) {
+    console.log('OM NOM NOM'); // Eat a taco
+    numberOfTacos--; // What does this do?
+  }
 					</code></pre>
         <div class="fragment">
           <p><code>while (numberOfTacos &gt; 0)</code> is the ending condition</p>
@@ -785,44 +810,70 @@ var lsp = "Lumpy Space Princess"; // initialized
       </section>
       <section>
         <h3>For loops</h3>
-        <p>For loops are very similar, but you declare a counter in the statement.</p>
+        <p>For loops are very similar, but you declare a <strong class="blue">counter</strong> in the statement.</p>
+        <p class="green">Let's try an example:</p>
         <pre><code>
-//will count 1 to 10
-for (var i = 1; i &lt;= 10; i++) {
-console.log (i);
-}
+  // will count 1 to 10
+  for (var i = 1; i &lt;= 10; i++) {
+    console.log(i);
+  }
 		</code></pre>
       </section>
       <section>
         <h3>Break</h3>
         <p>To exit a loop, use the break statement.</p>
         <pre><code>
-//Count from 100 to 200
-for (var i = 100; i &lt;= 200; i++) {
-console.log('Testing ' + i);
-//Stop at the first multiple of 7
-if (i % 7 == 0) {
-		console.log('Found it! ' + i);
-		break;
-}
-}
+  //Count from 100 to 200
+  for (var i = 100; i &lt;= 200; i++) {
+    console.log('Testing ' + i);
+
+    //Stop at the first multiple of 7
+    if (i % 7 == 0) {
+      console.log('Found it! ' + i);
+      break;
+    }
+  }
 		</code></pre>
       </section>
-
 
       <section>
         <h3>Iterating through arrays</h3>
         <p>Use a for loop to easily process each item in an array.</p>
         <pre><code>
-			var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
-			for (var i = 0; i &lt; rainbowColors.length; i++) {
-			console.log(rainbowColors[i]);
-			}
+  var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+
+  for (var i = 0; i &lt; rainbowColors.length; i++) {
+    console.log(rainbowColors[i]);
+  }
 						</code></pre>
       </section>
       <section>
-        <h3>Let's Develop It</h3>
-        <p>Use a loop to make a list of all your favorite foods.</p>
+        <section>
+          <h3>Let's Develop It</h3>
+          <p>Go back to our array of catNames and implement the printNames function, using a <code>for</code> loop:</p>
+          <pre><code class="javascript">
+  var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+
+  function printNames(arrayOfNames) {
+    // Print out each cat name
+    // What goes here?
+  }
+
+  printNames(catNames);
+					</code></pre>
+        </section>
+        <section>
+          <h3>Let's Develop It</h3>
+          <p>Use a <code>for</code> loop to display a list of all your favorite foods. Use the previous lab as a guide.</p>
+        </section>
+        <section>
+          <h3>Let's Develop It</h3>
+          <p>Display a list of your favorite foods again, but this time use a <code>while</code> loop.</p>
+        </section>
+      </section>
+
+      <section>
+        <h2>Questions?</h2>
       </section>
       <!-- Class 3 Slides: Basics -->
       <section id="class3slides">
