@@ -102,7 +102,7 @@
 
       <section>
         <h2>Welcome!</h2>
-        <p><strong>Girl Develop It</strong> is here to provide affordable programs to learn coding in a judgement-free environment through mentorship and hands-on instruction.</p>
+        <p><strong>Girl Develop It</strong> is here to provide affordable and judgment-free opportunities for women interested in learning web and software development.</p>
         <p class="green"><b>Some "rules":</b></p>
         <ul>
           <li>We are here for you!</li>
@@ -114,19 +114,16 @@
       </section>
 
       <section>
-        <h2>Course Overview</h2>
+        <h2>Today's Class</h2>
         <ul>
           <li><a href="#/class1slides">Part 1: Introduction and Fundamentals</a>
             <small>Getting set up</small>
             <small>Data types, operators, conditionals, and variables</small>
           </li>
+          <li><span class="blue">Lunch ~ 11:30pm</span></li>
           <li><a href="#/class2slides">Part 2: Working with JavaScript</a>
             <small>Functions, arrays, loops, and conditionals</small>
           </li>
-          <li><a href="#/class3slides">Part 3</a></li>
-          <li><a href="#/class4slides">Part 4</a></li>
-          <li><a href="#/definitions">Definitions</a></li>
-          <!-- <li><a href="#/references">References</a></li> -->
         </ul>
       </section>
 
@@ -143,7 +140,7 @@
         <ul>
           <li>Who are you?</li>
           <li>What do you hope to get out of the class?</li>
-          <li>What is your favorite book or movie from 2016?</li>
+          <li>What is your favorite dessert?</li>
         </ul>
       </section>
 
@@ -151,8 +148,8 @@
         <h3>Let's Get Introduced -- to JS!</h3>
         <p class="green">What is JavaScript?</p>
         <ul>
-          <li>Programming language</li>
-          <li>Computers have <strong class="blue">client-server</strong> relationship
+          <li>Scripting language</li>
+          <li>Computers have a <strong class="blue">client-server</strong> relationship
             <small>Server sends information, client (browser) displays it</small>
           </li>
           <li>JS can run on client-side <em>and</em> server-side!</li>
@@ -165,14 +162,14 @@
       <section>
         <h3>History of JS</h3>
         <ul>
-          <li><b>1995:</b> At Netscape, Brendan Eich created "Mocha" in only 10 days!</li>
+          <li><b>1995:</b> At Netscape, <strong class="blue">Brendan Eich</strong> created "Mocha" in only 10 days!</li>
           <li>That same year, Mocha is renamed "JavaScript"</li>
-          <li><b>1997:</b> Standardized by the <a href="https://en.wikipedia.org/wiki/Ecma_International" title="European Computer Manufacturers Association">ECMA</a> as "ECMAScript"</li>
+          <li><b>1997:</b> Standardized by the <a href="https://en.wikipedia.org/wiki/Ecma_International" title="European Computer Manufacturers Association">ECMA</a> as <strong class="blue">"ECMAScript"</strong></li>
           <li><b>1998-2003:</b> Various battles between browser vendors about adoption! IE boooo</li>
-          <li><b>2005-2006:</b> AJAX gets popular, jQuery 1.0 released</li>
-          <li><b>2010:</b> Node.JS released. Now it's server-side!</li>
+          <li><b>2005-2006:</b> AJAX gets popular; <strong class="blue">jQuery</strong> 1.0 released</li>
+          <li><b>2010:</b> <strong class="blue">Node.js</strong> released. Now it's server-side!</li>
           <li><b>2014-2015:</b> Rise of "Client-side MVC frameworks"- server-side techniques in the browser</li>
-          <li><b>2016:</b> Newest ECMAScript spec (ES6/ES2015+) changes a lot! (But more advanced than this class)</li>
+          <li><b>2016:</b> Newest <strong class="blue">ECMAScript</strong> spec (<strong class="blue">ES6/ES2015+</strong>) changes a lot! (But more advanced than this class)</li>
         </ul>
         <aside class="notes">
           <ul>
@@ -224,41 +221,53 @@
       <section>
         <h3>Variables</h3>
         <p>Variables represent information</p>
-        <pre><code class="javascript">x = 1
-x + 2 = 3
-</code></pre>
+        <pre><code class="javascript">
+  var x;
+  x = 1;
+  x + 2; // = 3
+        </code></pre>
         <ul>
-          <li class="fragment"><strong class="blue">Declared</strong> (created) using the word <code>var</code>
-            <pre><code class="javascript">var x = 1;</code></pre>
-          </li>
-          <li class="fragment">When first declared, it does not have a value (it is <strong class="blue">undefined</strong>).</li>
-          <li class="fragment">Once given a starting value, it is no longer undefined. This is called <strong class="blue">initializing</strong> the variable.</li>
+          <li><strong class="blue">Declared</strong> (created) using the word <code>var</code></li>
+          <li>When first declared, it does not have a value (it is <strong class="blue">undefined</strong>).</li>
+          <li>Once given a starting value, it is no longer undefined. This is called <strong class="blue">initializing</strong> the variable.</li>
         </ul>
-        <pre class="fragment"><code class="javascript try">var lsp; // declared but undefined
-var lsp = "Lumpy Space Princess"; // initialized
-</code></pre>
+        <pre><code class="javascript try">
+  var lsp; // declared but undefined
+  lsp = "Lumpy Space Princess"; // initialized
+
+  var lsp = "Lumpy Space Princess"; // declared and initialized
+        </code></pre>
       </section>
 
       <section>
-        <h3>Naming Variables</h3>
-        <ul>
-          <li class="fragment">Case-sensitive: ohio != Ohio</li>
-          <li class="fragment">Must be unique</li>
-          <li class="fragment">Must start with a letter, <code>$</code>, or <code>_</code>
-            <ul class="fragment">
-              <li><code>$</code> is used by the <b class="blue">jQuery</b> library</li>
-              <li><code>_</code> is used by the <b class="blue">underscore.js</b> library</li>
-              <li>Best just to start with a letter</li>
-            </ul>
-          </li>
-          <li class="fragment">Can only be made of letters, numbers, $, or _</li>
-          <li class="fragment">Best practice for multiple-word variables is to use <strong class="blue">camelCase</strong>:
-            <ul>
-              <li><code>var thisIsMyVariable;</code></li>
-              <li>Start with lowercase letter, then capitalize other words</li>
-            </ul>
-          </li>
-        </ul>
+        <section>
+          <h3>Naming Variables</h3>
+          <ul>
+            <li>Case-sensitive: ohio != Ohio</li>
+            <li>Must be unique</li>
+            <li>Must start with a letter, <code>$</code>, or <code>_</code>
+              <ul>
+                <li><code>$</code> is used by the <b class="blue">jQuery</b> library</li>
+                <li><code>_</code> is used by the <b class="blue">underscore.js</b> library</li>
+                <li>Best just to start with a letter</li>
+              </ul>
+            </li>
+            <li>Can only be made of letters, numbers, $, or _</li>
+            <li>Best practice for multiple-word variables is to use <strong class="blue">camelCase</strong>:
+              <ul>
+                <li><code>var thisIsMyVariable;</code></li>
+                <li>Start with lowercase letter, then capitalize other words</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Vocabulary!</h3>
+          <dl>
+            <dt><b class="blue">JavaScript Library</b></dt>
+            <dd>A collection of pre-written JavaScript available for reuse to make development quicker and easier. Examples: jQuery, underscore.js.</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -268,7 +277,7 @@ var lsp = "Lumpy Space Princess"; // initialized
 	var numberOfKittens = 5;
 	console.log(numberOfKittens);
 					</code></pre>
-        <li class="fragment">The value of a variable can change (be updated) later (don't need to re-use <code>var</code>).</li>
+        <p class="fragment">The value of a variable can change (be updated) later. (You don't need to re-use <code>var</code>).</p>
         <pre class="fragment"><code class="javascript try">
 	numberOfKittens = 13;
 	console.log(numberOfKittens);
@@ -277,7 +286,7 @@ var lsp = "Lumpy Space Princess"; // initialized
 
       <section>
         <h3>Let's Develop It!</h3>
-        <p>In your console, create a variable and give it a valid name and a value. Then, display the value.</p>
+        <p>In your console, create a variable and set it equal to a value. Then, display the value.</p>
         <p class="fragment">Next, try this one:</p>
         <pre class="fragment"><code class="javascript">
 	var kittenTitle = 'Admiral';
@@ -295,37 +304,33 @@ var lsp = "Lumpy Space Princess"; // initialized
       <section>
         <h3>Data Types</h3>
         <table>
-          <th class="green fragment">Numbers</th>
-          <tr class="fragment">
+          <th class="green">Number</th>
+          <tr>
             <td><b>Integers</b></td>
             <td><code>0, 1, 2 ... 9</code></td>
           </tr>
-          <tr class="fragment">
+          <tr>
             <td><b>Floats</b> (decimals)</td>
             <td><code>0.5, 1.618, 3.14</code></td>
           </tr>
-          <tr class="fragment">
-            <th class="green">Strings</th>
+          <tr>
+            <th class="green">String</th>
             <td><code>"GDI", 'rock on', "three"</code></td>
           </tr>
-          <tr class="fragment">
+          <tr>
             <th class="green">Boolean</th>
             <td><code>true</code> or <code>false</code></td>
           </tr>
-          <tr class="fragment">
+          <tr>
             <th class="green">Null</th>
             <td><code>null</code></td>
           </tr>
-          <tr class="fragment">
+          <tr>
             <th class="green">Undefined</th>
             <td><code>undefined</code></td>
           </tr>
-          <tr class="fragment">
-            <th class="green">Arrays</th>
-            <td>Stay tuned...</td>
-          </tr>
-          <tr class="fragment">
-            <th class="green">Objects</th>
+          <tr>
+            <th class="green">Object</th>
             <td>Stay tuned...</td>
           </tr>
         </table>
@@ -436,7 +441,9 @@ var lsp = "Lumpy Space Princess"; // initialized
         <h2>JavaScript Basics</h2>
         <h3>Statements</h3>
         <p>Each instruction in JS is a <b class="blue">statement</b>, like:</p>
-        <pre><code class="javascript">console.log('Hello Class!');</code></pre>
+        <pre><code class="javascript">
+  console.log('Hello Class!');
+        </code></pre>
         <div class="fragment">
           <p>After each individual statement, you <em>must</em> add a semicolon to end the command.</p>
           <pre><code class="javascript">
@@ -485,42 +492,30 @@ var lsp = "Lumpy Space Princess"; // initialized
 					</code></pre>
       </section>
 
-      <section>
-        <h3>Class 1 Homework</h3>
-        <p>Read over some introductory materials on JavaScript variables. If you want to look ahead, next time we'll be talking about <code>functions</code>, <code>arrays</code>, and <code>objects</code>.</p>
-        <ul>
-          <li><a href="https://www.codecademy.com/learn/javascript">Codecademy Intro to JS: Unit 1</a></li>
-          <li>Check out some browser-based JS tools like <a href="https://jsbin.com">jsbin</a> or <a href="http://jsfiddle.net/">jsfiddle</a>
-            <ul>
-              <li>Hint: Use the button labeled <code>run</code> to process your code</li>
-            </ul>
-          </li>
-          <li>Bring any questions you think of to next class</li>
-        </ul>
-        <blockquote class="green fragment"><b>Remember:<br/>Every question is important!</b></blockquote>
-      </section>
-
-
       <!-- Class 2 Slides: Basics -->
       <section id="class2slides">
-        <h2>Class 2 Slides</h2>
+        <h2>Part 2 Slides</h2>
         <p>Working with JavaScript</p>
         <small>Functions, Arrays, Loops, and Conditionals</small>
       </section>
 
       <section>
-        <h3>Class 1 Review</h3>
-        <p>Did you find anything interesting about JS since last time?</p>
+        <h3>Part 1 Review</h3>
         <ul>
-          <li class="fragment">Data Types - Which can you remember?</li>
+          <li>Data Types - Which can you remember?</li>
           <li class="fragment">Operators</li>
-          <li class="fragment">Comparators
-            <pre><code class="javascript">== vs ===</code></pre>
+          <li class="fragment">Comparators (<code class="javascript">==</code> vs <code>===</code>)
           </li>
           <li class="fragment">Variables
-            <pre><code class="javascript">var students = "Javascript stars!";</code></pre>
+            <pre><code class="javascript">
+  var students = "Javascript stars!";
+            </code></pre>
           </li>
         </ul>
+      </section>
+      <section>
+        <h3>Codepen</h3>
+        <p>Writing multiple lines in your console gets tough, so let's switch to <a href="http://codepen.io/pen/">Codepen.io</a>.</p>
       </section>
       <section>
         <h3>Functions</h3>
@@ -564,8 +559,7 @@ var lsp = "Lumpy Space Princess"; // initialized
         <h3>Calling Functions</h3>
         <ul>
           <li><strong class="blue">Calling</strong> a function means to <strong class="blue">invoke</strong> it, or activate it</li>
-          <li><em>After</em> it has been defined</li>
-          <li><code>functionName();</code></li>
+          <li>Can call a function <em>after</em> it has been defined: <code>functionName();</code></li>
         </ul>
         <pre><code class="javascript">
 	function helloWorld(){    // Declared function named helloWorld
@@ -601,33 +595,31 @@ var lsp = "Lumpy Space Princess"; // initialized
           <li>Pass multiple arguments</li>
         </ul>
         <pre><code class="javascript">
- function addNumbers(a, b) {
-  document.write(a + b);
- }
- addNumbers(5, 7); // outputs 12
- addNumbers(9, 12); // outputs 21
+  function calculateTip(totalBill, percentage) {
+    document.write(totalBill * percentage/100);
+  }
+
+  calculateTip(12, 20); // outputs 2.4
+  calculateTip(18, 20); // outputs 3.6
 					</code></pre>
         <ul>
           <li>Pass variables as arguments</li>
         </ul>
         <pre><code class="javascript">
- // Declare variables
- var numberOfKittens = 5;
- var numberOfPuppies = 4;
- var numberOfBlackKittens = 2;
- // Define function
- function addAnimals(puppies, kittens){
-  console.log('You now have ' + (puppies + kittens) + ' pets!');
- }
- //Use variables in the function
- addAnimals(numberOfPuppies,numberOfKittens);
- addAnimals(numberOfPuppies,numberOfBlackKittens);
+  var defaultPercentage = 20;
+
+  function calculateTip(totalBill, percentage) {
+    document.write(totalBill * percentage/100);
+  }
+
+  calculateTip(12, defaultPercentage); // outputs 2.4
+  calculateTip(18, defaultPercentage); // outputs 3.6
 					</code></pre>
       </section>
 
       <section>
-        <h3>Example</h3>
-        <p>Writing multiple lines in your console gets tough, so let's use <a href="http://codepen.io/pen/">Codepen.io</a></p>
+        <h3>Let's Try An Example</h3>
+        <p>Use <a href="http://codepen.io/pen/">Codepen.io</a> to try the following:</p>
         <ul>
           <li>In the JS area, write a function called <code>subtract</code></li>
           <li>Takes 2 parameters: <code>value1</code> and <code>value2</code></li>
@@ -639,16 +631,16 @@ var lsp = "Lumpy Space Princess"; // initialized
       <section>
         <section>
           <h3>Let's Develop It!</h3>
-          <p>Writing multiple lines in your console gets tough, so let's use <a href="http://codepen.io/pen/">Codepen.io</a></p>
+          <p>Use <a href="http://codepen.io/pen/">Codepen.io</a> to try the following:</p>
           <ul>
             <li>In the JS area, write a function called <code>sayMyName</code></li>
             <li>Takes 2 parameters: <code>firstName</code> and <code>lastName</code></li>
             <li>Output (either <code>alert</code> or <code>document.write</code>) a string that joins <code>firstName</code> and <code>lastName</code></li>
-            <li>Call your function by passing it your first and last names as <code>strings</code></li>
+            <li>Call your function by passing it your first and last names as strings</li>
           </ul>
         </section>
         <section>
-          <h3>Let's Develop It!</h3>
+          <h3>Bonus: Let's Develop It!</h3>
           <ul>
             <li>Write a function similar to <code>sayMyName</code> called <code>greet</code></li>
             <li>Takes 2 parameters: <code>firstName</code> and <code>lastName</code></li>
@@ -662,20 +654,20 @@ var lsp = "Lumpy Space Princess"; // initialized
         <h3>Function Returns</h3>
         <p>The keyword <code>return</code> produces a value at the end of the function</p>
         <pre><code class="javascript">
- var numberOfKittens = 5;
- var numberOfPuppies = 4;
+  var numberOfKittens = 5;
+  var numberOfPuppies = 4;
 
- function addAnimals(puppies,kittens){
-	return (puppies + kittens);
- }
+  function addAnimals(puppies, kittens){
+    return puppies + kittens;
+  }
 
- // Save the returned value as a variable
- // then output the variable
- var myAnimals = addAnimals(numberOfPuppies,numberOfKittens);
- document.write(myAnimals);
+  // Save the returned value as a variable
+  // then output the variable
+  var totalAnimals = addAnimals(numberOfPuppies, numberOfKittens);
+  document.write(myAnimals);
 
- // Output the returned value directly
- document.write(addAnimals(numberOfPuppies,numberOfKittens));
+  // Output the returned value directly
+  document.write(addAnimals(numberOfPuppies, numberOfKittens));
 					</code></pre>
       </section>
 
@@ -683,22 +675,22 @@ var lsp = "Lumpy Space Princess"; // initialized
         <h3>Function Returns</h3>
         <p>Immediately exits the function</p>
         <pre><code class="javascript">
-var numberOfKittens = 5;
-var numberOfPuppies = 4;
+  var numberOfKittens = 5;
+  var numberOfPuppies = 4;
 
-function addAnimals(puppies,kittens){
-  return (puppies + kittens);
-  console.log(puppies &gt; kittens); // Will never get to this line
-}
+  function addAnimals(puppies, kittens){
+    return puppies + kittens;
+    console.log(puppies &gt; kittens); // Will never get to this line
+  }
 
-addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
+  addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
         </code></pre>
       </section>
 
       <section>
         <h3>Arrays</h3>
         <pre><code class="javascript">
- var arrayName = [thing0, thing1, thing2, thing3];
+  var arrayName = [thing0, thing1, thing2, thing3];
 					</code></pre>
         <ul>
           <li>Arrays are <strong>ordered</strong> lists of values</li>
@@ -708,10 +700,10 @@ addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
           <li class="green">The <code>value</code> of <code>arrayName</code> at <code>index 0</code> is <code>thing0</code></li>
           <li>You can put different types of data into an array</li>
         </ul>
-        <pre class="fragment"><code>
- var colors = ['Red','Orange','Yellow','Green','Blue','Indigo','Violet'];
- var lotteryNumbers = [33, 72, 64, 18, 17, 85];
- var mixOfThings = ['Cheese', 100, 'Sherlock', ["array","in","array"]];
+        <pre><code>
+  var colors = ['Red','Orange','Yellow','Green','Blue','Indigo','Violet'];
+  var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+  var mixOfThings = ['Cheese', 100, 'Sherlock', ["array","in","array"]];
 					</code></pre>
       </section>
 
@@ -719,15 +711,15 @@ addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
         <h3>Using arrays</h3>
         <p>Access items in an array using <strong class="blue">bracket notation</strong>:</p>
         <pre><code class="javascript">
- var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
+  var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
 
- var firstCat = catNames[0]; // Zero-based! Sets firstCat to 'Fluffy'
- var lastCat = catNames[2]; // Sets lastCat to 'Fizgig'
+  var firstCat = catNames[0]; // Zero-based! Sets firstCat to 'Fluffy'
+  var lastCat = catNames[2]; // Sets lastCat to 'Fizgig'
 					</code></pre>
         <p>Change a particular value by accessing its <code>index</code> using bracket notation</p>
         <pre><code class="javascript">
- catNames[2] = 'Fizzgig'; // Fix that spelling!
- console.log(catNames);
+  catNames[2] = 'Fizzgig'; // Fix that spelling!
+  console.log(catNames);
 					</code></pre>
       </section>
 
@@ -735,13 +727,13 @@ addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
         <h3>Using Arrays</h3>
         <p>Get the length of an array with <code>.length</code></p>
         <pre><code class="javascript">
- var numberOfCats = catNames.length; // sets numberOfCats to 3
+  var numberOfCats = catNames.length; // sets numberOfCats to 3
 					</code></pre>
         <p>Add something to the <em>end</em> of an array with <code>.push()</code></p>
         <pre><code class="javascript">
- var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
- catNames.push('Miss Havisham');
- console.log(catNames);
+  var catNames = ['Fluffy','Admiral Snuggles','Fizgig'];
+  catNames.push('Miss Havisham');
+  console.log(catNames);
 					</code></pre>
       </section>
 
@@ -753,16 +745,19 @@ addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
           <li>Change a food using bracket notation.</li>
           <li>Output a few foods onto your screen.</li>
         </ul>
-        <p class="fragment green">What if we wanted to simplify this?<br/>Could we write a function?</p>
+      </section>
+
+      <section>
+        <p class="green">What if we wanted to simplify this?<br/>Could we write a function?</p>
         <pre class="fragment"><code class="javascript">
- var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
+  var catNames = ['Fluffy','Admiral Snuggles','Fizzgig','Miss Havisham'];
 
- function printNames(arrayOfNames) {
-	 // Print out each cat name
-	 // What goes here?
- }
+  function printNames(arrayOfNames) {
+   // Print out each cat name
+   // What goes here?
+  }
 
- printNames(catNames);
+  printNames(catNames);
 					</code></pre>
       </section>
 
@@ -875,10 +870,39 @@ addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
       <section>
         <h2>Questions?</h2>
       </section>
+
+      <section>
+        <h3>Day 1 Homework</h3>
+        <p>Read over some introductory materials on JavaScript variables. If you want to look ahead, next time we'll be talking about <code>functions</code>, <code>arrays</code>, and <code>objects</code>.</p>
+        <ul>
+          <li><a href="https://www.codecademy.com/learn/javascript">Codecademy Intro to JS: Unit 1</a></li>
+          <li>Check out some browser-based JS tools like <a href="https://jsbin.com">jsbin</a> or <a href="http://jsfiddle.net/">jsfiddle</a>
+            <ul>
+              <li>Hint: Use the button labeled <code>run</code> to process your code</li>
+            </ul>
+          </li>
+          <li>Bring any questions you think of to next class</li>
+        </ul>
+        <blockquote class="green fragment"><b>Remember:<br/>Every question is important!</b></blockquote>
+      </section>
       <!-- Class 3 Slides: Basics -->
       <section id="class3slides">
-        <h2>Class 3 Slides</h2>
+        <h2>Part 3 Slides</h2>
+      </section>
 
+      <section>
+        <h3>Review</h3>
+        <p>Did you find anything interesting about JS since last time?</p>
+        <ul>
+          <li class="fragment">Data Types - Which can you remember?</li>
+          <li class="fragment">Operators</li>
+          <li class="fragment">Comparators
+            <pre><code class="javascript">== vs ===</code></pre>
+          </li>
+          <li class="fragment">Variables
+            <pre><code class="javascript">var students = "Javascript stars!";</code></pre>
+          </li>
+        </ul>
       </section>
 
       <section>
@@ -888,7 +912,7 @@ addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
 
       <!-- Class 4 Slides: Basics -->
       <section id="class4slides">
-        <h2>Class 4 Slides</h2>
+        <h2>Part 4 Slides</h2>
 
       </section>
 
@@ -908,23 +932,7 @@ addAnimals(numberOfPuppies, numberOfKittens); // Has returned 9
         </dl>
       </section>
 
-      <!-- Definitions -->
-      <section>
-        <h2>JS Terms</h2>
-        <div class="left-column"></div>
-        <div class="right-column"></div>
-        <dl>
-          <dt>Client Side</dt>
-          <dd></dd>
-          <dt>Server Side</dt>
-          <dd></dd>
-          <dt>Object</dt>
-          <dd>JS Object: </dd>
-          <dd>DOM Object: </dd>
-        </dl>
-      </section>
-
-      <section>
+      <section id="references">
         <h2>References</h2>
         <ul>
           <li><a href="http://eloquentjavascript.net/01_values.html">Eloquent JavaScript - Data Types</a></li>
