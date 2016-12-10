@@ -38,6 +38,10 @@
     .hljs-comment {
       color: #a1a1a1;
     }
+
+    .reveal h2 {
+      margin-top: 40px;
+    }
   </style>
 
 </head>
@@ -54,7 +58,7 @@
     // Change the statement inside here
     student;
     // ------- //
-    return student == undefined;
+    return student === undefined;
   })();
 
   // Corrected example //
@@ -62,7 +66,7 @@
     // ------- //
     var student;
     // ------- //
-    return student == undefined;
+    return student === undefined;
   })();
 
     </code></pre>
@@ -74,7 +78,7 @@
     // ------- //
     variable student;
     // ------- //
-    return student == undefined;
+    return student === undefined;
   })();
         </code></pre>
       </li>
@@ -84,7 +88,7 @@
     // ------- //
     var student = ;
     // ------- //
-    return student != undefined;
+    return student !== undefined;
   })();
         </code></pre>
       </li>
@@ -94,7 +98,7 @@
     // ------- //
     var student = yourname;
     // ------- //
-    return student == "yourname";
+    return student === "yourname";
   })();
         </code></pre>
       </li>
@@ -104,7 +108,7 @@
     // ------- //
     var student = "3";
     // ------- //
-    return typeOf student == "number";
+    return typeof student === "number";
   })();
         </code></pre>
       </li>
@@ -114,7 +118,7 @@
     // ------- //
     var student = 3;
     // ------- //
-    return typeOf student == "string";
+    return typeof student === "string";
   })();
         </code></pre>
       </li>
@@ -128,7 +132,7 @@
     // ------- //
     var result = y + y;
     // ------- //
-    return result == 0;
+    return result === 0;
   })();
         </code></pre>
       </li>
@@ -140,7 +144,7 @@
     // ------- //
     var result = x - y;
     // ------- //
-    return result == 0;
+    return result === 0;
   })();
         </code></pre>
       </li>
@@ -152,7 +156,7 @@
     // ------- //
     var result = y * y;
     // ------- //
-    return result == 0;
+    return result === 0;
   })();
         </code></pre>
       </li>
@@ -164,13 +168,13 @@
     // ------- //
     var result = x / y;
     // ------- //
-    return result != 0;
+    return result !== 0;
   })();
         </code></pre>
       </li>
     </ol>
   </main>
-  <!--  -->
+  <!-- -->
 
   		<script src="plugin/highlight/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
