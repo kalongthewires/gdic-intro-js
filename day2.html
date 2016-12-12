@@ -84,42 +84,75 @@
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 
+      <section>
+        <h1>Intro to JavaScript</h1>
+        <pre><code class="javascript">
+	// Tell your computer how to do something
+	function helloWorld(){
+		var name = "GDI";
+		alert("Hello world, it's " + name + "!");
+	}
+
+	// Then make it do that thing!
+	helloWorld();
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Today's Class</h2>
+        <ul>
+          <li><a href="#/class3slides">Part 3: Working with JavaScript II</a>
+    				<small>Control flow and Objects</small>
+          </li>
+          <li><span class="blue">Lunch ~ 11:30pm</span></li>
+          <li><a href="#/class4slides">Part 4: Interactive Websites with JavaScript</a>
+            <small>Events, </small>
+          </li>
+        </ul>
+      </section>
 
 			<!-- Class 3 Slides -->
 			<section id="class3slides">
-				<h2>Class 3 Slides</h2>
+				<h2>Part 3 Slides</h2>
 				<p>Working with JavaScript II</p>
-				<small>Control flow and Objects</small>
-				<small>Interacting with the webpage</small>
+				<small>Control flow and objects</small>
 			</section>
 
-			<section>
-				<h3>Errors</h3>
-				<p>The secret sauce of programming</p>
-			</section>
+      <section>
+        <h3>Review: Last Week</h3>
+        <p class="green">What questions do you have?</p>
+        <ul>
+          <li>Data types</li>
+          <li>Functions</li>
+          <li>Arrays</li>
+          <li>Loops</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Review: Functions</h3>
+        <ul>
+          <li>Why use functions?</li>
+        </ul>
+      </section>
 
 			<section>
 				<h3>Scope</h3>
-				<p>Variable scope refers to the area of your program that can remember it</p>
-				<p class="fragment">Two types:
+				<p>Variable scope refers to the area of your program where a variable is accessible.</p>
+				<p>Two types:
 					<strong><u>global</u></strong> and
 					<strong><u>local</u></strong>
 				</p>
-				<pre class="fragment">
-					<code class="javascript">
-	var outsideHouse = "global scope";
-	var goInside = function() {
-		var insideHouse = "local scope";
+				<pre><code class="javascript">
+	var globalVariable = "global scope";
+
+	var exampleFunction = function() {
+		var localVariable = "local scope";
 	}
 
-	console.log(outsideHouse);
-	console.log(insideHouse);</code>
-				</pre>
-				<pre class="fragment">
-					<code class="javascript">
-	console.log(goInside);
-					</code>
-				</pre>
+	console.log(globalVariable);
+	console.log(localVariable);
+        </code></pre>
 			</section>
 
 			<section>
@@ -671,7 +704,7 @@
 	pageNode.innerHTML += '...just adding this bit at the end of the page.';
 				</code></pre>
 			</section>
-			
+
 			<section>
 				<h3>Creating New Nodes</h3>
 				<p>The
