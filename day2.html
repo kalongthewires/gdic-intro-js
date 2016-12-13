@@ -102,7 +102,7 @@
         <h2>Today's Class</h2>
         <ul>
           <li><a href="#/class3slides">Part 3: Working with JavaScript II</a>
-            <small>Control flow and Objects</small>
+            <small>Scope, conditional statements, and objects</small>
           </li>
           <li><span class="blue">Lunch ~ 11:30pm</span></li>
           <li><a href="#/class4slides">Part 4: Interactive Websites with JavaScript</a>
@@ -115,7 +115,7 @@
       <section id="class3slides">
         <h2>Part 3 Slides</h2>
         <p>Working with JavaScript II</p>
-        <small>Control flow and objects</small>
+        <small>Scope, conditional statements, and objects</small>
       </section>
 
       <section>
@@ -140,89 +140,81 @@
         <h3>Scope</h3>
         <p>Variable scope refers to the area of your program where a variable is accessible.</p>
         <p>Two types:
-          <strong><u>global</u></strong> and
-          <strong><u>local</u></strong>
+          <strong><b class="blue">global</b></strong> and
+          <strong><b class="blue">local</b></strong>
         </p>
         <pre><code class="javascript">
-	var globalVariable = "global scope";
+	var globalVariable = "global scope"; // accessible everywhere in app
 
 	var exampleFunction = function() {
-		var localVariable = "local scope";
+		var localVariable = "local scope"; // accessible only inside the function
+    console.log(localVariable);
 	}
 
 	console.log(globalVariable);
 	console.log(localVariable);
         </code></pre>
+        <pre><code class="javascript">
+  exampleFunction();
+        </code></pre>
       </section>
 
       <section>
         <h3>Scope</h3>
-        <pre class="fragment">
-					<code class="javascript">
-	var outsideHouse = "global scope";
+        <pre><code class="javascript">
+  var numberOfKittens = 5;
+  var numberOfPuppies = 4;
 
-	var goInside = function() {
-		var insideHouse = "local scope";
+  function addAnimals(puppies, kittens){
+    return puppies + kittens;
+  }
 
-		var goIntoBedroom = function() {
-			var insideBedroom = "also local scope";
-
-			var lookInSafe = function() {
-				var insideSafe = "yep, still local!";
-			}
-		}
-	}</code>
-				</pre>
+  console.log(puppies);
+  console.log(kittens);
+        </code></pre>
       </section>
 
       <section>
-        <h3>Control Flow</h3>
-        <p>Use
-          <code>if</code> to decide which lines of code to execute, based on a
-          <code>true</code> condition.</p>
-        <pre>
-					<code class="javascript">
+        <h3>Conditional Statements</h3>
+        <p>Use <code>if</code> to decide which lines of code to execute, based on a
+        <code>true</code> condition.</p>
+        <pre><code class="javascript">
 	if (condition) {
 		// statements to execute
-	}</code>
-				</pre>
-        <pre>
-					<code>
-	var bananas = 5;
-	if (bananas > 0) {
-		console.log ('You have some bananas!');
-	}</code>
-				</pre>
-        <p class="fragment green">What if you want multiple options?</p>
+	}
+        </code></pre>
+        <pre><code>
+  var daysToNewYear = 15;
+
+	if (daysToNewYear === 0) {
+		console.log ('Happy New Year!');
+	}
+        </code></pre>
+        <p class="green">What if you want multiple options?</p>
       </section>
 
       <section>
-        <h3>Control Flow</h3>
-        <pre>
-					<code class="javascript">
+        <h3>Conditional Statements</h3>
+        <pre><code class="javascript">
 	if (condition) {
-		// do one thing
+		// do a thing
 	} else {
-		// do another thing
-	}</code>
-				</pre>
+		// OR do this other thing
+	}
+        </code></pre>
         <p>Runs the first
-          <strong>true</strong> condition it meets</p>
-        <pre class="fragment">
-					<code class="javascript">
-	var classSize = 15;
+        <strong>true</strong> condition it meets</p>
+        <pre><code class="javascript">
+	var daysToNewYear = 15;
 
-	if (classSize > 15) {
-		console.log("Have class at Improving");
-	} else if (classSize > 10) {
-		console.log("Have class at Pillar");
-	} else if (classSize >= 5) {
-		console.log("Have class at Cardinal Solutions");
+	if (daysToNewYear === 0) {
+		console.log("Happy New Year!");
+	} else if (daysToNewYear &lt; 5) {
+		console.log("Only a few days left in the year!");
 	} else {
-		console.log("Aw bummer, we need at least 5 students!");
-	}</code>
-				</pre>
-
+		console.log("Just another day.");
+	}
+        </code></pre>
       </section>
 
       <section>
@@ -242,9 +234,9 @@
         <table>
           <thead>
             <tr>
-              <th width="200px">Example</th>
-              <th width="150px">Name</th>
-              <th>Result</th>
+              <th width="200px" class="green">Example</th>
+              <th width="150px" class="green">Name</th>
+              <th class="green">Result</th>
             </tr>
           </thead>
           <tbody>
@@ -288,16 +280,15 @@
       <section>
         <h3>Using logical operators</h3>
         <p>You can use these operators to combine conditions.</p>
-        <pre>
-					<code>
+        <pre><code>
 	var bananas = 5;
 
-	if (bananas >=2 &amp;&amp; bananas <7) {
+	if (bananas &gt;=2 &amp;&amp; bananas &lt; 7) {
 		console.log ('You have a reasonable number of bananas');
 	} else {
 		console.log ('Check your banana supply');
-	}</code>
-				</pre>
+	}
+  </code></pre>
       </section>
 
 
@@ -329,20 +320,48 @@
       </section>
 
       <section>
+        <h3>Data Types</h3>
+        <table>
+          <tr>
+            <th width="250px">Number</th>
+            <td><code>0, 0.5, 1.618, 2, 3.14, ...</code></td>
+          </tr>
+          <tr>
+            <th>String</th>
+            <td><code>"GDI", 'rock on', "three"</code></td>
+          </tr>
+          <tr>
+            <th>Boolean</th>
+            <td><code>true</code> or <code>false</code></td>
+          </tr>
+          <tr>
+            <th>Null</th>
+            <td><code>null</code></td>
+          </tr>
+          <tr>
+            <th>Undefined</th>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <th class="green">Object</th>
+            <td class="green"><b>Stay tuned...</b></td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
         <h3>Objects</h3>
-        <p>Objects let us store a collection of properties.</p>
-        <pre>
-					<code>
+        <p>Objects let us store a collection of <strong class="blue">properties</strong>.</p>
+        <pre><code>
 	var objectName = {
-		propertyName: propertyValue,
+		propertyName: propertyValue, // properties are comma-separated
 		propertyName: propertyValue,
 		propertyName: propertyValue,
 		...
-	};</code>
-				</pre>
-        <pre>
-					<code>
-	var aboutMe = {
+	};
+        </code></pre>
+        <pre><code>
+	var jenna = {
 		hometown: 'Atlanta, GA',
 		hair: 'Auburn',
 		likes: ['knitting', 'code'],
@@ -350,8 +369,11 @@
 			month: 10,
 			day: 17
 		}
-	};</code>
-				</pre>
+	};
+        </code></pre>
+      </section>
+      <section>
+        <h3>Why Objects?</h3>
       </section>
       <section>
         <h3>Accessing Objects</h3>
@@ -415,7 +437,7 @@
 		{name: 'Daemon', age: 1}
 	];
 
-	for (var i = 0; i < myCats.length; i++) {
+	for (var i = 0; i &lt; myCats.length; i++) {
 		var myCat = myCats[i];
 
 		console.log(myCat.name + ' is ' + myCat.age + ' years old.');
@@ -489,7 +511,7 @@
           <span class="blue">+ HTML: </span>Structure</div>
         <div>
           <span class="blue">+ CSS: </span>Presentation</div>
-        <div class="fragment">
+        <div>
           <span class="green">+ JS: </span>Function</div>
         <div class="blue">= Your Website</div>
         <p>A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</p>
@@ -499,22 +521,22 @@
       <section>
         <h3>IDs vs. Classes</h3>
         <ul>
-          <li id="myName" class="fragment">ID
+          <li id="myName">ID
             <ul>
               <li>ONE per page! Must be unique.
                 <small>Example: page footer</small>
               </li>
-              <li class="blue"><code>&lt;p id="myName">My name is Becky&lt;p></code></li>
+              <li class="blue"><code><p id="myName">My name is Becky</p></code></li>
               <li class="green"><code>#myName { color: red; }</code></li>
               <li class="orange"><code>document.getElementById("myName");</code></li>
             </ul>
           </li>
-          <li class="fragment">Class
+          <li>Class
             <ul>
               <li>As many as you need. Should be descriptive.
                 <small>Example: green text</small>
               </li>
-              <li class="blue"><code>&lt;p class="green">My name is Becky&lt;p></code></li>
+              <li class="blue"><code><p class="green">My name is Becky</p></code></li>
               <li class="green"><code>.green { color: green; }</code></li>
               <li class="orange"><code>document.getElementsByClassName("green");</code></li>
             </ul>
@@ -527,8 +549,8 @@
         <h3>The DOM</h3>
         <p>We model the nested structure of an HTML page with the DOM (Document Object Model). The browser makes objects, or <strong>node</strong>, of all the elements on a page.</p>
         <pre><code class="html">
-	&lt;h1>My Page&lt;/h1>
-	&lt;p>Hello World!&lt;/p>
+	<h1>My Page</h1>
+	<p>Hello World!</p>
 		</code></pre>
         <h1>My Page</h1>
         <p>Hello World!</p>
@@ -537,22 +559,22 @@
         <h3>The DOM: Sample Code</h3>
         <pre>
 					<code class="html">
-	&lt;!DOCTYPE html>
-	&lt;html>
-		&lt;head>
-			&lt;title>Test Page&lt;/title>
-			&lt;style>h1 { color: red; }&lt;/style>
-			&lt;script>
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Test Page</title>
+			<style>h1 { color: red; }</style>
+			&lt;script&gt;
 				alert("It's my fancy website!");
-			&lt;/script>
-		&lt;/head>
-		&lt;body>
-			&lt;h1>My Page&lt;/h1>
-			&lt;p>Hello World!&lt;/p>
-			&lt;img src="http://placekitten.com/200/300" alt="cat"/>
-			&lt;script src="path/to/file.js">&lt;/script>
-		&lt;/body>
-	&lt;/html></code>
+			&lt;/script&gt;
+		</head>
+		<body>
+			<h1>My Page</h1>
+			<p>Hello World!</p>
+			<img src="http://placekitten.com/200/300" alt="cat"/>
+			<script src="path/to/file.js"></script>
+		</body>
+	</html></code>
 				</pre>
       </section>
 
@@ -587,7 +609,7 @@
         <p>To find:</p>
         <pre>
 					<code>
-	&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
+	<img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
 				</pre>
         <p>We would use:</p>
         <pre>
@@ -623,14 +645,14 @@
         <p>To find:</p>
         <pre>
 					<code>
-	&lt;li>Daisy&lt;/li>
-	&lt;li>Tulip&lt;/li></code>
+	<li>Daisy</li>
+	<li>Tulip</li></code>
 				</pre>
         <p>We would use:</p>
         <pre>
 					<code>
 	var listItems = document.getElementsByTagName('li');
-	for (var i = 0; i < listItems.length; i++) {
+	for (var i = 0; i &lt; listItems.length; i++) {
 		var listItem = listItems[i];
 	}</code>
 				</pre>
@@ -642,7 +664,7 @@
         <p>To change this element:</p>
         <pre>
 					<code>
-	&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
+	<img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
 				</pre>
         <p>We could change the src attribute this way:</p>
         <pre>
@@ -697,7 +719,7 @@
         <p>Used to get or set content:</p>
         <pre><code>
 	var pageNode = document.getElementsByTagName('body')[0];
-	pageNode.innerHTML = '&h1>Oh Noes!&/h1> &p>I just changed the whole page!&/p>';
+	pageNode.innerHTML = '<h1>Oh Noes!</h1><p>I just changed the whole page!</p>';
 				</code></pre>
         <p>Or just add some new content to the end:</p>
         <pre><code>
