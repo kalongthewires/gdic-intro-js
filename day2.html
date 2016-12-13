@@ -2,87 +2,87 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
 
-	<title>Intro to JavaScript ~ Girl Develop It</title>
+  <title>Intro to JavaScript ~ Girl Develop It</title>
 
-	<meta name="description" content="Beginner level course material for learning javascript.">
-	<meta name="author" content="Girl Develop It">
+  <meta name="description" content="Beginner level course material for learning javascript.">
+  <meta name="author" content="Girl Develop It">
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	<!-- reveal.js -->
-	<link rel="stylesheet" href="css/reveal.css">
+  <!-- reveal.js -->
+  <link rel="stylesheet" href="css/reveal.css">
 
-	<!-- GDI theme -->
-	<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+  <!-- GDI theme -->
+  <link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
-	<!-- hightlight.js Stylesheets-->
-	<!-- For syntax highlighting -->
-	<!-- light editors -->
-	<!-- <link rel="stylesheet" href="lib/css/light.css"> -->
-	<link rel="stylesheet" href="lib/css/tomorrow.css">
-	<!-- dark editors -->
-	<!-- <link rel="stylesheet" href="lib/css/dark.css"> -->
-	<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+  <!-- hightlight.js Stylesheets-->
+  <!-- For syntax highlighting -->
+  <!-- light editors -->
+  <!-- <link rel="stylesheet" href="lib/css/light.css"> -->
+  <link rel="stylesheet" href="lib/css/tomorrow.css">
+  <!-- dark editors -->
+  <!-- <link rel="stylesheet" href="lib/css/dark.css"> -->
+  <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
 
-	<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+  <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
 
-	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-	<script>
-		if (window.location.search.match(/print-pdf/gi)) {
-			var link = document.createElement('link');
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = 'css/print/pdf.css';
-			document.getElementsByTagName('head')[0].appendChild(link);
-		}
-	</script>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if (window.location.search.match(/print-pdf/gi)) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'css/print/pdf.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+  </script>
 
-	<!-- If use the PDF print sheet so students can print slides-->
+  <!-- If use the PDF print sheet so students can print slides-->
 
-	<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
-	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-	<!--[if lt IE 9]>
+  <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	<style>
-		p a.link {
-			border-bottom: 1px dashed #92BB44;
-		}
+  <style>
+    p a.link {
+      border-bottom: 1px dashed #92BB44;
+    }
 
-		.left-column {
-			float: left;
-			width: 49%;
-		}
+    .left-column {
+      float: left;
+      width: 49%;
+    }
 
-		.right-column {
-			float: right;
-			width: 49%;
-		}
+    .right-column {
+      float: right;
+      width: 49%;
+    }
 
-		.reveal small {
-			display: block;
-		}
+    .reveal small {
+      display: block;
+    }
 
-		.try:after {
-			background-color: #92BB44;
-			color: white;
-			display: block;
-			content: 'Try It!';
-			position: absolute;
-			top: 0;
-			right: 0;
-			padding: 2px 4px;
-		}
-	</style>
+    .try:after {
+      background-color: #92BB44;
+      color: white;
+      display: block;
+      content: 'Try It!';
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 2px 4px;
+    }
+  </style>
 </head>
 
 <body>
-	<div class="reveal">
-		<!-- Any section element inside of this container is displayed as a slide -->
-		<div class="slides">
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
 
       <section>
         <h1>Intro to JavaScript</h1>
@@ -102,7 +102,7 @@
         <h2>Today's Class</h2>
         <ul>
           <li><a href="#/class3slides">Part 3: Working with JavaScript II</a>
-    				<small>Control flow and Objects</small>
+            <small>Control flow and Objects</small>
           </li>
           <li><span class="blue">Lunch ~ 11:30pm</span></li>
           <li><a href="#/class4slides">Part 4: Interactive Websites with JavaScript</a>
@@ -111,12 +111,12 @@
         </ul>
       </section>
 
-			<!-- Class 3 Slides -->
-			<section id="class3slides">
-				<h2>Part 3 Slides</h2>
-				<p>Working with JavaScript II</p>
-				<small>Control flow and objects</small>
-			</section>
+      <!-- Class 3 Slides -->
+      <section id="class3slides">
+        <h2>Part 3 Slides</h2>
+        <p>Working with JavaScript II</p>
+        <small>Control flow and objects</small>
+      </section>
 
       <section>
         <h3>Review: Last Week</h3>
@@ -136,14 +136,14 @@
         </ul>
       </section>
 
-			<section>
-				<h3>Scope</h3>
-				<p>Variable scope refers to the area of your program where a variable is accessible.</p>
-				<p>Two types:
-					<strong><u>global</u></strong> and
-					<strong><u>local</u></strong>
-				</p>
-				<pre><code class="javascript">
+      <section>
+        <h3>Scope</h3>
+        <p>Variable scope refers to the area of your program where a variable is accessible.</p>
+        <p>Two types:
+          <strong><u>global</u></strong> and
+          <strong><u>local</u></strong>
+        </p>
+        <pre><code class="javascript">
 	var globalVariable = "global scope";
 
 	var exampleFunction = function() {
@@ -153,11 +153,11 @@
 	console.log(globalVariable);
 	console.log(localVariable);
         </code></pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>Scope</h3>
-				<pre class="fragment">
+      <section>
+        <h3>Scope</h3>
+        <pre class="fragment">
 					<code class="javascript">
 	var outsideHouse = "global scope";
 
@@ -173,32 +173,32 @@
 		}
 	}</code>
 				</pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>Control Flow</h3>
-				<p>Use
-					<code>if</code> to decide which lines of code to execute, based on a
-					<code>true</code> condition.</p>
-				<pre>
+      <section>
+        <h3>Control Flow</h3>
+        <p>Use
+          <code>if</code> to decide which lines of code to execute, based on a
+          <code>true</code> condition.</p>
+        <pre>
 					<code class="javascript">
 	if (condition) {
 		// statements to execute
 	}</code>
 				</pre>
-				<pre>
+        <pre>
 					<code>
 	var bananas = 5;
 	if (bananas > 0) {
 		console.log ('You have some bananas!');
 	}</code>
 				</pre>
-				<p class="fragment green">What if you want multiple options?</p>
-			</section>
+        <p class="fragment green">What if you want multiple options?</p>
+      </section>
 
-			<section>
-				<h3>Control Flow</h3>
-				<pre>
+      <section>
+        <h3>Control Flow</h3>
+        <pre>
 					<code class="javascript">
 	if (condition) {
 		// do one thing
@@ -206,9 +206,9 @@
 		// do another thing
 	}</code>
 				</pre>
-				<p>Runs the first
-					<strong>true</strong> condition it meets</p>
-				<pre class="fragment">
+        <p>Runs the first
+          <strong>true</strong> condition it meets</p>
+        <pre class="fragment">
 					<code class="javascript">
 	var classSize = 15;
 
@@ -223,72 +223,72 @@
 	}</code>
 				</pre>
 
-			</section>
+      </section>
 
-			<section>
-				<h3>Let's Develop It</h3>
-				<p>Write a function
-					<code>weatherWear</code> that tells you what to wear outside:</p>
-				<ol>
-					<li>If it is less than 50 degrees, wear a coat.</li>
-					<li>If it is less than 30 degrees, wear a coat and a hat.</li>
-					<li>If it is less than 0 degrees, stay inside.</li>
-					<li>Otherwise, wear whatever you want.</li>
-				</ol>
-			</section>
+      <section>
+        <h3>Let's Develop It</h3>
+        <p>Write a function
+          <code>weatherWear</code> that tells you what to wear outside:</p>
+        <ol>
+          <li>If it is less than 50 degrees, wear a coat.</li>
+          <li>If it is less than 30 degrees, wear a coat and a hat.</li>
+          <li>If it is less than 0 degrees, stay inside.</li>
+          <li>Otherwise, wear whatever you want.</li>
+        </ol>
+      </section>
 
-			<section>
-				<h3>Logical Operators</h3>
-				<table>
-					<thead>
-						<tr>
-							<th width="200px">Example</th>
-							<th width="150px">Name</th>
-							<th>Result</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>a &amp;&amp; b</td>
-							<td>AND</td>
-							<td>
-								<strong>
+      <section>
+        <h3>Logical Operators</h3>
+        <table>
+          <thead>
+            <tr>
+              <th width="200px">Example</th>
+              <th width="150px">Name</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>a &amp;&amp; b</td>
+              <td>AND</td>
+              <td>
+                <strong>
 									<code>TRUE</code>
 								</strong> if both a and b are
-								<strong>
+                <strong>
 									<code>TRUE</code>
 								</strong>.</td>
-						</tr>
-						<tr>
-							<td>a || b</td>
-							<td>OR</td>
-							<td>
-								<strong>
+            </tr>
+            <tr>
+              <td>a || b</td>
+              <td>OR</td>
+              <td>
+                <strong>
 									<code>TRUE</code>
 								</strong> if either a or b is
-								<strong>
+                <strong>
 									<code>TRUE</code>
 								</strong>.</td>
-						</tr>
-						<tr>
-							<td>! a</td>
-							<td>NOT</td>
-							<td>
-								<strong>
+            </tr>
+            <tr>
+              <td>! a</td>
+              <td>NOT</td>
+              <td>
+                <strong>
 									<code>TRUE</code>
 								</strong> if a is not
-								<strong>
+                <strong>
 									<code>TRUE</code>
 								</strong>.</td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-			<section>
-				<h3>Using logical operators</h3>
-				<p>You can use these operators to combine conditions.</p>
-				<pre>
+      <section>
+        <h3>Using logical operators</h3>
+        <p>You can use these operators to combine conditions.</p>
+        <pre>
 					<code>
 	var bananas = 5;
 
@@ -298,40 +298,40 @@
 		console.log ('Check your banana supply');
 	}</code>
 				</pre>
-			</section>
+      </section>
 
 
-			<section>
-				<h3>Let's Develop It!</h3>
-				<p>Write a function that loops through the numbers 1-100 and meets the following conditions:</p>
-				<ul>
-					<li>
-						If the number is divisible by 3,
-						<code>console.log("Girl")</code>;
-					</li>
-					<li>
-						If the number is divisible by 5,
-						<code>console.log("Develop")</code>;
-					</li>
-					<li>
-						If the number is divisible by 3 AND 5,
-						<code>console.log("Girl Develop It!")</code>;
-					</li>
-					<li>
-						Otherwise, don't do anything!
-					</li>
-				</ul>
-				<small>Hint: Use a variable that starts at 1 and increments each loop.</small>
-			</section>
+      <section>
+        <h3>Let's Develop It!</h3>
+        <p>Write a function that loops through the numbers 1-100 and meets the following conditions:</p>
+        <ul>
+          <li>
+            If the number is divisible by 3,
+            <code>console.log("Girl")</code>;
+          </li>
+          <li>
+            If the number is divisible by 5,
+            <code>console.log("Develop")</code>;
+          </li>
+          <li>
+            If the number is divisible by 3 AND 5,
+            <code>console.log("Girl Develop It!")</code>;
+          </li>
+          <li>
+            Otherwise, don't do anything!
+          </li>
+        </ul>
+        <small>Hint: Use a variable that starts at 1 and increments each loop.</small>
+      </section>
 
-			<section>
-				<h2>Break time!</h2>
-			</section>
+      <section>
+        <h2>Break time!</h2>
+      </section>
 
-			<section>
-				<h3>Objects</h3>
-				<p>Objects let us store a collection of properties.</p>
-				<pre>
+      <section>
+        <h3>Objects</h3>
+        <p>Objects let us store a collection of properties.</p>
+        <pre>
 					<code>
 	var objectName = {
 		propertyName: propertyValue,
@@ -340,7 +340,7 @@
 		...
 	};</code>
 				</pre>
-				<pre>
+        <pre>
 					<code>
 	var aboutMe = {
 		hometown: 'Atlanta, GA',
@@ -352,11 +352,11 @@
 		}
 	};</code>
 				</pre>
-			</section>
-			<section>
-				<h3>Accessing Objects</h3>
-				<p>You can retrieve values using "dot notation"</p>
-				<pre>
+      </section>
+      <section>
+        <h3>Accessing Objects</h3>
+        <p>You can retrieve values using "dot notation"</p>
+        <pre>
 					<code>
 	var aboutMe = {
 		hometown: 'Atlanta, GA',
@@ -365,30 +365,30 @@
 
 	var myHometown = aboutMe.hometown;</code>
 				</pre>
-				<p>Or using "bracket notation" (like arrays)</p>
-				<pre>
+        <p>Or using "bracket notation" (like arrays)</p>
+        <pre>
 					<code>
 	var myHair = aboutMe['hair'];</code>
 				</pre>
-			</section>
-			<section>
-				<h3>Changing Objects</h3>
-				<p>You can use dot or bracket notation to change properties</p>
-				<pre><code>var aboutMe = {
+      </section>
+      <section>
+        <h3>Changing Objects</h3>
+        <p>You can use dot or bracket notation to change properties</p>
+        <pre><code>var aboutMe = {
 		hometown: 'Atlanta, GA',
 		hair: 'Auburn'
 	};
 	aboutMe.hair = 'blue';</code></pre>
-				<p>Add new properties</p>
-				<pre><code>aboutMe.gender = 'female';</code></pre>
-				<p>Or delete them</p>
-				<pre><code>delete aboutMe.gender;</code></pre>
-			</section>
+        <p>Add new properties</p>
+        <pre><code>aboutMe.gender = 'female';</code></pre>
+        <p>Or delete them</p>
+        <pre><code>delete aboutMe.gender;</code></pre>
+      </section>
 
-			<section>
-				<h3>Using Objects</h3>
-				<p>Just like other data types, objects can be passed into functions:</p>
-				<pre>
+      <section>
+        <h3>Using Objects</h3>
+        <p>Just like other data types, objects can be passed into functions:</p>
+        <pre>
 					<code>
 	var lizzieTheCat = {
 		age: 18,
@@ -403,12 +403,12 @@
 
 	describeCat(lizzieTheCat);</code>
 				</pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>Arrays of Objects</h3>
-				<p>Since arrays can hold any data type, they can also hold objects</p>
-				<pre>
+      <section>
+        <h3>Arrays of Objects</h3>
+        <p>Since arrays can hold any data type, they can also hold objects</p>
+        <pre>
 					<code>
 	var myCats = [
 		{name: 'Lizzie', age: 18},
@@ -421,19 +421,19 @@
 		console.log(myCat.name + ' is ' + myCat.age + ' years old.');
 	}</code>
 				</pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>Let's Develop It</h3>
-				<p>Create objects for your other two cats.</p>
-				<p>Try displaying some information about your cats.</p>
-				<p>Bonus: Create a loop to list all the features of a cat.</p>
-			</section>
+      <section>
+        <h3>Let's Develop It</h3>
+        <p>Create objects for your other two cats.</p>
+        <p>Try displaying some information about your cats.</p>
+        <p>Bonus: Create a loop to list all the features of a cat.</p>
+      </section>
 
-			<section>
-				<h3>Object methods</h3>
-				<p>Objects can also hold functions.</p>
-				<pre>
+      <section>
+        <h3>Object methods</h3>
+        <p>Objects can also hold functions.</p>
+        <pre>
 					<code>
 	var lizzieTheCat = {
 		age: 18,
@@ -446,96 +446,96 @@
 		}
 	};</code>
 				</pre>
-				<p>Call object methods using dot notation.</p>
-				<pre>
+        <p>Call object methods using dot notation.</p>
+        <pre>
 					<code>
 	lizzieTheCat.meow();
 	lizzieTheCat.eat('brown mushy stuff');</code>
 				</pre>
-			</section>
-			<section>
-				<h3>Built-in methods</h3>
-				<p>JS provides several built-in methods:</p>
-				<ul>
-					<li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">.length</a></code></li>
-					<li>
-						<code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Date</a></code>
-					</li>
-					<li>
-						<code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Math</a></code>
-					</li>
-				</ul>
-				<p>And some specifically for webpages</p>
-				<ul>
-					<li>
-						<code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a></code>
-					</li>
-					<li>
-						<code>getElementsByTagName()</code>
-					</li>
-					<li>
-						<code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a></code>
-					</li>
-					<li>
-						<code>textContent</code>
-					</li>
-				</ul>
-			</section>
+      </section>
+      <section>
+        <h3>Built-in methods</h3>
+        <p>JS provides several built-in methods:</p>
+        <ul>
+          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">.length</a></code></li>
+          <li>
+            <code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Date</a></code>
+          </li>
+          <li>
+            <code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Math</a></code>
+          </li>
+        </ul>
+        <p>And some specifically for webpages</p>
+        <ul>
+          <li>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a></code>
+          </li>
+          <li>
+            <code>getElementsByTagName()</code>
+          </li>
+          <li>
+            <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a></code>
+          </li>
+          <li>
+            <code>textContent</code>
+          </li>
+        </ul>
+      </section>
 
-			<section>
-				<h3>Review: Anatomy of a website</h3>
-				<div class="blue">Content</div>
-				<div>
-					<span class="blue">+ HTML: </span>Structure</div>
-				<div>
-					<span class="blue">+ CSS: </span>Presentation</div>
-					<div class="fragment">
-						<span class="green">+ JS: </span>Function</div>
-				<div class="blue">= Your Website</div>
-				<p>A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</p>
-				<p class="fragment green">JS makes it interactive!</p>
-			</section>
+      <section>
+        <h3>Review: Anatomy of a website</h3>
+        <div class="blue">Content</div>
+        <div>
+          <span class="blue">+ HTML: </span>Structure</div>
+        <div>
+          <span class="blue">+ CSS: </span>Presentation</div>
+        <div class="fragment">
+          <span class="green">+ JS: </span>Function</div>
+        <div class="blue">= Your Website</div>
+        <p>A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</p>
+        <p class="fragment green">JS makes it interactive!</p>
+      </section>
 
-			<section>
-				<h3>IDs vs. Classes</h3>
-				<ul>
-					<li id="myName" class="fragment">ID
-						<ul>
-							<li>ONE per page! Must be unique.
-								<small>Example: page footer</small>
-							</li>
-							<li class="blue"><code>&lt;p id="myName">My name is Becky&lt;p></code></li>
-							<li class="green"><code>#myName { color: red; }</code></li>
-							<li class="orange"><code>document.getElementById("myName");</code></li>
-						</ul>
-					</li>
-					<li class="fragment">Class
-						<ul>
-							<li>As many as you need. Should be descriptive.
-								<small>Example: green text</small>
-							</li>
-							<li class="blue"><code>&lt;p class="green">My name is Becky&lt;p></code></li>
-							<li class="green"><code>.green { color: green; }</code></li>
-							<li class="orange"><code>document.getElementsByClassName("green");</code></li>
-						</ul>
-					</li>
-				</ul>
-			</section>
+      <section>
+        <h3>IDs vs. Classes</h3>
+        <ul>
+          <li id="myName" class="fragment">ID
+            <ul>
+              <li>ONE per page! Must be unique.
+                <small>Example: page footer</small>
+              </li>
+              <li class="blue"><code>&lt;p id="myName">My name is Becky&lt;p></code></li>
+              <li class="green"><code>#myName { color: red; }</code></li>
+              <li class="orange"><code>document.getElementById("myName");</code></li>
+            </ul>
+          </li>
+          <li class="fragment">Class
+            <ul>
+              <li>As many as you need. Should be descriptive.
+                <small>Example: green text</small>
+              </li>
+              <li class="blue"><code>&lt;p class="green">My name is Becky&lt;p></code></li>
+              <li class="green"><code>.green { color: green; }</code></li>
+              <li class="orange"><code>document.getElementsByClassName("green");</code></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
 
 
-			<section>
-				<h3>The DOM</h3>
-				<p>We model the nested structure of an HTML page with the DOM (Document Object Model). The browser makes objects, or <strong>node</strong>, of all the elements on a page.</p>
-				<pre><code class="html">
+      <section>
+        <h3>The DOM</h3>
+        <p>We model the nested structure of an HTML page with the DOM (Document Object Model). The browser makes objects, or <strong>node</strong>, of all the elements on a page.</p>
+        <pre><code class="html">
 	&lt;h1>My Page&lt;/h1>
 	&lt;p>Hello World!&lt;/p>
 		</code></pre>
-		<h1>My Page</h1>
-  <p>Hello World!</p>
-			</section>
-			<section>
-				<h3>The DOM: Sample Code</h3>
-				<pre>
+        <h1>My Page</h1>
+        <p>Hello World!</p>
+      </section>
+      <section>
+        <h3>The DOM: Sample Code</h3>
+        <pre>
 					<code class="html">
 	&lt;!DOCTYPE html>
 	&lt;html>
@@ -554,171 +554,171 @@
 		&lt;/body>
 	&lt;/html></code>
 				</pre>
-			</section>
+      </section>
 
-			<!--Accessing the DOM-->
+      <!--Accessing the DOM-->
 
-			<section>
-				<h3>DOM Access</h3>
-				<p>To change something on a page:</p>
-				<ol>
-					<li>Select the DOM node using JS and store it in a variable
-						<ul>
-							<li>getElementById()</li>
-							<li>getElementsByClassName()</li>
-							<li>getElementsByTagName()</li>
-						</ul>
-					</li>
-					<li>Use methods to manipulate the node
-						<ul>
-							<li>node.innerHTML;</li>
-							<li>node.innerText = "My new text";</li>
-						</ul>
-					</li>
-				</ol>
-			</section>
-			<section>
-				<h3>DOM Access: By Id</h3>
-				<p>You can find nodes by id using the method:</p>
-				<pre>
+      <section>
+        <h3>DOM Access</h3>
+        <p>To change something on a page:</p>
+        <ol>
+          <li>Select the DOM node using JS and store it in a variable
+            <ul>
+              <li>getElementById()</li>
+              <li>getElementsByClassName()</li>
+              <li>getElementsByTagName()</li>
+            </ul>
+          </li>
+          <li>Use methods to manipulate the node
+            <ul>
+              <li>node.innerHTML;</li>
+              <li>node.innerText = "My new text";</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h3>DOM Access: By Id</h3>
+        <p>You can find nodes by id using the method:</p>
+        <pre>
 					<code>
 	document.getElementById(id);</code>
 				</pre>
-				<p>To find:</p>
-				<pre>
+        <p>To find:</p>
+        <pre>
 					<code>
 	&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
 				</pre>
-				<p>We would use:</p>
-				<pre>
+        <p>We would use:</p>
+        <pre>
 					<code>
 	var imgKitten = document.getElementById('kittenPic');</code>
 				</pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>getElement vs. getElements</h3>
-				<p>Any method that starts with "getElement" will return a
-					<span class="blue">single</span> node.</p>
-				<pre>
+      <section>
+        <h3>getElement vs. getElements</h3>
+        <p>Any method that starts with "getElement" will return a
+          <span class="blue">single</span> node.</p>
+        <pre>
 					<code>
 	document.getElementById('uniqueID'); //returns a single node</code>
 				</pre>
-				<p>Any method that starts with "getElements" will return a
-					<span class="blue">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
-				<pre>
+        <p>Any method that starts with "getElements" will return a
+          <span class="blue">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
+        <pre>
 					<code>
 	document.getElementsByTagName('p'); //returns multiple nodes
 	var specficParagraph = document.getElementsByTagName('p')[2];</code>
 				</pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>DOM Access: By Tag Name</h3>
-				<p>You can find certain types of HTML elements using this method:</p>
-				<pre>
+      <section>
+        <h3>DOM Access: By Tag Name</h3>
+        <p>You can find certain types of HTML elements using this method:</p>
+        <pre>
 					<code>
 	document.getElementsByTagName(tagName);</code>
 				</pre>
-				<p>To find:</p>
-				<pre>
+        <p>To find:</p>
+        <pre>
 					<code>
 	&lt;li>Daisy&lt;/li>
 	&lt;li>Tulip&lt;/li></code>
 				</pre>
-				<p>We would use:</p>
-				<pre>
+        <p>We would use:</p>
+        <pre>
 					<code>
 	var listItems = document.getElementsByTagName('li');
 	for (var i = 0; i < listItems.length; i++) {
 		var listItem = listItems[i];
 	}</code>
 				</pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>DOM Nodes: Attributes</h3>
-				<p>You can access and change attributes of DOM nodes using dot notation.</p>
-				<p>To change this element:</p>
-				<pre>
+      <section>
+        <h3>DOM Nodes: Attributes</h3>
+        <p>You can access and change attributes of DOM nodes using dot notation.</p>
+        <p>To change this element:</p>
+        <pre>
 					<code>
 	&lt;img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
 				</pre>
-				<p>We could change the src attribute this way:</p>
-				<pre>
+        <p>We could change the src attribute this way:</p>
+        <pre>
 					<code>
 	var imgKitten = document.getElementById('kittenPic');
 	var oldSrc = imgKitten.src;
 	imgKitten.src = 'http://placekitten.com/100/500';</code>
 				</pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>DOM Nodes: Styles</h3>
-				<p>You can change element css using <code>style</code></p>
-				<p>To make this CSS:</p>
-				<pre>
+      <section>
+        <h3>DOM Nodes: Styles</h3>
+        <p>You can change element css using <code>style</code></p>
+        <p>To make this CSS:</p>
+        <pre>
 					<code>
 	body {
 		color: red;
 	}</code>
 				</pre>
-				<p>Use this JavaScript:</p>
-				<pre>
+        <p>Use this JavaScript:</p>
+        <pre>
 					<code>
 	var pageNode = document.getElementsByTagName('body')[0];
 	pageNode.style.color = 'red';</code>
 				</pre>
-			</section>
-			<section>
-				<h3>DOM Nodes: More Styles</h3>
-				<p>Change any CSS property with a "-" to camelCase, and be sure to include a unit on any number</p>
-				<p>To make this CSS:</p>
-				<pre>
+      </section>
+      <section>
+        <h3>DOM Nodes: More Styles</h3>
+        <p>Change any CSS property with a "-" to camelCase, and be sure to include a unit on any number</p>
+        <p>To make this CSS:</p>
+        <pre>
 					<code>
 	body { background-color: pink; padding-top: 10px; }</code>
 				</pre>
-				<p>Use this JavaScript:</p>
-				<pre>
+        <p>Use this JavaScript:</p>
+        <pre>
 					<code>
 	var pageNode = document.getElementsByTagName('body')[0];
 	pageNode.style.backgroundColor = 'pink';
 	pageNode.style.paddingTop = '10px';</code>
 				</pre>
-			</section>
-			<section>
-				<h3>Let's Develop It</h3>
-				<p>Create a simple HTML page or <a href="files/class3.zip">use this sample code.</a></p>
-				<p>Isolate a node (an element on the page) and change an attribute or add a new style.</p>
-			</section>
+      </section>
+      <section>
+        <h3>Let's Develop It</h3>
+        <p>Create a simple HTML page or <a href="files/class3.zip">use this sample code.</a></p>
+        <p>Isolate a node (an element on the page) and change an attribute or add a new style.</p>
+      </section>
 
-			<section>
-				<h3>DOM innerHTML</h3>
-				<p>Used to get or set content:</p>
-				<pre><code>
+      <section>
+        <h3>DOM innerHTML</h3>
+        <p>Used to get or set content:</p>
+        <pre><code>
 	var pageNode = document.getElementsByTagName('body')[0];
 	pageNode.innerHTML = '&h1>Oh Noes!&/h1> &p>I just changed the whole page!&/p>';
 				</code></pre>
-				<p>Or just add some new content to the end:</p>
-				<pre><code>
+        <p>Or just add some new content to the end:</p>
+        <pre><code>
 	pageNode.innerHTML += '...just adding this bit at the end of the page.';
 				</code></pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>Creating New Nodes</h3>
-				<p>The
-					<code>document</code> object also provides ways to create nodes from scratch:</p>
-				<pre>
+      <section>
+        <h3>Creating New Nodes</h3>
+        <p>The
+          <code>document</code> object also provides ways to create nodes from scratch:</p>
+        <pre>
 					<code>
 	document.createElement(tagName);
 	document.createTextNode(text);
 	document.appendChild();</code>
 				</pre>
-			</section>
-			<section>
-				<h3>Creating New Nodes: Sample Code</h3>
-				<pre>
+      </section>
+      <section>
+        <h3>Creating New Nodes: Sample Code</h3>
+        <pre>
 					<code>
 	var pageNode = document.getElementsByTagName('body')[0];
 	var newImg = document.createElement('img');
@@ -734,87 +734,87 @@
 	newParagraph.appendChild(paragraphText);
 	pageNode.appendChild(newParagraph);</code>
 				</pre>
-			</section>
-			<section>
-				<h3>Let's Develop It</h3>
-				<p>Create a new paragraph element and add it to a div on your page.</p>
-			</section>
+      </section>
+      <section>
+        <h3>Let's Develop It</h3>
+        <p>Create a new paragraph element and add it to a div on your page.</p>
+      </section>
 
-			<section>
-				<h3>Resources</h3>
-				<ul>
-					<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
-					<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
-				</ul>
-			</section>
-
-
-		</div>
-		<footer>
-			<div class="copyright">
-				Intro to JavaScript -- Girl Develop It Columbus --
-				<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
-					<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" />
-				</a>
-			</div>
-		</footer>
-	</div>
+      <section>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
+          <li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
+        </ul>
+      </section>
 
 
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.min.js"></script>
+    </div>
+    <footer>
+      <div class="copyright">
+        Intro to JavaScript -- Girl Develop It Columbus --
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+          <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" />
+        </a>
+      </div>
+    </footer>
+  </div>
 
-	<script>
-		// Full list of configuration options available here:
-		// https://github.com/hakimel/reveal.js#configuration
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			history: true,
-			center: true,
 
-			transition: 'slide', // none/fade/slide/convex/concave/zoom
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
 
-			// Optional reveal.js plugins
-			dependencies: [{
-				src: 'lib/js/classList.js',
-				condition: function() {
-					return !document.body.classList;
-				}
-			}, {
-				src: 'plugin/markdown/marked.js',
-				condition: function() {
-					return !!document.querySelector('[data-markdown]');
-				}
-			}, {
-				src: 'plugin/markdown/markdown.js',
-				condition: function() {
-					return !!document.querySelector('[data-markdown]');
-				}
-			}, {
-				src: 'plugin/highlight/highlight.pack.js',
-				async: true,
-				condition: function() {
-					return !!document.querySelector('pre code');
-				},
-				callback: function() {
-					hljs.initHighlightingOnLoad();
-				}
-			}, {
-				src: 'plugin/zoom-js/zoom.js',
-				async: true
-			}, {
-				src: 'plugin/notes/notes.js',
-				async: true
-			}, {
-				src: 'plugin/accessibility-helper/js/accessibility-helper.js',
-				async: true,
-				condition: function() {
-					return !!document.body.classList;
-				}
-			}]
-		});
-	</script>
+  <script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [{
+        src: 'lib/js/classList.js',
+        condition: function() {
+          return !document.body.classList;
+        }
+      }, {
+        src: 'plugin/markdown/marked.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/markdown/markdown.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/highlight/highlight.pack.js',
+        async: true,
+        condition: function() {
+          return !!document.querySelector('pre code');
+        },
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }, {
+        src: 'plugin/zoom-js/zoom.js',
+        async: true
+      }, {
+        src: 'plugin/notes/notes.js',
+        async: true
+      }, {
+        src: 'plugin/accessibility-helper/js/accessibility-helper.js',
+        async: true,
+        condition: function() {
+          return !!document.body.classList;
+        }
+      }]
+    });
+  </script>
 
 </body>
 
