@@ -102,7 +102,7 @@
         <h2>Today's Class</h2>
         <ul>
           <li><a href="#/class3slides">Part 3: Working with JavaScript II</a>
-            <small>Scope, conditional statements, and objects</small>
+            <small>Review, scope, conditional statements, and objects</small>
           </li>
           <li><span class="blue">Lunch ~ 11:30pm</span></li>
           <li><a href="#/class4slides">Part 4: Interactive Websites with JavaScript</a>
@@ -130,10 +130,27 @@
       </section>
 
       <section>
+        <h3>Review: Data Types</h3>
+        <p class="green">What data types do you remember?</p>
+      </section>
+
+      <section>
         <h3>Review: Functions</h3>
+        <p>Why use functions?</p>
         <ul>
-          <li>Why use functions?</li>
+          <li>Reusable.</li>
+          <li>Functions hide the details.</li>
         </ul>
+        <pre><code class="javascript">
+  var defaultPercentage = 20;
+
+  function calculateTip(totalBill, percentage) {
+    return totalBill * percentage/100;
+  }
+
+  calculateTip(12, defaultPercentage); // outputs 2.4
+  calculateTip(18, defaultPercentage); // outputs 3.6
+					</code></pre>
       </section>
 
       <section>
@@ -172,6 +189,40 @@
   console.log(puppies);
   console.log(kittens);
         </code></pre>
+      </section>
+
+      <section>
+        <h3>Review: Arrays</h3>
+        <p>Arrays are <strong>ordered</strong> lists of values</p>
+        <pre><code>
+  var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+        </code></pre>
+        <ul>
+          <li>The number 18 is at what <strong class="green">index</strong> in the array?</li>
+          <li class="fragment">How could we print out the number 18?</li>
+          <li class="fragment">How could we add a new number to the array?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Arrays: push and pop</h3>
+        <p>Add something to the <em>end</em> of an array with <code class="blue">.push()</code></p>
+        <pre><code class="javascript">
+  var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+  lotteryNumbers.push(90);
+				</code></pre>
+        <p>Use <code class="blue">.pop()</code> to remove the last item in an array.</p>
+        <pre><code class="javascript">
+  var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+  lotteryNumbers.pop(); // outputs 85
+        </code></pre>
+        <p>There are many <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">
+          more functions</a> provided to manipulate arrays. <span class="green">(Take a look at shift and unshift.)</span></p>
+      </section>
+
+      <section>
+        <h3>Review: Loops</h3>
+
       </section>
 
       <section>
@@ -291,7 +342,6 @@
   </code></pre>
       </section>
 
-
       <section>
         <h3>Let's Develop It!</h3>
         <p>Write a function that loops through the numbers 1-100 and meets the following conditions:</p>
@@ -363,7 +413,7 @@
         <pre><code>
 	var jenna = {
 		hometown: 'Atlanta, GA',
-		hair: 'Auburn',
+		hair: 'auburn',
 		likes: ['knitting', 'code'],
 		birthday: {
 			month: 10,
@@ -373,113 +423,167 @@
         </code></pre>
       </section>
       <section>
-        <h3>Why Objects?</h3>
-      </section>
-      <section>
         <h3>Accessing Objects</h3>
-        <p>You can retrieve values using "dot notation"</p>
-        <pre>
-					<code>
-	var aboutMe = {
+        <p>You can retrieve values using <strong class="blue">dot notation</strong></p>
+        <pre><code>
+	var jenna = {
 		hometown: 'Atlanta, GA',
-		hair: 'Auburn'
+		hair: 'auburn'
 	};
 
-	var myHometown = aboutMe.hometown;</code>
-				</pre>
-        <p>Or using "bracket notation" (like arrays)</p>
-        <pre>
-					<code>
-	var myHair = aboutMe['hair'];</code>
-				</pre>
+	var myHometown = jenna.hometown;
+        </code></pre>
+        <p>Or using <strong class="blue">bracket notation</strong> (like arrays)</p>
+        <pre><code>
+	var myHair = jenna['hair'];
+        </code></pre>
+        <p>Dot notation is more succinct and readable.</p>
       </section>
       <section>
         <h3>Changing Objects</h3>
         <p>You can use dot or bracket notation to change properties</p>
-        <pre><code>var aboutMe = {
+        <pre><code>
+  var jenna = {
 		hometown: 'Atlanta, GA',
-		hair: 'Auburn'
+		hair: 'auburn'
 	};
-	aboutMe.hair = 'blue';</code></pre>
+
+	jenna.hair = 'blue';
+        </code></pre>
         <p>Add new properties</p>
-        <pre><code>aboutMe.gender = 'female';</code></pre>
+        <pre><code>
+  jenna.gender = 'female';
+        </code></pre>
         <p>Or delete them</p>
-        <pre><code>delete aboutMe.gender;</code></pre>
+        <pre><code>
+  delete jenna.gender;
+        </code></pre>
       </section>
 
       <section>
         <h3>Using Objects</h3>
         <p>Just like other data types, objects can be passed into functions:</p>
-        <pre>
-					<code>
-	var lizzieTheCat = {
-		age: 18,
-		furColor: 'grey',
-		likes: ['catnip', 'milk'],
-		birthday: {month: 7, day: 17, year: 1996}
-	}
+        <pre><code>
+	var thorTheCat = {
+		age: 2,
+		breed: 'domestic medium hair',
+		likes: ['catnip', 'running amok'],
+		birthday: {
+      month: 2,
+      day: 28,
+      year: 2014
+    }
+	};
 
 	function describeCat(cat) {
 		console.log('This cat is ' + cat.age + ' years old with ' + cat.furColor + ' fur.');
 	}
 
-	describeCat(lizzieTheCat);</code>
-				</pre>
+  describeCat(thorTheCat);
+        </code></pre>
       </section>
 
       <section>
         <h3>Arrays of Objects</h3>
         <p>Since arrays can hold any data type, they can also hold objects</p>
-        <pre>
-					<code>
-	var myCats = [
-		{name: 'Lizzie', age: 18},
-		{name: 'Daemon', age: 1}
-	];
+        <pre><code>
+  var myCats = [
+    {
+      name: 'Thor',
+      age: 2
+    }, {
+      name: 'Turnip',
+      age: 4
+    }
+  ];
 
-	for (var i = 0; i &lt; myCats.length; i++) {
-		var myCat = myCats[i];
+  for (var i = 0; i &lt; myCats.length; i++) {
+    var myCat = myCats[i];
 
-		console.log(myCat.name + ' is ' + myCat.age + ' years old.');
-	}</code>
-				</pre>
+    console.log(myCat.name + ' is ' + myCat.age + ' years old.');
+  }
+        </code></pre>
       </section>
 
       <section>
         <h3>Let's Develop It</h3>
-        <p>Create objects for your other two cats.</p>
-        <p>Try displaying some information about your cats.</p>
-        <p>Bonus: Create a loop to list all the features of a cat.</p>
+        <ul>
+          <li>Create objects for a couple of your family members.</li>
+          <li>Try displaying some information about your family members.</li>
+          <li class="fragment"><strong class="green">Bonus:</strong>Add your objects to an array called <code>familyMembers</code>, and use a loop to display each person's name.</li>
+        </ul>
       </section>
 
       <section>
         <h3>Object methods</h3>
-        <p>Objects can also hold functions.</p>
-        <pre>
-					<code>
-	var lizzieTheCat = {
-		age: 18,
-		furColor: 'grey',
+        <p>Objects can also hold functions. Functions inside objects are called <strong class="green">methods</strong>.</p>
+        <pre><code>
+	var thorTheCat = {
+		age: 2,
+    breed: 'domestic medium hair',
 		meow: function() {
 			console.log('meowww');
 		},
 		eat: function(food) {
 			console.log('Yum, I love ' + food);
 		}
-	};</code>
-				</pre>
+	};
+        </code></pre>
         <p>Call object methods using dot notation.</p>
-        <pre>
-					<code>
-	lizzieTheCat.meow();
-	lizzieTheCat.eat('brown mushy stuff');</code>
-				</pre>
+        <pre><code>
+	thorTheCat.meow();
+	thorTheCat.eat('chicken pâté');
+        </code></pre>
       </section>
+
+      <section>
+        <h3>Let's Develop It</h3>
+        <h4 class="align-left">Part I</h4>
+        <ul>
+          <li>Add a <code>pets</code> property to each object in your <code>familyMembers</code> array.
+          <li>Set <code>pets</code> equal to an array that contains the names of that family member's pets.</li>
+        </ul>
+        <br><br>
+        <h4 class="align-left">Part II</h4>
+        <ul>
+          <li>Add a method to each family member's object called <code>addPet</code>.</li>
+          <li>Set addPet equal to a function that uses <code>push</code> to add a new pet to the <code>pets</code> array.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Arrays are objects!</h3>
+        <p>Behind the scenes, when you create an array<br> (<code>var example = [1, 2, 3];</code>),
+          JavaScript creates a new Array object.</p><br>
+        <div style="display: flex; justify-content: space-around;">
+        <div style="width: 40%;">
+          <p class="align-left"><strong class="green">Array methods</strong>:</p>
+          <ul class="align-left" style="display: block;">
+            <li>push</li>
+            <li>pop</li>
+            <li>shift</li>
+            <li>unshift</li>
+            <li><strong class="blue">forEach</strong></li>
+          </ul>
+        </div>
+        <div style="width: 40%;">
+          <p class="align-left"><strong class="green">Array properties:</strong></p>
+          <ul class="align-left" style="display: block;">
+            <li>length</li>
+          </ul>
+        </div>
+      </div>
+      </section>
+
+      <section>
+        <h3>Array: forEach</h3>
+      </section>
+
       <section>
         <h3>Built-in methods</h3>
-        <p>JS provides several built-in methods:</p>
+        <p>JS provides several built-in object with methods:</p>
         <ul>
-          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">.length</a></code></li>
+          <li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">console</a></code></li>
           <li>
             <code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Date</a></code>
           </li>
@@ -487,7 +591,7 @@
             <code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Math</a></code>
           </li>
         </ul>
-        <p>And some specifically for webpages</p>
+        <p>And some methods specifically for webpages</p>
         <ul>
           <li>
             <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a></code>
@@ -502,6 +606,12 @@
             <code>textContent</code>
           </li>
         </ul>
+      </section>
+
+      <section id="class4slides">
+        <h2>Part 4 Slides</h2>
+        <p>Interactive Websites with JavaScript</p>
+        <small></small>
       </section>
 
       <section>
@@ -526,19 +636,19 @@
               <li>ONE per page! Must be unique.
                 <small>Example: page footer</small>
               </li>
-              <li class="blue"><code><p id="myName">My name is Becky</p></code></li>
-              <li class="green"><code>#myName { color: red; }</code></li>
-              <li class="orange"><code>document.getElementById("myName");</code></li>
+              <li><code>&lt;p id="myName"&gt;My name is Becky&lt;/p&gt;</code></li>
+              <li><code>#myName { color: red; }</code></li>
+              <li class="green"><code>document.getElementById("myName");</code></li>
             </ul>
           </li>
           <li>Class
             <ul>
               <li>As many as you need. Should be descriptive.
-                <small>Example: green text</small>
+                <small>Example: warning text</small>
               </li>
-              <li class="blue"><code><p class="green">My name is Becky</p></code></li>
-              <li class="green"><code>.green { color: green; }</code></li>
-              <li class="orange"><code>document.getElementsByClassName("green");</code></li>
+              <li><code>&lt;p class="warning"&gt;Warning!&lt;/p&gt;</code></li>
+              <li><code>.warning { color: red; }</code></li>
+              <li class="green"><code>document.getElementsByClassName("green");</code></li>
             </ul>
           </li>
         </ul>
@@ -547,35 +657,35 @@
 
       <section>
         <h3>The DOM</h3>
-        <p>We model the nested structure of an HTML page with the DOM (Document Object Model). The browser makes objects, or <strong>node</strong>, of all the elements on a page.</p>
+        <p>We model the nested structure of an HTML page with the DOM (<strong class="blue">Document Object Model</strong>).
+          The browser makes objects, or <strong class="blue">nodes</strong>, of all the elements on a page.</p>
         <pre><code class="html">
-	<h1>My Page</h1>
-	<p>Hello World!</p>
-		</code></pre>
+	&lt;h1&gt;My Page&lt;/h1&gt;
+	&lt;p&gt;Hello World!&lt;/p&gt;
+		    </code></pre>
         <h1>My Page</h1>
         <p>Hello World!</p>
       </section>
       <section>
         <h3>The DOM: Sample Code</h3>
-        <pre>
-					<code class="html">
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<title>Test Page</title>
-			<style>h1 { color: red; }</style>
+        <pre><code class="html">
+	&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+		&lt;head&gt;
+			&lt;title&gt;Test Page&lt;/title&gt;
+			&lt;style&gt;h1 { color: red; }&lt;/style&gt;
 			&lt;script&gt;
 				alert("It's my fancy website!");
 			&lt;/script&gt;
-		</head>
-		<body>
-			<h1>My Page</h1>
-			<p>Hello World!</p>
-			<img src="http://placekitten.com/200/300" alt="cat"/>
-			<script src="path/to/file.js"></script>
-		</body>
-	</html></code>
-				</pre>
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;h1&gt;My Page&lt;/h1&gt;
+			&lt;p&gt;Hello World!&lt;/p&gt;
+			&lt;img src="http://placekitten.com/200/300" alt="cat"/&gt;
+			&lt;script src="path/to/file.js"&gt;&lt;/script&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+        </code></pre>
       </section>
 
       <!--Accessing the DOM-->
@@ -602,98 +712,75 @@
       <section>
         <h3>DOM Access: By Id</h3>
         <p>You can find nodes by id using the method:</p>
-        <pre>
-					<code>
-	document.getElementById(id);</code>
-				</pre>
+        <pre><code>
+	document.getElementById(id);
+        </code></pre>
         <p>To find:</p>
-        <pre>
-					<code>
-	<img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
-				</pre>
+        <pre><code>
+	&lt;img id="kitten" src="http://placekitten.com/g/200/300" alt="cat"/&gt;
+        </code></pre>
         <p>We would use:</p>
-        <pre>
-					<code>
-	var imgKitten = document.getElementById('kittenPic');</code>
-				</pre>
-      </section>
-
-      <section>
-        <h3>getElement vs. getElements</h3>
-        <p>Any method that starts with "getElement" will return a
-          <span class="blue">single</span> node.</p>
-        <pre>
-					<code>
-	document.getElementById('uniqueID'); //returns a single node</code>
-				</pre>
-        <p>Any method that starts with "getElements" will return a
-          <span class="blue">array</span> of nodes. To modify a single node, you will need to use bracket notation to select the correct one.</p>
-        <pre>
-					<code>
-	document.getElementsByTagName('p'); //returns multiple nodes
-	var specficParagraph = document.getElementsByTagName('p')[2];</code>
-				</pre>
+        <pre><code>
+	var imgKitten = document.getElementById('kitten');
+        </code></pre>
       </section>
 
       <section>
         <h3>DOM Access: By Tag Name</h3>
-        <p>You can find certain types of HTML elements using this method:</p>
-        <pre>
-					<code>
-	document.getElementsByTagName(tagName);</code>
-				</pre>
-        <p>To find:</p>
-        <pre>
-					<code>
-	<li>Daisy</li>
-	<li>Tulip</li></code>
-				</pre>
-        <p>We would use:</p>
-        <pre>
-					<code>
-	var listItems = document.getElementsByTagName('li');
-	for (var i = 0; i &lt; listItems.length; i++) {
-		var listItem = listItems[i];
-	}</code>
-				</pre>
+        <p>You can find nodes that match a certain HTML element type using the method:</p>
+        <pre><code>
+  document.getElementsByTagName(tagName);
+        </code></pre><br>
+        <p>For example, you could find all paragraphs using:</p>
+        <pre><code>
+  document.getElementsByTagName('p');
+        </code></pre>
+        <p><strong class="blue">getElementsByTagName</strong> returns an <strong class="blue">array</strong> of nodes.</p><br>
       </section>
 
       <section>
-        <h3>DOM Nodes: Attributes</h3>
+        <h3>DOM Access: By Class Name</h3>
+        <p>You can find nodes that match a class using the method:</p>
+        <pre><code>
+  document.getElementsByClassName(className);
+        </code></pre><br>
+        <p>For example, you could find all the error messages with a class of <code>error</code> using:</p>
+        <pre><code>
+  document.getElementsByClassName('error');
+        </code></pre>
+        <p><strong class="blue">getElementsByClassName</strong> also returns an <strong class="blue">array</strong>.</p><br>
+      </section>
+
+      <section>
+        <h3>DOM Changes: Attributes</h3>
         <p>You can access and change attributes of DOM nodes using dot notation.</p>
-        <p>To change this element:</p>
-        <pre>
-					<code>
-	<img id="kittenPic" src="http://placekitten.com/200/300" alt="cat"/></code>
-				</pre>
+        <pre><code>
+	&lt;img id="kitten" src="http://placekitten.com/g/200/300" alt="cat"/&gt;
+          </code></pre>
         <p>We could change the src attribute this way:</p>
-        <pre>
-					<code>
-	var imgKitten = document.getElementById('kittenPic');
+        <pre><code>
+	var imgKitten = document.getElementById('kitten');
 	var oldSrc = imgKitten.src;
-	imgKitten.src = 'http://placekitten.com/100/500';</code>
-				</pre>
+	imgKitten.src = 'http://placekitten.com/g/200/500';
+        </code></pre>
       </section>
 
       <section>
-        <h3>DOM Nodes: Styles</h3>
-        <p>You can change element css using <code>style</code></p>
-        <p>To make this CSS:</p>
-        <pre>
-					<code>
-	body {
-		color: red;
-	}</code>
-				</pre>
+        <h3>DOM Changes: Styles</h3>
+        <p>You can change element css using <code>style</code>.</p>
+        <pre><code>
+        </code>
+        <pre><code>
+  &lt;p class="error" style="display: none"&gt;Something went wrong!&lt;p&gt;
+        </code></pre>
         <p>Use this JavaScript:</p>
-        <pre>
-					<code>
-	var pageNode = document.getElementsByTagName('body')[0];
-	pageNode.style.color = 'red';</code>
-				</pre>
+        <pre><code>
+	var errorMessage = document.getElementsByClassName('error')[0];
+	errorMessage.style.display = 'block';
+        </code></pre>
       </section>
       <section>
-        <h3>DOM Nodes: More Styles</h3>
+        <h3>DOM Changes: More Styles</h3>
         <p>Change any CSS property with a "-" to camelCase, and be sure to include a unit on any number</p>
         <p>To make this CSS:</p>
         <pre>
