@@ -744,7 +744,7 @@
         <pre><code>
   document.getElementsByClassName(className);
         </code></pre><br>
-        <p>For example, you could find all the error messages with a class of <code>error</code> using:</p>
+        <p>For example, you could find all the nodes with a class of <code>error</code> using:</p>
         <pre><code>
   document.getElementsByClassName('error');
         </code></pre>
@@ -769,9 +769,7 @@
         <h3>DOM Changes: Styles</h3>
         <p>You can change element css using <code>style</code>.</p>
         <pre><code>
-        </code>
-        <pre><code>
-  &lt;p class="error" style="display: none"&gt;Something went wrong!&lt;p&gt;
+  &lt;p class="error" style="display: none;"&gt;Something went wrong!&lt;/p&gt;
         </code></pre>
         <p>Use this JavaScript:</p>
         <pre><code>
@@ -782,31 +780,35 @@
       <section>
         <h3>DOM Changes: More Styles</h3>
         <p>Change any CSS property with a "-" to camelCase, and be sure to include a unit on any number</p>
-        <p>To make this CSS:</p>
-        <pre>
-					<code>
-	body { background-color: pink; padding-top: 10px; }</code>
-				</pre>
+        <p>To achieve the equivalent of this CSS:</p>
+        <pre><code>
+	body {
+    background-color: pink;
+    padding-top: 10px;
+  }
+        </code></pre>
         <p>Use this JavaScript:</p>
-        <pre>
-					<code>
+        <pre><code>
 	var pageNode = document.getElementsByTagName('body')[0];
 	pageNode.style.backgroundColor = 'pink';
-	pageNode.style.paddingTop = '10px';</code>
-				</pre>
+	pageNode.style.paddingTop = '10px';
+        </code></pre>
       </section>
       <section>
         <h3>Let's Develop It</h3>
-        <p>Create a simple HTML page or <a href="files/class3.zip">use this sample code.</a></p>
-        <p>Isolate a node (an element on the page) and change an attribute or add a new style.</p>
+        <p>Create a simple HTML page or <a href="sample-website.zip" download>use this sample code.</a></p>
+        <ul>
+          <li>Target a node (an element on the page) by its ID (you will need to add an ID to your HTML!) and change an attribute or add a new style.</li>
+          <li>Try targeting and modifying other nodes using <code>getElementsByTagName</code> and <code>getElementsByClassName</code>.</li>
+        </ul>
       </section>
 
       <section>
-        <h3>DOM innerHTML</h3>
+        <h3>DOM Changes: innerHTML</h3>
         <p>Used to get or set content:</p>
         <pre><code>
 	var pageNode = document.getElementsByTagName('body')[0];
-	pageNode.innerHTML = '<h1>Oh Noes!</h1><p>I just changed the whole page!</p>';
+	pageNode.innerHTML = '&lt;p&gt;I just changed the whole page!&lt;/p&gt;';
 				</code></pre>
         <p>Or just add some new content to the end:</p>
         <pre><code>
@@ -818,96 +820,86 @@
         <h3>Creating New Nodes</h3>
         <p>The
           <code>document</code> object also provides ways to create nodes from scratch:</p>
-        <pre>
-					<code>
+        <pre><code>
 	document.createElement(tagName);
 	document.createTextNode(text);
-	document.appendChild();</code>
-				</pre>
+	document.appendChild();
+        </code></pre>
       </section>
       <section>
         <h3>Creating New Nodes: Sample Code</h3>
-        <pre>
-					<code>
+        <pre><code>
 	var pageNode = document.getElementsByTagName('body')[0];
 	var newImg = document.createElement('img');
 
-	newImg.src = 'http://placekitten.com/400/300';
-	newImg.style.border = '1px solid black';
+	newImg.src = 'http://placekitten.com/g/400/300';
 
 	pageNode.appendChild(newImg);
-
+        </pre></code>
+        <pre><code>
+  var pageNode = document.getElementsByTagName('body')[0];
 	var newParagraph = document.createElement('p');
 	var paragraphText = document.createTextNode('Squee!');
 
 	newParagraph.appendChild(paragraphText);
-	pageNode.appendChild(newParagraph);</code>
-				</pre>
+	pageNode.appendChild(newParagraph);
+        </code></pre>
       </section>
+
       <section>
         <h3>Let's Develop It</h3>
         <p>Create a new paragraph element and add it to a div on your page.</p>
       </section>
 
       <section>
-				<h3>Events</h3>
-				<p>An 'event' is a type of object that is created when the user interacts with a web page.</p>
-                <p>For example, JS creates an event when a user clicks an element.</p>
-                <pre><code>
-element.onclick = function () {
-  //code to execute when the click happens
-};
-				</code></pre>
+				<h3>Events &amp; Listeners</h3>
+          <p>An <strong class="blue">event</strong> is a type of object that is created when the user interacts with a web page.</p>
+            <button id="button" style="display: block; border: 1px solid #999; font-size: 0.5em; padding: 10px 15px; margin: 0 auto; cursor: pointer;">
+              Click Me!
+            </button>
+            <pre><code>
+  &lt;button id="button"&gt;Click Me!&lt;/button&gt;
+            </code></pre>
+          <p>To cause a message to appear when the button is clicked, add an <strong class="blue">event listener</strong> to the button:</p>
+            <pre><code>
+  var button = document.getElementById('button');
+
+  function clickHandler() {
+    alert('You clicked the button!');
+  }
+
+  button.addEventListener('click', clickHandler);
+    				</code></pre>
 			</section>
+      <section>
+        <h3>Events: addEventListener</h3>
+        <ul>
+          <li><p>An <strong class="blue">event listener</strong> triggers a reaction when a specified event occurs.</p></li>
+          <li>To create an event listener on a specific node, use the format:
+            <pre><code class="javascript">
+  eventTarget.addEventListener(eventType, eventHandler);
+            </code></pre>
+          </li>
+          <li><strong class="blue">Event target</strong>: a node that the user can interact with, e.g. a button.</li>
+          <li><strong class="blue">Event handler</strong>: a function that is called when the event occurs.</li>
+        </ul>
+      </section>
             <section>
 				<h3>Types of Events</h3>
-				<p>There are a <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">variety of events</a>. Some of the most common:</p>
-                <ul>
-                    <li>onclick: The event occurs when the user clicks on an element</li>
-                    <li>onmouseover: The event occurs when the pointer is moved onto an element</li>
-                    <li>onkeyup: The event occurs when the user releases a key</li>
-                    <li>onload: The event occurs when a document has been loaded</li>
-                    <li>onfocus: The event occurs when an element gets focus</li>
-                </ul>
+				<p>There are a <a href="https://developer.mozilla.org/en-US/docs/Web/Events">variety of events</a>. Some common events:</p>
+        <ul>
+            <li><strong class="blue">click:</strong> The event occurs when the user clicks on an element</li>
+            <li><strong class="blue">mouseover:</strong> The event occurs when the pointer is moved onto an element (or its children)</li>
+            <li><strong class="blue">mouseout:</strong> The event occurs when the pointer is moved off an element (or its children)</li>
+            <li><strong class="blue">keypress:</strong> The event occurs when the user presses a key on their keyboard</li>
+            <li><strong class="blue">load:</strong> The event occurs when a document has been loaded</li>
+        </ul>
 			</section>
-            <section>
-                <h3>Events and Code</h3>
-                <p>How do you make an event trigger some code?</p>
-                <ol>
-                    <li>Break your code into functions</li>
-                    <li>Associate a function with a JavaScript event</li>
-                </ol>
-			</section>
-            <section>
-                <h3>Calling Functions from HTML</h3>
-                <p>You can call a function directly from your HTML code:</p>
-			    <pre><code>
-&lt;button id="clickMe" onclick="sayHi()"&gt;Click Me!&lt;/button&gt;
-				</code></pre>
-                <pre><code>
-function sayHi() {
-    alert ('Hi!');
-}
-				</code></pre>
-            </section>
-            <section>
-                <h3>Listening Functions</h3>
-                <p>Listening functions work like many of the other things we have done. First, find the object:</p>
-                <pre><code>
-var myTarget = document.getElementById('clickMe');
-                </code></pre>
-                <p>Then add an event to that object:</p>
-                <pre><code>
-myTarget.onclick=function(){
-     alert ('Hi!');
-}
-                </code></pre>
-			</section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Download <a href="files/class4.zip">this week's sample code</a>.</p>
-                <p>Make some JavaScript code fire after an <code>onmouseover</code> event. Try adding the event to the HTML and adding a listening function.</p>
 
+      <section>
+				<h3>Let's Develop It</h3>
+        <p>Download <a href="sample-website.zip">the sample code</a>.</p>
+        <p>Make a function execute after an <code>onmouseover</code> event using <code>addEventListener</code>.</p>
 			</section>
 
             <section>
