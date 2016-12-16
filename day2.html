@@ -228,7 +228,7 @@
       <section>
         <h3>Conditional Statements</h3>
         <p>Use <code>if</code> to decide which lines of code to execute, based on a
-        <code>true</code> condition.</p>
+          <code>true</code> condition.</p>
         <pre><code class="javascript">
 	if (condition) {
 		// statements to execute
@@ -254,7 +254,7 @@
 	}
         </code></pre>
         <p>Runs the first
-        <strong>true</strong> condition it meets</p>
+          <strong>true</strong> condition it meets</p>
         <pre><code class="javascript">
 	var daysToNewYear = 15;
 
@@ -541,7 +541,7 @@
         <h4 class="align-left">Part I</h4>
         <ul>
           <li>Add a <code>pets</code> property to each object in your <code>familyMembers</code> array.
-          <li>Set <code>pets</code> equal to an array that contains the names of that family member's pets.</li>
+            <li>Set <code>pets</code> equal to an array that contains the names of that family member's pets.</li>
         </ul>
         <br><br>
         <h4 class="align-left">Part II</h4>
@@ -553,26 +553,25 @@
 
       <section>
         <h3>Arrays are objects!</h3>
-        <p>Behind the scenes, when you create an array<br> (<code>var example = [1, 2, 3];</code>),
-          JavaScript creates a new Array object.</p><br>
+        <p>Behind the scenes, when you create an array<br> (<code>var example = [1, 2, 3];</code>), JavaScript creates a new Array object.</p><br>
         <div style="display: flex; justify-content: space-around;">
-        <div style="width: 40%;">
-          <p class="align-left"><strong class="green">Array methods</strong>:</p>
-          <ul class="align-left" style="display: block;">
-            <li>push</li>
-            <li>pop</li>
-            <li>shift</li>
-            <li>unshift</li>
-            <li><strong class="blue">forEach</strong></li>
-          </ul>
+          <div style="width: 40%;">
+            <p class="align-left"><strong class="green">Array methods</strong>:</p>
+            <ul class="align-left" style="display: block;">
+              <li>push</li>
+              <li>pop</li>
+              <li>shift</li>
+              <li>unshift</li>
+              <li><strong class="blue">forEach</strong></li>
+            </ul>
+          </div>
+          <div style="width: 40%;">
+            <p class="align-left"><strong class="green">Array properties:</strong></p>
+            <ul class="align-left" style="display: block;">
+              <li>length</li>
+            </ul>
+          </div>
         </div>
-        <div style="width: 40%;">
-          <p class="align-left"><strong class="green">Array properties:</strong></p>
-          <ul class="align-left" style="display: block;">
-            <li>length</li>
-          </ul>
-        </div>
-      </div>
       </section>
 
       <section>
@@ -657,8 +656,7 @@
 
       <section>
         <h3>The DOM</h3>
-        <p>We model the nested structure of an HTML page with the DOM (<strong class="blue">Document Object Model</strong>).
-          The browser makes objects, or <strong class="blue">nodes</strong>, of all the elements on a page.</p>
+        <p>We model the nested structure of an HTML page with the DOM (<strong class="blue">Document Object Model</strong>). The browser makes objects, or <strong class="blue">nodes</strong>, of all the elements on a page.</p>
         <pre><code class="html">
 	&lt;h1&gt;My Page&lt;/h1&gt;
 	&lt;p&gt;Hello World!&lt;/p&gt;
@@ -852,16 +850,16 @@
       </section>
 
       <section>
-				<h3>Events &amp; Listeners</h3>
-          <p>An <strong class="blue">event</strong> is a type of object that is created when the user interacts with a web page.</p>
-            <button id="button" style="display: block; border: 1px solid #999; font-size: 0.5em; padding: 10px 15px; margin: 0 auto; cursor: pointer;">
+        <h3>Events &amp; Listeners</h3>
+        <p>An <strong class="blue">event</strong> is a type of object that is created when the user interacts with a web page.</p>
+        <button id="button" style="display: block; border: 1px solid #999; font-size: 0.5em; padding: 10px 15px; margin: 0 auto; cursor: pointer;">
               Click Me!
             </button>
-            <pre><code>
+        <pre><code>
   &lt;button id="button"&gt;Click Me!&lt;/button&gt;
             </code></pre>
-          <p>To cause a message to appear when the button is clicked, add an <strong class="blue">event listener</strong> to the button:</p>
-            <pre><code>
+        <p>To cause a message to appear when the button is clicked, add an <strong class="blue">event listener</strong> to the button:</p>
+        <pre><code>
   var button = document.getElementById('button');
 
   function clickHandler() {
@@ -870,11 +868,13 @@
 
   button.addEventListener('click', clickHandler);
     				</code></pre>
-			</section>
+      </section>
       <section>
         <h3>Events: addEventListener</h3>
         <ul>
-          <li><p>An <strong class="blue">event listener</strong> triggers a reaction when a specified event occurs.</p></li>
+          <li>
+            <p>An <strong class="blue">event listener</strong> triggers a reaction when a specified event occurs.</p>
+          </li>
           <li>To create an event listener on a specific node, use the format:
             <pre><code class="javascript">
   eventTarget.addEventListener(eventType, eventHandler);
@@ -884,39 +884,38 @@
           <li><strong class="blue">Event handler</strong>: a function that is called when the event occurs.</li>
         </ul>
       </section>
-            <section>
-				<h3>Types of Events</h3>
-				<p>There are a <a href="https://developer.mozilla.org/en-US/docs/Web/Events">variety of events</a>. Some common events:</p>
+      <section>
+        <h3>Types of Events</h3>
+        <p>There are a <a href="https://developer.mozilla.org/en-US/docs/Web/Events">variety of events</a>. Some common events:</p>
         <ul>
-            <li><strong class="blue">click:</strong> The event occurs when the user clicks on an element</li>
-            <li><strong class="blue">mouseover:</strong> The event occurs when the pointer is moved onto an element (or its children)</li>
-            <li><strong class="blue">mouseout:</strong> The event occurs when the pointer is moved off an element (or its children)</li>
-            <li><strong class="blue">keypress:</strong> The event occurs when the user presses a key on their keyboard</li>
-            <li><strong class="blue">load:</strong> The event occurs when a document has been loaded</li>
+          <li><strong class="blue">click:</strong> The event occurs when the user clicks on an element</li>
+          <li><strong class="blue">mouseover:</strong> The event occurs when the pointer is moved onto an element (or its children)</li>
+          <li><strong class="blue">mouseout:</strong> The event occurs when the pointer is moved off an element (or its children)</li>
+          <li><strong class="blue">keypress:</strong> The event occurs when the user presses a key on their keyboard</li>
+          <li><strong class="blue">load:</strong> The event occurs when a document has been loaded</li>
         </ul>
-			</section>
+      </section>
 
       <section>
-				<h3>Let's Develop It</h3>
+        <h3>Let's Develop It</h3>
         <p>Download <a href="sample-website.zip">the sample code</a>.</p>
-        <p>Make a function execute after an <code>onmouseover</code> event using <code>addEventListener</code>.</p>
-			</section>
+        <p>Make a function execute after an <code>mouseover</code> event using <code>addEventListener</code>.</p>
+      </section>
 
-            <section>
-				<h3>Preventing Defaults</h3>
-				<p>Elements like buttons and links have default behaviors. However, the <code>event</code> objects has a built-in method to handle that:</p>
-                <pre><code>
-element.onclick = function (event) {
-  event.preventDefault();
-};
-
+      <section>
+        <h3>Preventing Default Behavior</h3>
+        <p>Elements like buttons and links have default behaviors. However, the <code>event</code> objects has a built-in method to handle that:</p>
+        <pre><code>
+  element.onclick = function (event) {
+    event.preventDefault();
+  };
 				</code></pre>
-			</section>
+      </section>
 
-			<section>
-				<h3>This</h3>
-				<p>The keyword <code>this</code> references the element that the user has just interacted with:</p>
-                <pre><code>
+      <section>
+        <h3>This</h3>
+        <p>The keyword <code>this</code> references the element that the user has just interacted with:</p>
+        <pre><code>
 element.onmouseover = function (event) {
   console.log(this);
 };
@@ -926,21 +925,21 @@ element.onclick = function (event) {
   this.innerHTML = 'I've been clicked!';
 };
 				</code></pre>
-			</section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Write code that targets this link:</p>
-                <pre><code>
+      </section>
+      <section>
+        <h3>Let's Develop It</h3>
+        <p>Write code that targets this link:</p>
+        <pre><code>
 &lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
 				</code></pre>
-                <p>When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
-			</section>
+        <p>When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
+      </section>
 
 
-			<section>
-                <h3>Forms</h3>
-                <p>You can collect information from users to use in functions. The most common method is an HTML form:</p>
-                <pre><code>
+      <section>
+        <h3>Forms</h3>
+        <p>You can collect information from users to use in functions. The most common method is an HTML form:</p>
+        <pre><code>
 &lt;form id="temperatureForm"&gt;
     &lt;label for="temp"&gt;Temperature:&lt;/label&gt; &lt;input type="text" id="temp" size="3"/&gt; degrees in
     &lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit
@@ -948,20 +947,20 @@ element.onclick = function (event) {
     &lt;label for="submitButton"&gt;&lt;/label&gt; &lt;input id="tempSubmitButton" type="submit" value="Submit" /&gt;
 &lt;/form&gt;
 				</code></pre>
-			</section>
-            <section>
-                <h3>Retrieving Form Data</h3>
-                <p>You retrieve the values of form elements using the <code>value</code> method:</p>
-                <pre><code>
+      </section>
+      <section>
+        <h3>Retrieving Form Data</h3>
+        <p>You retrieve the values of form elements using the <code>value</code> method:</p>
+        <pre><code>
 var temperature = document.getElementById('temp').value;
 console.log (temperature);
 				</code></pre>
-                <p>You can retrieve the value of a form at any time. Try <code>onblur</code> (when a form element loses focus).</p>
-			</section>
-            <section>
-                <h3>Radio Buttons</h3>
-                <p>Radio buttons usually do not have IDs, so you will need to use an array:</p>
-                <pre><code>
+        <p>You can retrieve the value of a form at any time. Try <code>onblur</code> (when a form element loses focus).</p>
+      </section>
+      <section>
+        <h3>Radio Buttons</h3>
+        <p>Radio buttons usually do not have IDs, so you will need to use an array:</p>
+        <pre><code>
 var radios = document.getElementsByName('tempFormat');
 
 for (var i = 0, length = radios.length; i &lt; length; i++) {
@@ -972,11 +971,11 @@ for (var i = 0, length = radios.length; i &lt; length; i++) {
     }
 }
 				</code></pre>
-			</section>
-             <section>
-                <h3>Submit buttons</h3>
-                <p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
-                <pre><code>
+      </section>
+      <section>
+        <h3>Submit buttons</h3>
+        <p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
+        <pre><code>
 var submitButton = document.getElementById('tempSubmitButton');
 submitButton.onclick = function () {
     event.preventDefault();
@@ -985,11 +984,11 @@ submitButton.onclick = function () {
 }
 <!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
 				</code></pre>
-			</section>
-            <section>
-				<h3>Let's Develop It</h3>
-                <p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
-			</section>
+      </section>
+      <section>
+        <h3>Let's Develop It</h3>
+        <p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+      </section>
 
       <section>
         <h3>Questions?</h3>
