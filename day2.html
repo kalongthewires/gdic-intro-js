@@ -398,10 +398,6 @@
       </section>
 
       <section>
-        <h2>Break time!</h2>
-      </section>
-
-      <section>
         <h3>Data Types</h3>
         <table>
           <tr>
@@ -570,15 +566,10 @@
 
       <section>
         <h3>Let's Develop It</h3>
-        <h4 class="align-left">Part I</h4>
         <ul>
-          <li>Add a <code>pets</code> property to each object in your <code>familyMembers</code> array.
-            <li>Set <code>pets</code> equal to an array that contains the names of that family member's pets.</li>
-        </ul>
-        <br><br>
-        <h4 class="align-left">Part II</h4>
-        <ul>
-          <li>Add a method to each family member's object called <code>addPet</code>.</li>
+          <li>Add a <code>pets</code> property to one of your family member objects.
+          <li>Set <code>pets</code> equal to an array that contains the names of that family member's pets.</li>
+          <li>Add a method to the family member's object called <code>addPet</code>.</li>
           <li>Set addPet equal to a function that uses <code>push</code> to add a new pet to the <code>pets</code> array.</li>
         </ul>
       </section>
@@ -677,28 +668,23 @@
 
       <section>
         <h3>IDs vs. Classes</h3>
-        <ul>
-          <li id="myName">ID
-            <ul>
-              <li>ONE per page! Must be unique.
-                <small>Example: page footer</small>
-              </li>
-              <li><code>&lt;p id="myName"&gt;My name is Becky&lt;/p&gt;</code></li>
-              <li><code>#myName { color: red; }</code></li>
-              <li class="green"><code>document.getElementById("myName");</code></li>
-            </ul>
-          </li>
-          <li>Class
-            <ul>
-              <li>As many as you need. Should be descriptive.
-                <small>Example: warning text</small>
-              </li>
-              <li><code>&lt;p class="warning"&gt;Warning!&lt;/p&gt;</code></li>
-              <li><code>.warning { color: red; }</code></li>
-              <li class="green"><code>document.getElementsByClassName("green");</code></li>
-            </ul>
-          </li>
-        </ul>
+
+        <p><strong class="green">IDs</strong> - <strong>One</strong> per page! Must be unique.</p>
+        <pre><code class="html">
+  &lt;p id="my-name"&gt;My name is Becky&lt;/p&gt;
+        </code></pre>
+        <pre><code class="javascript">
+  document.getElementById('my-name');
+        </code></pre>
+        </p>
+        <br>
+        <p><strong class="green">Classes</strong> - As many as you need. Should be descriptive.</p>
+        <pre><code class="html">
+  &lt;p class="warning"&gt;Warning!&lt;/p&gt;
+        </code></pre>
+        <pre><code class="javascript">
+  document.getElementsByClassName('warning');
+        </code></pre>
       </section>
 
 
@@ -709,6 +695,7 @@
 	&lt;h1&gt;My Page&lt;/h1&gt;
 	&lt;p&gt;Hello World!&lt;/p&gt;
 		    </code></pre>
+        <br>
         <h1>My Page</h1>
         <p>Hello World!</p>
       </section>
@@ -727,7 +714,7 @@
 		&lt;body&gt;
 			&lt;h1&gt;My Page&lt;/h1&gt;
 			&lt;p&gt;Hello World!&lt;/p&gt;
-			&lt;img src="http://placekitten.com/200/300" alt="cat"/&gt;
+			&lt;img src="http://placekitten.com/g/200/300" alt="cat"/&gt;
 			&lt;script src="path/to/file.js"&gt;&lt;/script&gt;
 		&lt;/body&gt;
 	&lt;/html&gt;
@@ -738,19 +725,19 @@
 
       <section>
         <h3>DOM Access</h3>
-        <p>To change something on a page:</p>
-        <ol>
+        <p class="green">To change something on a page:</p>
+        <ol><br>
           <li>Select the DOM node using JS and store it in a variable
             <ul>
               <li>getElementById()</li>
               <li>getElementsByClassName()</li>
               <li>getElementsByTagName()</li>
             </ul>
-          </li>
+          </li><br>
           <li>Use methods to manipulate the node
             <ul>
-              <li>node.innerHTML;</li>
-              <li>node.innerText = "My new text";</li>
+              <li>node.innerHTML = '&lt;p&gt;My new HTML&lt;/p&gt;';</li>
+              <li>node.innerText = 'My new text';</li>
             </ul>
           </li>
         </ol>
@@ -895,6 +882,10 @@
       <section>
         <h3>Let's Develop It</h3>
         <p>Create a new paragraph element and add it to a div on your page.</p>
+      </section>
+
+      <section>
+        <h2>Break time!</h2>
       </section>
 
       <section>
