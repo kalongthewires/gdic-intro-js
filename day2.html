@@ -877,10 +877,10 @@
           </li>
           <li>To create an event listener on a specific node, use the format:
             <pre><code class="javascript">
-  eventTarget.addEventListener(eventType, eventHandler);
+  element.addEventListener(eventType, eventHandler);
             </code></pre>
           </li>
-          <li><strong class="blue">Event target</strong>: a node that the user can interact with, e.g. a button.</li>
+          <li>The element is the node that the user interacts with to trigger the event, e.g. a button.</li>
           <li><strong class="blue">Event handler</strong>: a function that is called when the event occurs.</li>
         </ul>
       </section>
@@ -904,56 +904,65 @@
 
       <section>
         <h3>Preventing Default Behavior</h3>
-        <p>Elements like buttons and links have default behaviors. However, the <code>event</code> objects has a built-in method to handle that:</p>
+        <p>Elements like buttons and links have default behaviors. However, the <code>event</code> object has a built-in method to suppress default behavior:</p>
         <pre><code>
-  element.onclick = function (event) {
-    event.preventDefault();
-  };
+  &lt;a id="content-toggle" href="#"&gt;Read More&lt;/a&gt;
+        </code></pre>
+        <pre><code>
+  var contentToggle = document.getElementById('content-toggle');
+
+  function clickHandler(event) {
+    event.preventDefault(); // prevents jump to the top of the page
+    console.log(event); // what information is in the event object?
+  }
+
+  contentToggle.addEventListener('click', clickHandler);
 				</code></pre>
       </section>
 
       <section>
-        <h3>This</h3>
-        <p>The keyword <code>this</code> references the element that the user has just interacted with:</p>
+        <h3>this</h3>
+        <p>The keyword <code>this</code> references the node that the event was triggered from:</p>
         <pre><code>
-element.onmouseover = function (event) {
-  console.log(this);
-};
-
-element.onclick = function (event) {
-  this.style.backgroundColor = 'red';
-  this.innerHTML = 'I've been clicked!';
-};
-				</code></pre>
+  someElement.addEventListener('mouseover', function() {
+    console.log(this); // What do we see if we print to the console?
+  });
+        </code></pre>
+        <pre><code>
+  someElement.addEventListener('click', function() {
+    this.style.backgroundColor = 'red';
+  });
+        </code></pre>
       </section>
       <section>
         <h3>Let's Develop It</h3>
         <p>Write code that targets this link:</p>
         <pre><code>
-&lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
+  &lt;a href="http://girldevelopit.com/" id="gdi"&gt;Girl Develop It&lt;/a&gt;
 				</code></pre>
         <p>When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
       </section>
-
 
       <section>
         <h3>Forms</h3>
         <p>You can collect information from users to use in functions. The most common method is an HTML form:</p>
         <pre><code>
-&lt;form id="temperatureForm"&gt;
-    &lt;label for="temp"&gt;Temperature:&lt;/label&gt; &lt;input type="text" id="temp" size="3"/&gt; degrees in
+  &lt;form id="temperature-form"&gt;
+    &lt;label for="temp"&gt;Convert temperature:&lt;/label&gt;
+    &lt;input type="text" id="temp" size="3" placeholder="Enter temperature"/&gt;
     &lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit
     &lt;input type="radio" name="tempFormat" value="C" /&gt;Celsius &lt;br /&gt;
-    &lt;label for="submitButton"&gt;&lt;/label&gt; &lt;input id="tempSubmitButton" type="submit" value="Submit" /&gt;
-&lt;/form&gt;
+    &lt;label for="temp-submit-button"&gt;&lt;/label&gt;
+    &lt;input id="temp-submit-button" type="submit" value="Convert" /&gt;
+  &lt;/form&gt;
 				</code></pre>
       </section>
       <section>
         <h3>Retrieving Form Data</h3>
         <p>You retrieve the values of form elements using the <code>value</code> method:</p>
         <pre><code>
-var temperature = document.getElementById('temp').value;
-console.log (temperature);
+  var temperature = document.getElementById('temp').value;
+  console.log (temperature);
 				</code></pre>
         <p>You can retrieve the value of a form at any time. Try <code>onblur</code> (when a form element loses focus).</p>
       </section>
