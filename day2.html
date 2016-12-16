@@ -106,7 +106,7 @@
           </li>
           <li><span class="blue">Lunch ~ 11:30pm</span></li>
           <li><a href="#/class4slides">Part 4: Interactive Websites with JavaScript</a>
-            <small>Events, </small>
+            <small>Modifying the DOM, events, and forms</small>
           </li>
         </ul>
       </section>
@@ -115,7 +115,7 @@
       <section id="class3slides">
         <h2>Part 3 Slides</h2>
         <p>Working with JavaScript II</p>
-        <small>Scope, conditional statements, and objects</small>
+        <small>Review, scope, conditional statements, and objects</small>
       </section>
 
       <section>
@@ -211,7 +211,7 @@
   var lotteryNumbers = [33, 72, 64, 18, 17, 85];
   lotteryNumbers.push(90);
 				</code></pre>
-        <p>Use <code class="blue">.pop()</code> to remove the last item in an array.</p>
+        <p>Use <code class="blue">.pop()</code> to <em>remove</em> the last item in an array.</p>
         <pre><code class="javascript">
   var lotteryNumbers = [33, 72, 64, 18, 17, 85];
   lotteryNumbers.pop(); // outputs 85
@@ -222,7 +222,39 @@
 
       <section>
         <h3>Review: Loops</h3>
+        <ul>
+          <li class="left">What types of loops did we cover?</li>
+          <li class="fragment left">What do we use loops for?</li>
+          <li class="fragment green left">When do we use while loops?</li>
+        </ul>
+        <div class="fragment">
+          <pre><code>
+  var numberOfTacos = 10;
 
+  while (numberOfTacos > 0) {
+    console.log('OM NOM NOM'); // Eat a taco
+    numberOfTacos--; // What does this do?
+  }
+          </code></pre>
+          <pre><code>
+  // will count 1 to 10
+  for (var i = 1; i <= 10; i++) {
+    console.log(i);
+  }
+          </code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3>Review: Loops</h3>
+        <p>Variable naming in <code>for</code> loops:</p>
+        <pre><code>
+  for (var counter = 1; counter &lt;= 10; counter++) {
+    console.log(counter);
+  }
+        </code></pre>
+        <p class="fragment green">There are other, more readable kinds of loops
+          that we can use instead of <code>for</code> loops.</p>
       </section>
 
       <section>
@@ -260,8 +292,8 @@
 
 	if (daysToNewYear === 0) {
 		console.log("Happy New Year!");
-	} else if (daysToNewYear &lt; 5) {
-		console.log("Only a few days left in the year!");
+	} else if (daysToNewYear &lt; 10) {
+		console.log("Start the countdown!");
 	} else {
 		console.log("Just another day.");
 	}
@@ -576,11 +608,27 @@
 
       <section>
         <h3>Array: forEach</h3>
+        <p>An alternative to using a <code>for</code> loop to iterate through an array.</p>
+        <p class="green">For arrays only!</p>
+        <pre><code>
+  var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+
+  for (var counter = 0; counter &lt; lotteryNumbers.length; counter++) {
+    document.write(lotteryNumbers[counter] + ' ');
+  }
+        </code></pre>
+        <pre><code>
+  var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+
+  lotteryNumbers.forEach(function(number) {
+    document.write(number + ' ');
+  });
+        </code></pre>
       </section>
 
       <section>
-        <h3>Built-in methods</h3>
-        <p>JS provides several built-in object with methods:</p>
+        <h3>Built-in JavaScript Methods</h3>
+        <p>JS provides several built-in objects with methods:</p>
         <ul>
           <li><code><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">console</a></code></li>
           <li>
@@ -610,7 +658,7 @@
       <section id="class4slides">
         <h2>Part 4 Slides</h2>
         <p>Interactive Websites with JavaScript</p>
-        <small></small>
+        <small>Modifying the DOM, events, and forms</small>
       </section>
 
       <section>
