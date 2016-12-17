@@ -231,14 +231,14 @@
           <pre><code>
   var numberOfTacos = 10;
 
-  while (numberOfTacos > 0) {
+  while (numberOfTacos &gt; 0) {
     console.log('OM NOM NOM'); // Eat a taco
     numberOfTacos--; // What does this do?
   }
           </code></pre>
           <pre><code>
   // will count 1 to 10
-  for (var i = 1; i <= 10; i++) {
+  for (var i = 1; i &lt;= 10; i++) {
     console.log(i);
   }
           </code></pre>
@@ -567,7 +567,7 @@
       <section>
         <h3>Let's Develop It</h3>
         <ul>
-          <li>Add a <code>pets</code> property to one of your family member objects.
+          <li>Add a <code>pets</code> property to one of your family member objects.</li>
           <li>Set <code>pets</code> equal to an array that contains the names of that family member's pets.</li>
           <li>Add a method to the family member's object called <code>addPet</code>.</li>
           <li>Set addPet equal to a function that uses <code>push</code> to add a new pet to the <code>pets</code> array.</li>
@@ -671,12 +671,11 @@
 
         <p><strong class="green">IDs</strong> - <strong>One</strong> per page! Must be unique.</p>
         <pre><code class="html">
-  &lt;p id="my-name"&gt;My name is Becky&lt;/p&gt;
+  &lt;p id="myName"&gt;My name is Becky&lt;/p&gt;
         </code></pre>
         <pre><code class="javascript">
-  document.getElementById('my-name');
+  document.getElementById('myName');
         </code></pre>
-        </p>
         <br>
         <p><strong class="green">Classes</strong> - As many as you need. Should be descriptive.</p>
         <pre><code class="html">
@@ -737,14 +736,14 @@
           <li>Use methods to manipulate the node
             <ul>
               <li>node.innerHTML = '&lt;p&gt;My new HTML&lt;/p&gt;';</li>
-              <li>node.innerText = 'My new text';</li>
+              <li>node.textContent = 'My new text';</li>
             </ul>
           </li>
         </ol>
       </section>
       <section>
-        <h3>DOM Access: By Id</h3>
-        <p>You can find nodes by id using the method:</p>
+        <h3>DOM Access: By ID</h3>
+        <p>You can find nodes by ID using the method:</p>
         <pre><code>
 	document.getElementById(id);
         </code></pre>
@@ -844,9 +843,21 @@
 	pageNode.innerHTML = '&lt;p&gt;I just changed the whole page!&lt;/p&gt;';
 				</code></pre>
         <p>Or just add some new content to the end:</p>
-        <pre><code>
+        <pre><code class="javascript">
 	pageNode.innerHTML += '...just adding this bit at the end of the page.';
 				</code></pre>
+      </section>
+
+      <section>
+        <h3>DOM Changes: textContent</h3>
+        <p>Change the text in a node:</p>
+        <pre><code class="html">
+  &lt;p id="currentDate"&gt;Today is December 15th, 2016&lt;/p&gt;
+        </code></pre>
+        <pre><code class="javascript">
+  var currentDate = document.getElementById('currentDate');
+  currentDate.textContent = 'Today is December 16th, 2016';
+        </code></pre>
       </section>
 
       <section>
@@ -868,7 +879,7 @@
 	newImg.src = 'http://placekitten.com/g/400/300';
 
 	pageNode.appendChild(newImg);
-        </pre></code>
+        </code></pre>
         <pre><code>
   var pageNode = document.getElementsByTagName('body')[0];
 	var newParagraph = document.createElement('p');
@@ -916,10 +927,9 @@
           </li>
           <li>To create an event listener on a specific node, use the format:
             <pre><code class="javascript">
-  element.addEventListener(eventType, eventHandler);
+  node.addEventListener(eventType, eventHandler);
             </code></pre>
           </li>
-          <li>The element is the node that the user interacts with to trigger the event, e.g. a button.</li>
           <li><strong class="blue">Event handler</strong>: a function that is called when the event occurs.</li>
         </ul>
       </section>
@@ -945,10 +955,10 @@
         <h3>Preventing Default Behavior</h3>
         <p>Elements like buttons and links have default behaviors. However, the <code>event</code> object has a built-in method to suppress default behavior:</p>
         <pre><code>
-  &lt;a id="content-toggle" href="#"&gt;Read More&lt;/a&gt;
+  &lt;a id="contentToggle" href="#"&gt;Read More&lt;/a&gt;
         </code></pre>
         <pre><code>
-  var contentToggle = document.getElementById('content-toggle');
+  var contentToggle = document.getElementById('contentToggle');
 
   function clickHandler(event) {
     event.preventDefault(); // prevents jump to the top of the page
@@ -963,12 +973,12 @@
         <h3>this</h3>
         <p>The keyword <code>this</code> references the node that the event was triggered from:</p>
         <pre><code>
-  someElement.addEventListener('mouseover', function() {
+  someNode.addEventListener('mouseover', function() {
     console.log(this); // What do we see if we print to the console?
   });
         </code></pre>
         <pre><code>
-  someElement.addEventListener('click', function() {
+  someNode.addEventListener('click', function() {
     this.style.backgroundColor = 'red';
   });
         </code></pre>
@@ -986,13 +996,13 @@
         <h3>Forms</h3>
         <p>You can collect information from users to use in functions. The most common method is an HTML form:</p>
         <pre><code>
-  &lt;form id="temperature-form"&gt;
+  &lt;form id="temperatureForm"&gt;
     &lt;label for="temp"&gt;Convert temperature:&lt;/label&gt;
     &lt;input type="text" id="temp" size="3" placeholder="Enter temperature"/&gt;
     &lt;input type="radio" name="tempFormat" value="F" checked /&gt;Fahrenheit
     &lt;input type="radio" name="tempFormat" value="C" /&gt;Celsius &lt;br /&gt;
-    &lt;label for="temp-submit-button"&gt;&lt;/label&gt;
-    &lt;input id="temp-submit-button" type="submit" value="Convert" /&gt;
+    &lt;label for="tempSubmitButton"&gt;&lt;/label&gt;
+    &lt;input id="tempSubmitButton" type="submit" value="Convert" /&gt;
   &lt;/form&gt;
 				</code></pre>
       </section>
@@ -1003,39 +1013,42 @@
   var temperature = document.getElementById('temp').value;
   console.log (temperature);
 				</code></pre>
-        <p>You can retrieve the value of a form at any time. Try <code>onblur</code> (when a form element loses focus).</p>
       </section>
       <section>
         <h3>Radio Buttons</h3>
-        <p>Radio buttons usually do not have IDs, so you will need to use an array:</p>
+        <p>Radio buttons usually do not have IDs, but you can use <code>getElementsByName</code>:</p>
         <pre><code>
-var radios = document.getElementsByName('tempFormat');
+  var radioButtons = document.getElementsByName('tempFormat');
+  var selectedValue;
 
-for (var i = 0, length = radios.length; i &lt; length; i++) {
-    if (radios[i].checked) {
-        var radioButtonValue = radios[i].value;
-        // only one radio can be checked, so stop now
-        break;
+  radioButtons.forEach(function (button) {
+    if (button.checked) {
+      selectedValue = button.value;
     }
-}
+  });
 				</code></pre>
       </section>
       <section>
         <h3>Submit buttons</h3>
         <p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
-        <pre><code>
-var submitButton = document.getElementById('tempSubmitButton');
-submitButton.onclick = function () {
+        <pre><code class="javascript">
+  var submitButton = document.getElementById('tempSubmitButton');
+
+  submitButton.addEventListener('click', function(event) {
     event.preventDefault();
     var temperature = document.getElementById('temp').value;
     console.log (temperature);
-}
-<!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
+  });
 				</code></pre>
       </section>
       <section>
         <h3>Let's Develop It</h3>
-        <p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+        <ul>
+          <li>Add an input box and a button to your page.</li>
+          <li>Collect a value from the input box when the button is clicked.</li>
+          <li>Use the value in a function of some kind. For example, collect a
+            number and multiply it by five or collect a name and display a greeting.</li>
+        </ul>
       </section>
 
       <section>
@@ -1045,21 +1058,17 @@ submitButton.onclick = function () {
       <section>
         <h3>What to do next</h3>
         <ul>
-          <li>Free Code Camp</li>
-          <li>Codecademy</li>
-          <li>Udemy: JavaScript the Weird Parts (paid)</li>
-          <li>Books: You Don't Know JS &amp; Eloquent JavaScript</li>
-          <li>Look into new JavaScript features (ES2015, aka ES6)</li>
-          <li>Make something!</li>
+          <li><a href="https://www.freecodecamp.com/">Free Code Camp</a></li>
+          <li><a href="https://www.codecademy.com/learn/javascript">Codecademy</a></li>
+          <li><a href="https://www.udemy.com/understand-javascript/">Udemy: JavaScript the Weird Parts</a> (paid)</li>
+          <li>Books: <a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS</a> &amp; <a href="http://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+          <li>Newsletter: <a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+          <li>Experiment!</li>
         </ul>
       </section>
 
       <section>
-        <h3>Resources</h3>
-        <ul>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
-          <li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
-        </ul>
+        <h2>Thank you!</h2>
       </section>
     </div>
     <footer>
