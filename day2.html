@@ -1013,39 +1013,42 @@
   var temperature = document.getElementById('temp').value;
   console.log (temperature);
 				</code></pre>
-        <p>You can retrieve the value of a form at any time. Try listening for the <code>blur</code> event (when a form element loses focus).</p>
       </section>
       <section>
         <h3>Radio Buttons</h3>
-        <p>Radio buttons usually do not have IDs, so you will need to use an array:</p>
+        <p>Radio buttons usually do not have IDs, but you can use <code>getElementsByName</code>:</p>
         <pre><code>
-var radios = document.getElementsByName('tempFormat');
+  var radioButtons = document.getElementsByName('tempFormat');
+  var selectedValue;
 
-for (var i = 0, length = radios.length; i &lt; length; i++) {
-    if (radios[i].checked) {
-        var radioButtonValue = radios[i].value;
-        // only one radio can be checked, so stop now
-        break;
+  radioButtons.forEach(function (button) {
+    if (button.checked) {
+      selectedValue = button.value;
     }
-}
+  });
 				</code></pre>
       </section>
       <section>
         <h3>Submit buttons</h3>
         <p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
-        <pre><code>
-var submitButton = document.getElementById('tempSubmitButton');
-submitButton.onclick = function () {
+        <pre><code class="javascript">
+  var submitButton = document.getElementById('tempSubmitButton');
+
+  submitButton.addEventListener('click', function(event) {
     event.preventDefault();
     var temperature = document.getElementById('temp').value;
     console.log (temperature);
-}
-<!--line 84 has a purple { opening bracket, but line 188 has a white } closing bracket. should they be the same color?-->
+  });
 				</code></pre>
       </section>
       <section>
         <h3>Let's Develop It</h3>
-        <p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+        <ul>
+          <li>Add an input box and a button to your page.</li>
+          <li>Collect a value from the input box when the button is clicked.</li>
+          <li>Use the value in a function of some kind. For example, collect a
+            number and multiply it by five or collect a name and display a greeting.</li>
+        </ul>
       </section>
 
       <section>
@@ -1055,21 +1058,17 @@ submitButton.onclick = function () {
       <section>
         <h3>What to do next</h3>
         <ul>
-          <li>Free Code Camp</li>
-          <li>Codecademy</li>
-          <li>Udemy: JavaScript the Weird Parts (paid)</li>
-          <li>Books: You Don't Know JS &amp; Eloquent JavaScript</li>
-          <li>Look into new JavaScript features (ES2015, aka ES6)</li>
-          <li>Make something!</li>
+          <li><a href="https://www.freecodecamp.com/">Free Code Camp</a></li>
+          <li><a href="https://www.codecademy.com/learn/javascript">Codecademy</a></li>
+          <li><a href="https://www.udemy.com/understand-javascript/">Udemy: JavaScript the Weird Parts</a> (paid)</li>
+          <li>Books: <a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS</a> &amp; <a href="http://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+          <li>Newsletter: <a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+          <li>Experiment!</li>
         </ul>
       </section>
 
       <section>
-        <h3>Resources</h3>
-        <ul>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
-          <li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
-        </ul>
+        <h2>Thank you!</h2>
       </section>
     </div>
     <footer>
